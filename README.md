@@ -252,5 +252,5 @@ Perform unit tests for all routes defined in `module.routing.rb` using the [Rack
 |`--environment`	|`-e`		|Sinatra environment (`development` or `production`) |
 
 ```shell
-ruby app/tests.rb [-k API_KEY] [-s SPACE_ID] [-e ENVIRONMENT]
+ruby app/tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
 ```
