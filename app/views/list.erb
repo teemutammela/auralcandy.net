@@ -1,0 +1,62 @@
+<% if episodes.size > 0 %>
+  <% content_tag :div, :class => "row pb-0" do %>
+    <% episodes.each do |episode| %>
+      <% content_tag :div, :class => "col-lg-4" do %>
+        <%
+          locals = {
+            :episode => {
+              :preview     => true,
+              :djs         => episode.djs,
+              :title       => episode.title,
+              :published   => episode.published,
+              :natural     => episode.published_natural,
+              :episode_url => episode.url,
+              :image_url   => episode.image_url,
+              :audio_url   => episode.audio_url,
+              :selected    => genre,
+              :genre       => episode.genre,
+              :duration    => episode.duration
+            }
+          }
+        %>
+        <%= partial :card, :locals => locals[:episode] %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% content_tag :nav, :class => "pb-2", :aria => {:label => "Pagination"} do %>
+    <% content_tag :div, :class => "d-flex justify-content-center" do %>
+      <% content_tag :ul, :class => "pagination d-inline-flex box-shadow" do %>
+        <%
+          range     = (1..pages)
+          prev_page = (current == range.first ? current : current-1)
+          next_page = (current == range.last ? current : current+1)
+        %>
+        <% for page in range %>
+          <% content_tag :li, :class => (current == range.first ? "page-item disabled" : "page-item") do %>
+            <% link_to false, :title => "Previous Page", :class => "page-link", :data => {:url => page_url + prev_page.to_s}, :aria => {:label => "Previous Page"} do %>
+              <%= content_tag :span, "<!-- Previous Page -->".html_safe, :class => "fas fa-arrow-left" %>
+            <% end %>
+          <% end if page == range.first %>
+          <% content_tag :li, :title => "Page #{page}", :class => (page == current ? "page-item disabled d-none d-lg-block d-xl-block" : "page-item d-none d-lg-block d-xl-block") do %>
+            <%= link_to page, false, :class => "page-link", :data => {:url => page_url + page.to_s} %>
+          <% end if pages > 1 %>
+          <% content_tag :li, :class => "page-item" do %>
+            <% link_to false, :title => "Back to Top", :class => "page-link", :aria => {:label => "Back to Top"} do %>
+              <%= content_tag :span, "<!-- Back to Top -->".html_safe, :class => "fas fa-arrow-up" %>
+            <% end %>
+          <% end if page == range.last %>
+          <% content_tag :li, :class => (current == range.last ? "page-item disabled" : "page-item") do %>
+            <% link_to false, :title => "Next Page", :class => "page-link", :data => {:url => page_url + next_page.to_s}, :aria => {:label => "Next Page"} do %>
+              <%= content_tag :span, "<!-- Next Page -->".html_safe, :class => "fas fa-arrow-right" %>
+            <% end %>
+          <% end if page == range.last %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <% content_tag :div, :class => "alert alert-warning", :role => "alert" do %>
+    <%= content_tag :span, "<!-- Icon -->".html_safe, :class => "fas fa-exclamation-circle" %>
+    <%= content_tag :span, "0 Podcast Episodes Found.", :class => "ml-2" %>
+  <% end %>
+<% end %>

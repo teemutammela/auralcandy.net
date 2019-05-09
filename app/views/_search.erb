@@ -1,0 +1,14 @@
+<% content_tag :div, :class => "card mb-4 box-shadow" do %>
+  <% content_tag :div, :class => "card-body" do %>
+    <% content_tag :form, :id => "episode-search" do %>
+      <% content_tag :div, :class => "form-row" do %>
+        <% fields.each do |id, value| %>
+          <% content_tag :div, :class => "col-md-3" do %>
+            <%= content_tag :label, value[:name], :class => "d-none d-md-block d-lg-block d-xl-block text-muted small", :for => id %>
+            <%= select_tag id.to_sym, :id => id, :options => value[:options], :selected => value[:options][0][1], :class => "form-control" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

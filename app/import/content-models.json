@@ -1,0 +1,1352 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": false
+          }
+        },
+        "id": "episode",
+        "type": "ContentType",
+        "createdAt": "2017-03-07T08:27:58.485Z",
+        "updatedAt": "2019-04-09T09:54:51.558Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 139,
+        "publishedAt": "2019-04-09T09:54:51.558Z",
+        "firstPublishedAt": "2017-03-07T08:27:58.772Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "publishedCounter": 70,
+        "version": 140,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Episode",
+      "description": "Podcast episode item",
+      "fields": [
+        {
+          "id": "dj",
+          "name": "DJ",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "author"
+                ],
+                "message": "Invalid relation. Only DJ is allowed."
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "size": {
+                "max": 255
+              },
+              "message": "Should be less than 255 characters"
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z0-9-]*$",
+                "flags": "i"
+              },
+              "message": "Only lowercase characters, numbers and hyphens are allowed."
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "releaseDate",
+          "name": "Release Date",
+          "type": "Date",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "brand",
+          "name": "Brand",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkContentType": [
+                "brand"
+              ],
+              "message": "Invalid relation. Only Brand is allowed."
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "trackList",
+          "name": "Track List",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "duration",
+          "name": "Duration",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^\\d{2}:\\d{2}:\\d{2}$",
+                "flags": ""
+              },
+              "message": "Should be of format HH:MM:SS"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "genre",
+          "name": "Genre",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "Acid House",
+                  "Acid Jazz",
+                  "Alternative",
+                  "Ambient",
+                  "Beach House",
+                  "Big Beat",
+                  "Chill Out",
+                  "Deep House",
+                  "Drum & Bass",
+                  "Electro House",
+                  "Funk & Soul",
+                  "Funky House",
+                  "Garage",
+                  "Hip-Hop",
+                  "House Music",
+                  "Latin House",
+                  "Nu-Disco",
+                  "Progressive House",
+                  "Psytrance",
+                  "Soulful House",
+                  "Tech House",
+                  "Techno",
+                  "Trance",
+                  "Tribal House",
+                  "Trip-Hop",
+                  "World Music"
+                ],
+                "message": "Not included in allowed genres"
+              }
+            ]
+          }
+        },
+        {
+          "id": "label",
+          "name": "Label",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "label"
+                ],
+                "message": "Invalid relation. Only Label is allowed."
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ],
+              "message": "Invalid file type. Only image is allowed."
+            },
+            {
+              "assetImageDimensions": {
+                "width": {
+                  "min": 900,
+                  "max": null
+                },
+                "height": {
+                  "min": 900,
+                  "max": null
+                }
+              },
+              "message": "Invalid dimensions. Should be at least 900 x 900 pixels."
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "audio",
+          "name": "Audio",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "audio"
+              ],
+              "message": "Invalid file type. Only audio is allowed."
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": false
+          }
+        },
+        "id": "author",
+        "type": "ContentType",
+        "createdAt": "2017-03-07T08:44:22.322Z",
+        "updatedAt": "2019-04-10T11:21:24.893Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 49,
+        "publishedAt": "2019-04-10T11:21:24.893Z",
+        "firstPublishedAt": "2017-03-07T08:44:22.643Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "publishedCounter": 25,
+        "version": 50,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        }
+      },
+      "displayField": "handle",
+      "name": "DJ",
+      "description": "Author of a podcast episode",
+      "fields": [
+        {
+          "id": "handle",
+          "name": "Handle",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": false
+          }
+        },
+        "id": "label",
+        "type": "ContentType",
+        "createdAt": "2017-03-08T08:35:36.741Z",
+        "updatedAt": "2019-04-09T06:05:45.386Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 19,
+        "publishedAt": "2019-04-09T06:05:45.386Z",
+        "firstPublishedAt": "2017-03-08T08:35:37.096Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "publishedCounter": 10,
+        "version": 20,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Label",
+      "description": "Related recording label",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "linkUrl",
+          "name": "Link URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^(http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$",
+                "flags": "i"
+              },
+              "message": "Not a valid URL"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": false
+          }
+        },
+        "id": "brand",
+        "type": "ContentType",
+        "createdAt": "2017-03-08T12:10:14.461Z",
+        "updatedAt": "2019-04-10T11:19:22.599Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 101,
+        "publishedAt": "2019-04-10T11:19:22.599Z",
+        "firstPublishedAt": "2017-03-08T12:10:14.950Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "publishedCounter": 51,
+        "version": 102,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Brand",
+      "description": "Podcast brand",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "default",
+          "name": "Default",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "size": {
+                "max": 255
+              },
+              "message": "Should be less than 255 characters."
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z0-9-]*$",
+                "flags": "i"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "tagline",
+          "name": "Tagline",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ],
+              "message": "Invalid relation. Only images are allowed."
+            },
+            {
+              "assetImageDimensions": {
+                "width": {
+                  "min": 900,
+                  "max": null
+                },
+                "height": {
+                  "min": 900,
+                  "max": null
+                }
+              },
+              "message": "Invalid dimensions. Should be at least 900 x 900 pixels."
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "shortDescription",
+          "name": "Short Description",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 140
+              },
+              "message": "Should be less than 140 characters"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "longDescription",
+          "name": "Long Description",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "compatibility",
+          "name": "Compatibility",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "privacyPolicy",
+          "name": "Privacy Policy",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "keywords",
+          "name": "Keywords",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        },
+        {
+          "id": "email",
+          "name": "E-Mail",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$",
+                "flags": "i"
+              },
+              "message": "Is not a valid e-mail address"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "phone",
+          "name": "Phone",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 20
+              },
+              "message": "Should be less than 20 characters"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "streetAddress",
+          "name": "Street Address",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "zipCode",
+          "name": "Zip Code",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": 5,
+                "max": 5
+              },
+              "message": "Should be 5 characters long"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "locality",
+          "name": "Locality",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "itunesUrl",
+          "name": "iTunes URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$",
+                "flags": "i"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "spotifyUrl",
+          "name": "Spotify URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "googlePodcastsUrl",
+          "name": "Google Podcasts URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "mixcloudUrl",
+          "name": "Mixcloud URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "merchandiseUrl",
+          "name": "Merchandise URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": false,
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 140,
+        "createdAt": "2017-03-07T08:27:59.073Z",
+        "createdBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2019-04-09T09:54:52.360Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "episode",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "dj",
+          "settings": {
+            "helpText": "Multiple DJs are formatted as 'First, Second & Third'",
+            "bulkEditing": true
+          },
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "settings": {
+            "helpText": "e.g. 'Awesome Deep House Mix. Vol. 01'"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "helpText": "e.g. 'awesome-deep-house-mix-vol01'"
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "releaseDate",
+          "settings": {
+            "format": "dateonly",
+            "helpText": "Only affects display order, NOT a scheduled publishing tool."
+          },
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "brand",
+          "settings": {
+            "helpText": ""
+          },
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "settings": {
+            "helpText": "Brand's field 'Long description' is used as fallback if episode has no description"
+          },
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "trackList",
+          "settings": {
+            "helpText": "Format 'Producer feat. Vocalist - Track Name [Mix Name]' per line"
+          },
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "duration",
+          "settings": {
+            "helpText": "HH:MM:SS"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "genre",
+          "settings": {
+            "helpText": ""
+          },
+          "widgetId": "checkbox",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "label",
+          "settings": {
+            "bulkEditing": true
+          },
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "settings": {
+            "helpText": "Brand's field 'Image' is used as fallback if episode has no image"
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "audio",
+          "settings": {
+            "helpText": "Recommended audio file type MP3, AAC or WMA."
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": false,
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 50,
+        "createdAt": "2017-03-07T08:44:22.851Z",
+        "createdBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2019-04-10T11:21:25.894Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "author",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "handle",
+          "settings": {
+            "helpText": "e.g. 'MK-Ultra'"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Firstname Lastname"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": false,
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 20,
+        "createdAt": "2017-03-08T08:35:37.268Z",
+        "createdBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2019-04-09T06:05:46.020Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "label",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Name of the recording label (e.g. 'Defected Records')"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "linkUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": false,
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 102,
+        "createdAt": "2017-03-08T12:10:15.091Z",
+        "createdBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2019-04-10T11:19:23.149Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "brand",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "e.g. 'AuralCandy.Net'"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "default",
+          "settings": {
+            "helpText": "Only one brand should be set as default",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "helpText": "e.g. 'auralcandynet'"
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tagline",
+          "settings": {
+            "helpText": "e.g. 'Premium House Music Podcast'"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "settings": {
+            "helpText": "Minimum required dimensions 900 x 900 pixels. Square image recommended."
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "shortDescription",
+          "settings": {
+            "helpText": "Displayed in the header section of index page, Google search results etc."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "longDescription",
+          "settings": {
+            "helpText": "Displayed in the footer section of page, RSS feed etc."
+          },
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "compatibility",
+          "settings": {
+            "helpText": "Displayed in the header section of index page"
+          },
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "privacyPolicy",
+          "settings": {
+            "helpText": "Displayed in the footer section of page. Needed only for the default brand."
+          },
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "keywords",
+          "settings": {
+            "helpText": "e.g. 'Podcast', 'DJ' and 'House Music'"
+          },
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "email",
+          "settings": {
+            "helpText": "Displayed in the footer section of the page"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "phone",
+          "settings": {
+            "helpText": "Displayed in the footer section of the page"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "streetAddress",
+          "settings": {
+            "helpText": "Displayed in the footer section of the page"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "zipCode",
+          "settings": {
+            "helpText": "Displayed in the footer section of the page"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "locality",
+          "settings": {
+            "helpText": "Displayed in the footer section of the page"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "itunesUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "spotifyUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "googlePodcastsUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "mixcloudUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "merchandiseUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "locales": [
+    {
+      "name": "U.S. English",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "6oQ3cqAQiWof9N7kHoukui",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": false
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "createdAt": "2017-03-02T14:52:46Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+          }
+        },
+        "updatedAt": "2017-03-02T14:52:46Z"
+      }
+    }
+  ]
+}

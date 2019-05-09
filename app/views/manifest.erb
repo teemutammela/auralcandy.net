@@ -1,0 +1,51 @@
+{
+  "name": "<%= brand.name %> - <%= brand.tagline %>",
+  "short_name": "<%= brand.name %>",
+  "description": "<%= brand.short_description %>",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "browser",
+  "orientation": "any",
+  "background_color": "#222222",
+  "theme_color": "#222222",
+  "icons": [
+  <% sizes = ["192", "256", "384", "512"] %>
+  <% sizes.each do |size| %>
+    {
+      "src": "<%= "#{brand.image_url}?w=#{size}&h=#{size}".html_safe %>",
+      "sizes": "<%= size %>x<%= size %>",
+      "type": "image/png"
+    }<%= "," unless size == sizes.last %>
+  <% end %>
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/us/app/apple-podcasts/id525463029"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/us/app/spotify-music/id324684580"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/us/app/mixcloud-radio-dj-mixes/id401206431"
+    },
+    {
+      "platform": "play",
+      "id": "com.google.android.apps.podcasts",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts"
+    },
+    {
+      "platform": "play",
+      "id": "com.spotify.music",
+      "url": "https://play.google.com/store/apps/details?id=com.spotify.music"
+    },
+    {
+      "platform": "play",
+      "id": "com.mixcloud.player",
+      "url": "https://play.google.com/store/apps/details?id=com.mixcloud.player"
+    }
+  ]
+}

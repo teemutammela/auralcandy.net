@@ -1,0 +1,25 @@
+<% content_tag :header, :class => "jumbotron jumbotron-fluid my-0 box-shadow" do %>
+  <% content_tag :nav, :class => "navbar navbar-expand-lg navbar-dark" do %>
+    <% content_tag :div, :class => "container" do %>
+      <%= link_to brand, "/", :class => "navbar-brand", :title => "Home" %>
+      <% content_tag :button, :class => "navbar-toggler", :type => "button", :data => {:toggle => "collapse", :target => "#main-navigation"}, :aria => {:controls => "main-navigation", :expanded => "false", :label => "Toggle navigation"} do %>
+        <%= content_tag :span, "<!-- Toggle -->".html_safe, :class => "navbar-toggler-icon" %>
+      <% end %>
+      <% content_tag :div, :class => "collapse navbar-collapse", :id => "main-navigation" do %>
+        <% content_tag :ul, :class => "navbar-nav ml-auto" do %>
+          <% links.each do |link| %>
+            <% content_tag :li, :class => "nav-item" do %>
+              <%= link_to link[:title], link[:url], :class => "nav-link", :title => link[:title], :itemprop => "relatedLink" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% content_tag :div, :class => "container text-center" do %>
+    <%= content_tag :h1, title, :class => "jumbotron-heading" %>
+    <%= content_tag :div, description, :class => "lead", :itemprop => "description" %>
+    <%= link_to button_text, button_url, :class => defined?(image_url) ? "btn btn-lg btn-outline-primary play-button" : "btn btn-lg btn-outline-primary", :title => button_title, :data => button_data %>
+    <%= content_tag :div, footnote, :id => "footnote", :class => "text-muted" %>
+  <% end %>
+<% end %>

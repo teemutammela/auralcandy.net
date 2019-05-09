@@ -1,0 +1,7 @@
+<% content_tag :div, :id => "lightbox" do %>
+  <% content_tag :div, :id => "lightbox-image" do %>
+    <% link_to false, :title => "Close", :id => "lightbox-close" do %>
+      <%= content_tag :span, "<!-- Close -->".html_safe, :class => "fas fa-times float-right mx-3 my-3" %>
+    <% end %>
+  <% end %>
+<% end %>

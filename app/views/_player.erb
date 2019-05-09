@@ -1,0 +1,54 @@
+<% content_tag :div, :id => "media-player", :class => "navbar navbar-expand fixed-bottom navbar-dark bg-dark p-0" do %>
+  <% content_tag :audio, :id => "media-audio", :preload => "auto" do %>
+    <%= tag :source, :id => "media-audio-url", :src => "/audio/chime.mp3", :type => "audio/mpeg" %>
+  <% end %>
+  <% content_tag :div, :class => "container px-3" do %>
+    <% link_to false, :id => "media-image-full-url", :data => {:image_full_url => false} do %>
+      <%= image_tag "/images/layout/loading-dark.gif", :alt => "Cover Image", :title => "View Cover Image", :width => "50", :height => "50", :id => "media-image-url", :class => "d-inline-block align-top mr-2 float-left", :data => {:image_url => "/images/layout/loading-dark.gif"} %>
+    <% end %>
+    <% content_tag :div, :class => "collapse navbar-collapse" do %>
+      <% content_tag :ul, :class => "navbar-nav mr-auto" do %>
+        <% content_tag :li, :class => "nav-item pl-2" do %>
+          <% link_to false, :title => "Show Episode Details", :id => "media-episode-url", :class => "nav-link" do %>
+            <%= content_tag :span, "DJ", :id => "media-dj", :class => "d-none d-lg-inline d-xl-inline" %>
+            <%= content_tag :span, "Episode Title", :id => "media-title", :class => "d-none d-md-inline d-lg-inline d-xl-inline" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <% content_tag :ul, :class => "navbar-nav ml-auto" do %>
+        <% content_tag :li, :class => "nav-item pl-0" do %>
+          <%= content_tag :span, "00:00:00", :title => "Time Remaining", :id => "media-duration", :class => "nav-link" %>
+        <% end %>
+        <% content_tag :li, :class => "nav-item pl-2" do %>
+          <% link_to false, :title => "Pause", :id => "media-playpause", :class => "nav-link" do %>
+            <%= content_tag :span, "<!-- Play/Pause -->".html_safe, :class => "fas fa-pause" %>
+          <% end %>
+        <% end %>
+        <% content_tag :li, :class => "nav-item pl-2" do %>
+          <% link_to false, :title => "Download", :download => true, :id => "media-download", :class => "nav-link" do %>
+            <%= content_tag :span, "<!-- Download -->".html_safe, :class => "fas fa-download" %>
+          <% end %>
+        <% end %>
+        <% content_tag :li, :class => "nav-item pl-2" do %>
+          <% content_tag :div, :class => "btn-group dropup" do %>
+            <% link_to false, :title => "Share", :id => "media-share", :class => "nav-link", :data => {:toggle => "dropdown"}, :aria => {:haspopup => "true", :expanded => "false"} do %>
+              <%= content_tag :span, "<!-- Share -->".html_safe, :class => "fas fa-share-square" %>
+            <% end %>
+            <% content_tag :div, :id => "media-share-links", :class => "dropdown-menu dropdown-menu-right" do %>
+              <%= link_to "Twitter", false, :id => "media-twitter-url", :class => "dropdown-item", :target => "_blank", :rel => "noreferrer" %>
+              <%= link_to "Facebook", false, :id => "media-facebook-url", :class => "dropdown-item", :target => "_blank", :rel => "noreferrer" %>
+              <%= link_to "Google Plus", false, :id => "media-googleplus-url", :class => "dropdown-item", :target => "_blank", :rel => "noreferrer" %>
+              <%= link_to "Pinterest", false, :id => "media-pinterest-url", :class => "dropdown-item", :target => "_blank", :rel => "noreferrer" %>
+              <%= link_to "E-mail", false, :id => "media-email-url", :class => "dropdown-item" %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% content_tag :li, :class => "nav-item pl-2" do %>
+          <% link_to false, :title => "Close", :id => "media-close", :class => "nav-link" do %>
+            <%= content_tag :span, "<!-- Close -->".html_safe, :class => "fas fa-times" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

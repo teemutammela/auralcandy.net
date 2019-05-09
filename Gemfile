@@ -1,0 +1,18 @@
+source "http://rubygems.org"
+
+ruby "2.6.2"
+
+gem "sinatra", "2.0.5"
+gem "sinatra-contrib", "2.0.5"
+gem "sinatra-partial", "1.0.1"
+gem "padrino", "0.14.4"
+gem "thin", "1.7.2"
+gem "rack-test", "1.1.0"
+gem "rack-cache", "1.9.0"
+gem "rack-protection", "2.0.5"
+gem "contentful", "2.11.1"
+gem "activesupport", "5.2.3"
+gem "redcarpet", "3.4.0"
+gem "sass", "3.7.3"
+gem "eat", "0.1.8"
+gem "json", "2.2.0"

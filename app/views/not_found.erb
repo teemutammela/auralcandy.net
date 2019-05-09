@@ -1,0 +1,44 @@
+<%
+  locals = {
+    :head => {
+      :author        => "Teemu Tammela",
+      :description   => $brand.short_description,
+      :keywords      => $brand.keywords.join(", "),
+      :twitter_image => $brand.image_url,
+      :og_image      => "#{$base_url}/images/layout/facebook-preview-logo.png",
+      :og_site_name  => $brand.name,
+      :og_url        => $base_url,
+      :title         => "#{title} - #{$brand.name}",
+    },
+    :header => {
+      :brand         => $brand.name,
+      :links         => $default_locals[:links],
+      :title         => title,
+      :description   => message,
+      :button_text   => "Index",
+      :button_title  => "Back to Index",
+      :button_url    => "/",
+      :button_data   => false,
+      :footnote      => "Copyright&copy; #{$brand.name} 2008-#{Time.now.year}. All rights reserved.".html_safe
+    }
+  }
+%>
+<!DOCTYPE HTML>
+<% content_tag :html, :lang => "en" do %>
+  <%= partial :head, :locals => locals[:head] %>
+  <% content_tag :body, :itemtype => "https://schema.org/WebPage", :itemscope => true do %>
+    <%= partial :header, :locals => locals[:header] %>
+    <% content_tag :main do %>
+      <%= partial :lightbox %>
+      <% content_tag :div, :class => "pt-4 pb-0 bg-light" do %>
+        <% content_tag :div, :class => "container" do %>
+          <%= partial :search, :locals => $default_locals[:search] %>
+          <%= content_tag :div, "<!-- Episode List -->".html_safe, :id => "episode-list", :data => {:brand => "any", :genre => "any", :limit => "12", :order => "date-desc", :id => "none", :page => "1"} %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= partial :footer, :locals => $default_locals[:footer] %>
+    <%= partial :player %>
+    <%= javascript_include_tag "scripts.min.js", :async => "async", :type => false %>
+  <% end %>
+<% end %>

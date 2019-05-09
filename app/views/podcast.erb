@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<% content_tag :rss, "xmlns:itunes".to_sym => "http://www.itunes.com/dtds/podcast-1.0.dtd", "xmlns:atom".to_sym => "http://www.w3.org/2005/Atom", "xmlns:media".to_sym => "http://search.yahoo.com/mrss/", :version => "2.0" do %>
+  <% content_tag :channel do %>
+    <%= tag "atom:link".to_sym, :href => $base_url + + request.path_info, :rel => "self", :type => "application/rss+xml" %>
+    <%= content_tag :title, cd("#{$brand.name} - #{$brand.tagline}") %>
+    <%= content_tag :link, $base_url %>
+    <%= content_tag :description, cd($brand.short_description) %>
+    <%= content_tag :category, cd("DJ/Music/Podcasts") %>
+    <%= content_tag :copyright, cd("#{$brand.name} 2008 - #{Time.now.year}. All rights reserved.") %>
+    <%= content_tag :language, "en-us" %>
+    <%= content_tag :lastBuildDate, episodes.first.updated.rfc2822 %>
+    <%= content_tag :docs, "http://blogs.law.harvard.edu/tech/rss" %>
+    <%= content_tag :webMaster, cd("#{$brand.email} (#{$brand.name})") %>
+    <% content_tag :image do %>
+      <%= content_tag :url, "#{$base_url}/images/layout/podcast.png" %>
+      <%= content_tag :title, cd("#{$brand.name} - #{$brand.tagline}") %>
+      <%= content_tag :link, $base_url %>
+    <% end %>
+    <%= content_tag "itunes:author".to_sym, cd("MK-Ultra & Mesmic") %>
+    <%= content_tag "itunes:subtitle".to_sym, cd($brand.short_description) %>
+    <%= content_tag "itunes:summary".to_sym, cd(st($brand.long_description)) %>
+    <% content_tag "itunes:owner".to_sym do %>
+      <%= content_tag "itunes:name".to_sym, cd("Teemu Tammela") %>
+      <%= content_tag "itunes:email".to_sym, cd($brand.email) %>
+    <% end %>
+    <%= content_tag "itunes:explicit".to_sym, "No" %>
+    <%= tag "itunes:image".to_sym, :href => "#{$base_url}/images/layout/podcast.png" %>
+    <%= tag "itunes:category".to_sym, :text => "Music" %>
+    <% episodes.each do |episode| %>
+      <% content_tag :item do %>
+        <%= content_tag :title, cd(episode.title_full) %>
+        <%= content_tag :link, episode.url %>
+        <%= content_tag :guid, episode.audio_url %>
+        <%= content_tag :category, cd("Podcasts") %>
+        <%
+          i = 0
+          track_list = episode.track_list.map { |track| content_tag(:li, track) }
+          track_list = content_tag :ol, track_list.join("\n").html_safe
+          labels = "This podcast episode features music published by #{(episode.labels.to_a.map { |label| link_to label.name, label.link }).join(", ")} and others."
+          description = md(episode.description ? episode.description : episode.brand.long_description)
+          description.concat(content_tag :p, labels.html_safe) unless episode.labels.size == 0
+          description.concat(content_tag :p, track_list.html_safe)
+        %>
+        <%= content_tag :description, cd(description) %>
+        <%= content_tag :author, cd("#{episode.brand.email} (#{episode.djs})") %>
+        <%= tag :enclosure, :url => episode.audio_url, :length => episode.file_size, :type => "audio/mpeg" %>
+        <%= content_tag :pubDate, episode.published_rfc %>
+        <%= tag "itunes:image".to_sym, :href => episode.image_url %>
+        <%= content_tag "itunes:duration".to_sym, episode.duration %>
+        <%= content_tag "itunes:keywords".to_sym, cd("DJ, Podcast, #{episode.genre.join(", ")}") %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,64 @@
+<% content_tag :article, :itemscope => true, :class => "card mb-4 box-shadow", :itemtype => "http://schema.org/MusicRecording" do %>
+  <%= content_tag :h2, preview ? title : "Track List", :class => "card-header text-center text-muted", :itemprop => "name" %>
+  <%= image_tag "#{image_url}?w=300&h=300&fm=jpg&q=80", :alt => title, :title => title, :srcset => "#{image_url}?w=450&h=450&fm=jpg&q=80 450w, #{image_url}?w=600&h=600&fm=jpg&q=80 600w", :class => "img-fluid", :itemprop => "image" if preview %>
+  <% content_tag :div, :class => "list-group list-group-flush px-0 text-center" do %>
+    <% content_tag :ul, :class => "list-group-item genre-list #{preview ? "px-0" : false} pt-2", :itemprop => "genre" do %>
+      <%
+        index = genre.map { |genre_name| parse_genre(genre_name) }.index(selected)
+        genres = (index.nil? ? genre : genre.unshift(genre[index])).uniq
+      %>
+      <% badges = preview ? 2 : 6 %>
+      <% genres.take(badges).each do |genre| %>
+        <%= content_tag :li, genre, :title => genre, :class => "badge badge-pill badge-primary" %>
+      <% end %>
+      <%= content_tag :li, "#{genres.size-badges}+", :title => genres.slice(badges, 20).join(", "), :class => "badge badge-pill badge-primary" if genres.size > badges %>
+    <% end %>
+  <% end %>
+  <% content_tag :div, :class => "card-body row" do %>
+    <% content_tag :div, :class => "col pr-0" do %>
+      <%
+        data = {
+          :dj             => djs,
+          :title          => title,
+          :episode_url    => episode_url,
+          :image_url      => "#{image_url}?w=100&h=100&fm=jpg&q=100",
+          :image_full_url => image_url,
+          :audio_url      => audio_url
+        }
+      %>
+      <%= link_to "Play", false, :title => "Play Episode (#{duration})", :class => "btn btn-block btn-outline-primary play-button", :data => data %>
+    <% end %>
+    <% content_tag :div, :class => "col" do %>
+      <%= link_to "Details", episode_url, :title => "Show Episode Details", :class => "btn btn-block btn-outline-primary details-button" %>
+    <% end %>
+  <% end if preview %>
+  <% content_tag :div, :class => "card-body px-0 py-0", :itemprop => "description" do %>
+    <% content_tag :ul, :class => "list-group list-group-flush" do %>
+      <% i = 0 %>
+      <% track_list.each do |track| %>
+        <% content_tag :li, :class => "list-group-item" do %>
+          <% content_tag :div, :class => "row" do %>
+            <% content_tag :div, :class => "col-10 pr-0" do %>
+              <%= content_tag :div, track.split(" - ")[0], :class => "text-muted" %>
+              <%= content_tag :div, track.split(" - ")[1], :class => "small" %>
+            <% end %>
+            <% content_tag :div, :class => "col-2 d-none d-md-block d-lg-block d-xl-block" do %>
+              <%= content_tag :span, "#{(i = i + 1).to_s.rjust(2, "0")}", :class => "track-list-number float-right" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end unless preview %>
+  <% content_tag :div, :class => "card-footer text-muted small" do %>
+    <% content_tag :div, :class => "row" do %>
+      <% timestamp = natural.split(" ") %>
+      <% content_tag :time, :class => "col text-left text-nowrap", :datetime => published, :itemprop => "datePublished" do %>
+        <%= content_tag :span, timestamp[0], :class => "d-inline d-lg-none d-xl-inline" %>
+        <%= content_tag :span, timestamp[1], :class => "d-inline d-lg-none d-xl-inline" %>
+        <%= content_tag :span, timestamp[2], :class => "d-inline" %>
+      <% end %>
+      <%= content_tag :div, djs, :class => "col text-right text-nowrap", :itemprop => "author" %>
+    <% end %>
+  <% end %>
+<% end %>

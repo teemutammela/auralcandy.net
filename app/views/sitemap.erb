@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<% content_tag :urlset, "xmlns:xsi".to_sym => "http://www.w3.org/2001/XMLSchema-instance", "xsi:schemaLocation".to_sym => "http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd", :xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9" do %>
+  <% content_tag :url do %>
+    <%= content_tag :loc, $base_url %>
+    <%= content_tag :changefreq, "weekly" %>
+    <%= content_tag :priority, "1.0" %>
+  <% end %>
+  <% content_tag :url do %>
+    <%= content_tag :loc, "#{$base_url}/podcast" %>
+    <%= content_tag :changefreq, "weekly" %>
+    <%= content_tag :priority, "0.9" %>
+  <% end %>
+  <% episodes.each do |episode| %>
+    <% content_tag :url do %>
+      <%= content_tag :loc, episode.url %>
+      <%= content_tag :changefreq, "monthly" %>
+      <%= content_tag :priority, "0.8" %>
+    <% end %>
+  <% end %>
+<% end %>

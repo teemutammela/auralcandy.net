@@ -1,0 +1,349 @@
+@import "bootstrap/bootstrap.scss";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/fa-solid.scss";
+@import "fonts.scss";
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: normal !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h1.card-header, h2, h3 {
+  font-size: $font-size-base;
+}
+
+.navbar-dark {
+
+  .navbar-brand {
+    color: $navbar-dark-color;
+  }
+
+  .navbar-brand:hover, .navbar-brand:active {
+    color: $navbar-dark-hover-color;
+  }
+
+}
+
+.jumbotron {
+  background-image: url("/images/layout/header.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-shadow: 1px 1px 1px #111111;
+
+  h1 {
+    color: $gray-200;
+    font-family: "Passion One", sans-serif;
+  }
+
+  .lead {
+    color: $gray-200;
+
+    a {
+      color: $gray-200;
+      border-bottom: 1px solid $gray-500;
+      text-decoration: none;
+    }
+
+    a:hover, a:active {
+      border-bottom: 1px solid $orange;
+    }
+
+  }
+
+  .btn {
+    text-shadow: none !important;
+  }
+
+  #footnote {
+    margin: 0 auto;
+    max-width: 75%;
+
+    a {
+      white-space: nowrap;
+    }
+
+    a:link, a:visited {
+      color: $gray-600;
+    }
+
+    a:hover, a:active {
+      color: $gray-200;
+    }
+
+  }
+
+}
+
+.bg-light {
+  background-color: $gray-200 !important;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.badge {
+  text-transform: uppercase;
+}
+
+.lead, footer, .card-body p {
+  line-height: 1.75 !important;
+}
+
+.card-body .list-group-item div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-list-number {
+  color: $white;
+  background-color: $primary;
+  padding: 10px 13px;
+  border-radius: 50%;
+}
+
+#lightbox {
+  background-image: url("/images/layout/lightbox.png");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+
+  #lightbox-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    max-width: 900px;
+    max-height: 900px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #lightbox-close {
+    background-color: $primary;
+    color: $white;
+    font-size: $font-size-lg;
+    text-shadow: 1px 1px 2px $gray-900;
+  }
+
+}
+
+#episode-list {
+  background-image: url("/images/layout/loading-light.gif");
+  background-size: 100px 100px;
+  background-position: center 10%;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+
+  .genre-list {
+    list-style-type: none;
+    white-space: nowrap;
+    overflow: hidden;
+
+    li {
+      display: inline;
+    }
+
+  }
+
+}
+
+#media-player {
+  display: none;
+  z-index: 999;
+  text-shadow: 1px 1px 1px $gray-900;
+
+  #media-dj:after {
+    content: " -";
+  }
+
+  #media-episode-url, #media-duration {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #media-share-links a {
+    font-size: $font-size-sm !important;
+    text-shadow: none !important;
+  }
+
+}
+
+@media screen and (orientation:portrait) {
+
+  .navbar-brand {
+    font-size: $font-size-base !important;
+  }
+
+  .jumbotron {
+    padding-bottom: $spacer * 2;
+
+    h1 {
+      font-size: $font-size-lg * 1.25;
+      margin: $spacer * 2 0 0 0;
+    }
+
+    .lead {
+      margin: $spacer auto $spacer * 2 auto;
+    }
+
+    .lead, .btn {
+      font-size: $font-size-base;
+    }
+
+    #footnote {
+      max-width: 75vw;
+      margin-top: $spacer * 2;
+      font-size: $font-size-sm * 0.75;
+    }
+
+  }
+
+  #lightbox-image {
+    width: 90vw;
+    height: 90vw;
+  }
+
+}
+
+@media screen and (orientation:landscape) {
+
+  .jumbotron {
+    padding-bottom: $spacer * 2;
+
+    h1 {
+      font-size: $font-size-lg * 3;
+      margin: $spacer * 6 0 0 0;
+    }
+
+    .lead {
+      margin: $spacer auto $spacer * 4 auto;
+      font-size: $font-size-lg;
+    }
+
+    #footnote {
+      margin-top: $spacer * 4;
+      font-size: $font-size-sm;
+    }
+
+  }
+
+  #lightbox-image {
+    width: 90vh;
+    height: 90vh;
+  }
+
+}
+
+@media (orientation:landscape) and (min-width: 1921px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 35vw;
+    }
+
+  }
+
+}
+
+@media (orientation:landscape) and (max-width: 1920px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 40vw;
+    }
+
+  }
+
+}
+
+@media (orientation:landscape) and (max-width: 1375px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 60vw;
+    }
+
+  }
+
+}
+
+@media (orientation:landscape) and (max-width: 920px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 70vw;
+    }
+
+  }
+
+}
+
+@media (orientation:landscape) and (max-width: 790px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 75vw;
+    }
+
+  }
+
+}
+
+@media (orientation:portrait) and (min-width: 1024px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 60vw;
+    }
+
+  }
+
+}
+
+@media (orientation:portrait) and (min-width: 768px) and (max-width: 1023px) {
+
+  .jumbotron {
+
+    .lead {
+      max-width: 75vw;
+    }
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+
+  #episode-search {
+
+    select {
+      font-size: $font-size-sm;
+      margin: 2px 0;
+    }
+
+  }
+
+}

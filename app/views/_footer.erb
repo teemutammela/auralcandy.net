@@ -1,0 +1,27 @@
+<% content_tag :footer, :class => "box-shadow pt-4 pb-2", :itemtype => "https://schema.org/Organization", :itemscope => true do %>
+  <% content_tag :div, :class => "container" do %>
+    <% content_tag :div, :class => "row" do %>
+      <% content_tag :div, :class => "col-lg-6" do %>
+        <% content_tag :h3 do %>
+          <%= content_tag :span, "About", :id => "about" %>
+          <%= content_tag :span, brand_name, :itemprop => "name" %>
+        <% end %>
+        <%= content_tag :div, description, :class => "text-justify small", :itemprop => "description" %>
+      <% end %>
+      <% content_tag :div, :class => "col-lg-3" do %>
+        <%= content_tag :h3, "Privacy Policy", :id => "privacy-policy" %>
+        <%= content_tag :div, privacy_policy, :class => "text-justify small" %>
+      <% end %>
+      <% content_tag :div, :class => "col-lg-3" do %>
+        <%= content_tag :h3, "Contact", :id => "contact" %>
+        <% content_tag :address, :class => "small", :itemprop => "address", :itemtype => "https://schema.org/PostalAddress", :itemscope => true do %>
+          <%= content_tag :span, street_address, :class => "d-block", :itemprop => "streetAddress" %>
+          <%= content_tag :span, zip_code, :itemprop => "postalCode" %>
+          <%= content_tag :span, locality, :itemprop => "addressLocality" %>
+          <%= mail_to email, email, :class => "d-block", :itemprop => "email" %>
+          <%= link_to phone, "tel:#{phone}", :class => "d-block", :itemprop => "telephone" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
