@@ -53,16 +53,17 @@ module Sinatra
           $default_locals = {
             :links => [
               {
-                :title => "Spotify",
-                :url   => $brand.spotify_url
-              },
-              {
                 :title => "Apple Podcasts",
                 :url   => $brand.itunes_url
               },
               {
                 :title => "Google Podcasts",
-                :url   => $brand.google_podcasts_url},
+                :url   => $brand.google_podcasts_url
+              },
+              {
+                :title => "Spotify",
+                :url   => $brand.spotify_url
+              },
               {
                 :title => "Mixcloud",
                 :url   => $brand.mixcloud_url
