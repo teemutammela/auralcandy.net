@@ -146,8 +146,6 @@ Contentful Delivery API key and Space ID must be set using environment variables
 
 **NOTE!** [Chartable](https://chartable.com/) ID is optional; It can be set for neither or both environments. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
-https://chartable.com/teams/auralcandynet/dashboard/integrations/trackable
-
 ### Development (Local)
 
 ```shell
