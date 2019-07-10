@@ -39,7 +39,6 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
 	* Ready to be deployed in [Heroku](https://www.heroku.com/)
-	* Adheres to the [Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
 	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) unit tests
 		
 * Mobile-friendly responsive layout
@@ -63,12 +62,15 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 	* Related episodes
 		
 * RSS/XML feed
-	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
+	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Spotify](https://www.spotify.com/download), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
 	* Episode descriptions
 	* Episode images (as defined in iTunes Podcast DTD)
 	* Genre keywords (as defined in iTunes Podcast DTD)
 	* Track listing
 	* Related recording labels
+
+* Statistics
+  * Download tracking via [Chartable](http://chartable.com) (optional)
 		
 * Search Engine Optimization
 	* Machine-readable [microdata schemas](https://schema.org/)
@@ -105,34 +107,35 @@ __2)__ Performance tests conducted while application is hosted on Heroku running
 * [Contentful CLI](https://github.com/contentful/contentful-cli)
 * [Heroku account](https://www.heroku.com/)
 * [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+* [Chartable account](http://chartable.com) (optional)
 
 ## Installation
 
 **1)** Clone or fork the repository and install the required Ruby gems listed in ``Gemfile`` via Bundler.
 
 ```shell
-git clone https://github.com/teemutammela/auralcandy.net.git
-cd auralcandy.net
-bundle install
+$ git clone https://github.com/teemutammela/auralcandy.net.git
+$ cd auralcandy.net
+$ bundle install
 ```
 
 **2)** Login to [Contentful CLI](https://github.com/contentful/contentful-cli) and select the target space.
 
 ```shell
-contentful login
-contentful space use
+$ contentful login
+$ contentful space use
 ```
 
 **3)** Import content models to target space.
 
 ```shell
-contentful space import --content-file app/import/content-models.json
+$ contentful space import --content-file app/import/content-models.json
 ```
 
 **4)** Import example content to target space.
 
 ```shell
-contentful space import --content-file app/import/example-content.json
+$ contentful space import --content-file app/import/example-content.json
 ```
 
 **NOTE!** Unit tests (`app/tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces (e.g. `Production` and `Testing`) and keep unmodified test content in the latter.
@@ -141,19 +144,23 @@ contentful space import --content-file app/import/example-content.json
 
 Contentful Delivery API key and Space ID must be set using environment variables. In production environment variables are set via application settings in the [Heroku dashboard](https://dashboard.heroku.com/apps/). Contentful API keys are managed in _Space settings → API keys_.
 
+**NOTE!** [Chartable](https://chartable.com/) ID is optional; It can be set for neither or both environments. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+
+https://chartable.com/teams/auralcandynet/dashboard/integrations/trackable
+
 ### Development (Local)
 
 ```shell
-CONTENTFUL_DELIVERY_KEY=xyz123 CONTENTFUL_SPACE_ID=xyz123 rackup -p 4567
+$ export CONTENTFUL_DELIVERY_KEY=xyz123
+$ export CONTENTFUL_SPACE_ID=xyz123
+$ export CHARTABLE_ID=xyz123
+$ source ~/.bashrc
+$ rackup -p 4567
 ```
 
 Application is now running at [http://localhost:4567](http://localhost:4567).
 
 Default environment is `development`. Set production environment via the `APP_ENV` variable.
-
-```shell
-CONTENTFUL_DELIVERY_KEY=xyz123 CONTENTFUL_SPACE_ID=xyz123 APP_ENV=production rackup -p 4567
-```
 
 **NOTE!** Global variable `$base_url` (set in `app/modules/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/module.defaults.rb`.
 
@@ -168,17 +175,17 @@ $base_url.sub!("http://", "https://") unless settings.development?
 **2)** Login to Heroku and associate the repository with the Heroku application.
 
 ```shell
-heroku login
-heroku git:remote -a <APP_NAME>
+$ heroku login
+$ heroku git:remote -a <APP_NAME>
 ```
 
 **3)** Deploy commits to production by pushing to Heroku master repository.
 
 ```shell
-git push heroku master
+$ git push heroku master
 ```
 
-The default URL of the application is https://appname.herokuapp.com. More domains can be attached to the application via the _Settings_ tab in the [dashboard](https://dashboard.heroku.com/apps).
+The default URL of the application is `https://appname.herokuapp.com`. More domains can be attached to the application via the _Settings_ tab in the [dashboard](https://dashboard.heroku.com/apps).
 
 **NOTE!** Before deploying your site to public production environment, change the line `Sitemap: https://www.auralcandy.net/sitemap.xml` in `public/robots.txt` to match the domain of your production site.
 
@@ -187,13 +194,13 @@ The default URL of the application is https://appname.herokuapp.com. More domain
 Install the required _npm_ packages listed in `package.json`.
 
 ```shell
-npm install
+$ npm install
 ```
 
 Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
 
 ```shell
-grunt watch
+$ grunt watch
 ```
 
 ## Application Structure
@@ -252,5 +259,5 @@ Perform unit tests for all routes defined in `module.routing.rb` using the [Rack
 |`--environment`	|`-e`		|Sinatra environment (`development` or `production`) |
 
 ```shell
-ruby app/tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
+$ ruby app/tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
 ```

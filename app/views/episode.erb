@@ -27,7 +27,7 @@
         :episode_url    => episode.url,
         :image_url      => "#{episode.image_url}?w=100&h=100&fm=jpg&q=100",
         :image_full_url => episode.image_url,
-        :audio_url      => episode.audio_url
+        :audio_url      => episode.audio_url_chartable
       },
       :footnote         => (episode.labels.size > 0 ? "&copy; #{(episode.labels.to_a.map { |label| link_to label.name, label.link }).join(", ")}." : "Copyright&copy; #{$brand.name} #{episode.published_year}. All rights reserved.").html_safe
     },
@@ -42,7 +42,7 @@
       :natural          => episode.published_natural,
       :episode_url      => episode.url,
       :image_url        => episode.image_url,
-      :audio_url        => episode.audio_url,
+      :audio_url        => episode.audio_url_chartable,
       :selected         => false,
       :genre            => episode.genre,
       :duration         => episode.duration

@@ -34,7 +34,7 @@ class Episode
   def published_natural
     @published.strftime("#{@published.day.ordinalize} %B %Y")
   end
-  
+
   # Publish date year
   def published_year
     @published.strftime("%Y")
@@ -68,6 +68,11 @@ class Episode
   # Next episode URL
   def next_url
     create_episode_url($slugs[@index+1])
+  end
+
+  # Trackable audio URL via Chartable (return Contentful URL if Chartable user ID not set as environmental variable)
+  def audio_url_chartable
+    ENV["CHARTABLE_ID"].nil? ? @audio_url : @audio_url.gsub("https://", "https://chtbl.com/track/#{ENV["CHARTABLE_ID"]}/")
   end
 
 end

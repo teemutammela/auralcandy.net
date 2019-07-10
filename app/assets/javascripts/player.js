@@ -82,25 +82,25 @@ Player = {
 
       // Display media player instantly
       player.show();
-      
+
     }
 
   },
-  
+
   /* Attempt to resume audio playback if media player is in play state */
   resumePlayback: function() {
-    
+
     if (Player.getLocalStorage("state") == "play") {
       audio.play().catch(function() {
         console.log("Browser prevented resuming audio playback.");
-      });  
+      });
     }
-    
+
   },
 
   /* Play or pause media player */
   togglePlayState: function() {
-	  
+
     audio.paused ? audio.play() : audio.pause();
     audio.paused ? Player.updateLocalStorage("state", "pause") : Player.updateLocalStorage("state", "play");
 
@@ -161,6 +161,13 @@ Player = {
   setLocalStorage: function(data) {
 
     localStorage.clear();
+
+    // Strip Chartable redirection from audio URL to prevent unnecessary redirections when restoring state
+    if (data.audioUrl.includes("chtbl.com")) {
+      audio_url = "https:/" + data.audioUrl.replace("https://chtbl.com/track/", "").replace(/^[0-9A-Z]{5}?/, "");
+      data.audioUrl = audio_url;
+    }
+
     localStorage.setItem("data", JSON.stringify(data));
 
   },
@@ -186,7 +193,7 @@ Player = {
     audio.onprogress = function() {
 
       if (localStorage.data && audio.currentTime == 0) {
-        
+
         // Setting current time only once prevents jumps in audio playback
         audio.currentTime = Player.getLocalStorage("elapsed");
 
