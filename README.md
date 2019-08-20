@@ -38,7 +38,7 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 	* Built upon the [Sinatra](http://www.sinatrarb.com/) framework
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
-	* Ready to be deployed in [Heroku](https://www.heroku.com/)
+	* Ready to be deployed on [Heroku](https://www.heroku.com/)
 	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) unit tests
 		
 * Mobile-friendly responsive layout
@@ -51,7 +51,7 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 	* Sort by title and date
 		
 * Embedded media player
-	* Saves player state in localStorage
+	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
 	* Continuous playback between page loads __1)__
 		
 * Episode landing pages
@@ -84,7 +84,7 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 		* [PageSpeed](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.auralcandy.net%2F)
 		* [Web Page Test](https://www.webpagetest.org/result/190404_CK_62a479b5a1b29ae1b77baf480f8396a8/)
 	* Efficient use of caching, content compression and headers on the application level
-	* Low amount of HTTP requests (26) and memory usage (~5MB)
+	* Low amount of HTTP requests (29) and memory usage (~5MB)
 	* JavaScript and SASS asset pipeline via [Grunt](https://gruntjs.com/)
 		
 * Certification
@@ -146,8 +146,6 @@ Contentful Delivery API key and Space ID must be set using environment variables
 
 **NOTE!** [Chartable](https://chartable.com/) ID is optional; It can be set for neither or both environments. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
-https://chartable.com/teams/auralcandynet/dashboard/integrations/trackable
-
 ### Development (Local)
 
 ```shell
@@ -161,6 +159,10 @@ $ rackup -p 4567
 Application is now running at [http://localhost:4567](http://localhost:4567).
 
 Default environment is `development`. Set production environment via the `APP_ENV` variable.
+
+```shell
+$ export APP_ENV=production
+```
 
 **NOTE!** Global variable `$base_url` (set in `app/modules/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/module.defaults.rb`.
 
