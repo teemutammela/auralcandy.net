@@ -10,7 +10,7 @@
           <% links.each do |link| %>
             <% content_tag :li, :class => "nav-item" do %>
               <%= link_to link[:title], link[:url], :class => "nav-link", :title => link[:title], :itemprop => "relatedLink" %>
-            <% end %>
+            <% end unless link[:url].nil? %>
           <% end %>
         <% end %>
       <% end %>

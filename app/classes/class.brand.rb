@@ -1,7 +1,7 @@
 class Brand
 
   # Accessible properties
-  attr_accessor :name, :default, :slug, :tagline, :image_url, :short_description, :long_description, :compatibility, :privacy_policy, :keywords, :email, :phone, :street_address, :zip_code, :locality, :itunes_url, :spotify_url, :google_podcasts_url, :mixcloud_url, :merchandise_url
+  attr_accessor :name, :default, :slug, :tagline, :image_url, :short_description, :long_description, :compatibility, :privacy_policy, :keywords, :email, :phone, :street_address, :zip_code, :locality, :apple_podcasts_url, :google_podcasts_url, :spotify_url, :paypal_url, :merchandise_url
 
   # Initialize properties
   def initialize(entry)
@@ -21,10 +21,10 @@ class Brand
     @street_address      = entry.fields[:street_address]
     @zip_code            = entry.fields[:zip_code]
     @locality            = entry.fields[:locality]
-    @itunes_url          = entry.fields[:itunes_url]
-    @spotify_url         = entry.fields[:spotify_url]
+    @apple_podcasts_url  = entry.fields[:apple_podcasts_url]
     @google_podcasts_url = entry.fields[:google_podcasts_url]
-    @mixcloud_url        = entry.fields[:mixcloud_url]
+    @spotify_url         = entry.fields[:spotify_url]
+    @paypal_url          = entry.fields[:paypal_url]
     @merchandise_url     = entry.fields[:merchandise_url]
 
   end

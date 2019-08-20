@@ -54,7 +54,7 @@ module Sinatra
             :links => [
               {
                 :title => "Apple Podcasts",
-                :url   => $brand.itunes_url
+                :url   => $brand.apple_podcasts_url
               },
               {
                 :title => "Google Podcasts",
@@ -65,8 +65,8 @@ module Sinatra
                 :url   => $brand.spotify_url
               },
               {
-                :title => "Mixcloud",
-                :url   => $brand.mixcloud_url
+                :title => "Support",
+                :url   => $brand.paypal_url
               },
               {
                 :title => "Merchandise",
