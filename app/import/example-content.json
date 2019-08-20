@@ -6,13 +6,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "2nQyi1UOLrDhV91kKkIJbw",
         "type": "Entry",
         "createdAt": "2019-04-11T10:14:07.157Z",
-        "updatedAt": "2019-04-11T10:55:32.688Z",
+        "updatedAt": "2019-08-20T07:07:09.330Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,30 +20,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 127,
-        "publishedAt": "2019-04-11T10:55:32.688Z",
+        "publishedVersion": 130,
+        "publishedAt": "2019-08-20T07:07:09.330Z",
         "firstPublishedAt": "2019-04-11T10:21:07.288Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 5,
-        "version": 128,
+        "publishedCounter": 6,
+        "version": 131,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -110,17 +110,17 @@
         "locality": {
           "en-US": "Testville, Testland"
         },
-        "itunesUrl": {
-          "en-US": "https://itunes.apple.com/podcast/auralcandy-net/id291192514"
-        },
-        "spotifyUrl": {
-          "en-US": "https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9"
+        "applePodcastsUrl": {
+          "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
         },
         "googlePodcastsUrl": {
           "en-US": "https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
         },
-        "mixcloudUrl": {
-          "en-US": "https://www.mixcloud.com/AuralCandyNet/"
+        "spotifyUrl": {
+          "en-US": "https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9"
+        },
+        "paypalUrl": {
+          "en-US": "https://www.paypal.me/teemutammela"
         },
         "merchandiseUrl": {
           "en-US": "https://shop.spreadshirt.fi/acdn/"
@@ -133,7 +133,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "6uZtjEnJF2qj3lp9fbmkg4",
@@ -154,14 +154,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -170,7 +170,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -269,13 +269,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "2aUl2vwF05DKl3ay2umXlW",
         "type": "Entry",
         "createdAt": "2019-04-11T10:22:43.220Z",
-        "updatedAt": "2019-04-11T10:55:42.884Z",
+        "updatedAt": "2019-08-20T07:07:43.410Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -283,30 +283,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 23,
-        "publishedAt": "2019-04-11T10:55:42.884Z",
+        "publishedVersion": 26,
+        "publishedAt": "2019-08-20T07:07:43.410Z",
         "firstPublishedAt": "2019-04-11T10:23:21.109Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 4,
-        "version": 24,
+        "publishedCounter": 5,
+        "version": 27,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -373,17 +373,17 @@
         "locality": {
           "en-US": "Testville, Testland"
         },
-        "itunesUrl": {
-          "en-US": "https://itunes.apple.com/podcast/auralcandy-net/id291192514"
-        },
-        "spotifyUrl": {
-          "en-US": "https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9"
+        "applePodcastsUrl": {
+          "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
         },
         "googlePodcastsUrl": {
           "en-US": "https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
         },
-        "mixcloudUrl": {
-          "en-US": "https://www.mixcloud.com/AuralCandyNet/"
+        "spotifyUrl": {
+          "en-US": "https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9"
+        },
+        "paypalUrl": {
+          "en-US": "https://www.paypal.me/teemutammela"
         },
         "merchandiseUrl": {
           "en-US": "https://shop.spreadshirt.fi/acdn/"
@@ -396,7 +396,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "6wPXzEMrbx80raVgHWYjOS",
@@ -417,14 +417,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
@@ -433,7 +433,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -459,7 +459,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "4PUgVQOOpMYcL9gaf1qBEw",
@@ -480,14 +480,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
@@ -496,7 +496,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -522,7 +522,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "7nGfh6clf0prdJc7drnDR",
@@ -543,14 +543,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -559,7 +559,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -585,7 +585,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "2VYYX2PyyZP9CQOfenUEq5",
@@ -606,14 +606,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -622,7 +622,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -648,7 +648,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "24bwcozeB2o1WfNvjcFXxy",
@@ -669,14 +669,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -685,7 +685,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -711,7 +711,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "6WUOG2PAIDPQU7pOvMBZEt",
@@ -732,14 +732,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -748,7 +748,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -774,7 +774,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "40gUlBAxTalXpHnHPK04UW",
@@ -795,14 +795,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -811,7 +811,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -837,7 +837,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "3BkAlY9bVptp7jvKV4UwIH",
@@ -858,14 +858,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -874,7 +874,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -900,7 +900,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "6L4bBqz8ZVF01HVr2zRDQQ",
@@ -921,14 +921,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -937,7 +937,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -1036,7 +1036,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "3BKvBtYL2wFzVy4XryVOQU",
@@ -1057,14 +1057,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
@@ -1073,7 +1073,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -1174,6 +1174,117 @@
           }
         }
       }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "6CGsfWafDZsEpe0xG7ftJP",
+        "type": "Entry",
+        "createdAt": "2019-04-15T09:31:24.261Z",
+        "updatedAt": "2019-04-15T09:33:20.642Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2019-04-15T09:33:20.642Z",
+        "firstPublishedAt": "2019-04-15T09:33:20.642Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "episode"
+          }
+        }
+      },
+      "fields": {
+        "dj": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4PUgVQOOpMYcL9gaf1qBEw"
+              }
+            }
+          ]
+        },
+        "title": {
+          "en-US": "Example Episode 4"
+        },
+        "slug": {
+          "en-US": "example-episode-4"
+        },
+        "releaseDate": {
+          "en-US": "2019-04-04"
+        },
+        "brand": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2aUl2vwF05DKl3ay2umXlW"
+            }
+          }
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis."
+        },
+        "trackList": {
+          "en-US": "Producer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]"
+        },
+        "duration": {
+          "en-US": "00:00:27"
+        },
+        "genre": {
+          "en-US": [
+            "Garage",
+            "House Music",
+            "Psytrance"
+          ]
+        },
+        "audio": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7mhP8l36JN57SvwgTlQFCN"
+            }
+          }
+        }
+      }
     }
   ],
   "assets": [
@@ -1183,7 +1294,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "5QPtjMlzYtnVLvC7JxMM4l",
@@ -1204,14 +1315,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
@@ -1220,7 +1331,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -1250,7 +1361,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "7E7nq1Wk6hyaf1vcTVM97Y",
@@ -1271,14 +1382,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -1287,7 +1398,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -1317,7 +1428,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "dku45kq1y9wb"
+            "id": null
           }
         },
         "id": "7mhP8l36JN57SvwgTlQFCN",
@@ -1338,14 +1449,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
@@ -1354,7 +1465,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },

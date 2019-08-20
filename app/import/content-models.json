@@ -6,7 +6,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": false
+            "id": null
           }
         },
         "id": "episode",
@@ -27,14 +27,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 70,
@@ -43,7 +43,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -311,7 +311,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": false
+            "id": null
           }
         },
         "id": "author",
@@ -332,14 +332,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 25,
@@ -348,7 +348,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -392,7 +392,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": false
+            "id": null
           }
         },
         "id": "label",
@@ -413,14 +413,14 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 10,
@@ -429,7 +429,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -480,13 +480,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": false
+            "id": null
           }
         },
         "id": "brand",
         "type": "ContentType",
         "createdAt": "2017-03-08T12:10:14.461Z",
-        "updatedAt": "2019-04-10T11:19:22.599Z",
+        "updatedAt": "2019-08-20T07:33:51.673Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -494,30 +494,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 101,
-        "publishedAt": "2019-04-10T11:19:22.599Z",
+        "publishedVersion": 137,
+        "publishedAt": "2019-08-20T07:33:51.673Z",
         "firstPublishedAt": "2017-03-08T12:10:14.950Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 51,
-        "version": 102,
+        "publishedCounter": 69,
+        "version": 138,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -693,8 +693,7 @@
           "validations": [
             {
               "regexp": {
-                "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$",
-                "flags": "i"
+                "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$"
               },
               "message": "Is not a valid e-mail address"
             }
@@ -760,33 +759,18 @@
           "omitted": false
         },
         {
-          "id": "itunesUrl",
-          "name": "iTunes URL",
+          "id": "applePodcastsUrl",
+          "name": "Apple Podcasts URL",
           "type": "Symbol",
           "localized": false,
           "required": false,
           "validations": [
             {
               "regexp": {
-                "pattern": "^(http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$",
-                "flags": "i"
-              }
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "spotifyUrl",
-          "name": "Spotify URL",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "regexp": {
-                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
-              }
+                "pattern": "^https?:\\/\\/?podcasts\\.apple\\.com(\\/.*)?$",
+                "flags": "g"
+              },
+              "message": "Not a valid Apple Podcasts URL"
             }
           ],
           "disabled": false,
@@ -801,24 +785,46 @@
           "validations": [
             {
               "regexp": {
-                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
-              }
+                "pattern": "^https?:\\/\\/?podcasts\\.google\\.com(\\/.*)?$",
+                "flags": "g"
+              },
+              "message": "Not a valid Google Podcasts URL"
             }
           ],
           "disabled": false,
           "omitted": false
         },
         {
-          "id": "mixcloudUrl",
-          "name": "Mixcloud URL",
+          "id": "spotifyUrl",
+          "name": "Spotify URL",
           "type": "Symbol",
           "localized": false,
           "required": false,
           "validations": [
             {
               "regexp": {
-                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
-              }
+                "pattern": "^https?:\\/\\/?open\\.spotify\\.com(\\/.*)?$",
+                "flags": "g"
+              },
+              "message": "Not a valid Spotify URL"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "paypalUrl",
+          "name": "PayPal URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(?:https?:\\/\\/)?(?:[^\\.]+\\.)?paypal\\.me(\\/.*)?$",
+                "flags": "g"
+              },
+              "message": "Not a valid PayPal URL"
             }
           ],
           "disabled": false,
@@ -833,7 +839,7 @@
           "validations": [
             {
               "regexp": {
-                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+                "pattern": "^(http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
               }
             }
           ],
@@ -850,7 +856,7 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": false,
+            "id": null,
             "type": "Link",
             "linkType": "Space"
           }
@@ -859,7 +865,7 @@
         "createdAt": "2017-03-07T08:27:59.073Z",
         "createdBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -867,7 +873,7 @@
         "updatedAt": "2019-04-09T09:54:52.360Z",
         "updatedBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -994,7 +1000,7 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": false,
+            "id": null,
             "type": "Link",
             "linkType": "Space"
           }
@@ -1003,7 +1009,7 @@
         "createdAt": "2017-03-07T08:44:22.851Z",
         "createdBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -1011,7 +1017,7 @@
         "updatedAt": "2019-04-10T11:21:25.894Z",
         "updatedBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -1056,7 +1062,7 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": false,
+            "id": null,
             "type": "Link",
             "linkType": "Space"
           }
@@ -1065,7 +1071,7 @@
         "createdAt": "2017-03-08T08:35:37.268Z",
         "createdBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -1073,7 +1079,7 @@
         "updatedAt": "2019-04-09T06:05:46.020Z",
         "updatedBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -1115,24 +1121,24 @@
         "type": "EditorInterface",
         "space": {
           "sys": {
-            "id": false,
+            "id": null,
             "type": "Link",
             "linkType": "Space"
           }
         },
-        "version": 102,
+        "version": 138,
         "createdAt": "2017-03-08T12:10:15.091Z",
         "createdBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
         },
-        "updatedAt": "2019-04-10T11:19:23.149Z",
+        "updatedAt": "2019-08-20T07:33:52.799Z",
         "updatedBy": {
           "sys": {
-            "id": "1uT7CdKKwdKpMXDlNV8TIt",
+            "id": null,
             "type": "Link",
             "linkType": "User"
           }
@@ -1276,12 +1282,7 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "itunesUrl",
-          "widgetId": "urlEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "spotifyUrl",
+          "fieldId": "applePodcastsUrl",
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
         },
@@ -1291,7 +1292,12 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "mixcloudUrl",
+          "fieldId": "spotifyUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "paypalUrl",
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
         },
@@ -1320,7 +1326,7 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": false
+            "id": null
           }
         },
         "environment": {
@@ -1334,7 +1340,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "createdAt": "2017-03-02T14:52:46Z",
@@ -1342,7 +1348,7 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedAt": "2017-03-02T14:52:46Z"
