@@ -212,11 +212,6 @@ Player = {
     /* Playback started */
     audio.onplay = function() {
 
-      // Display media player if playback is resumed when media player is hidden (e.g. keyboard shortcut)
-      if (player.is(":hidden")) {
-        player.fadeIn("slow");
-      }
-
       // Set cover image thumbnail
       Player.setThumbnail();
 
@@ -281,6 +276,9 @@ $(document).ready(function() {
 
   /* Media player close button */
   $("#media-close").click(function() {
+
+    // Clear episode properties from local storage
+    localStorage.clear();
 
     // Fade out media player
     player.fadeOut("slow");
