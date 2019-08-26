@@ -13,7 +13,17 @@ module Sinatra
 
         # Web app manifest
         app.get "/manifest.json" do
+
+          # Set headers
+          unless settings.development?
+
+            last_modified(Time.now - (60 * 60 * 24 * 7))
+            cache_control :public, :must_revalidate, :max_age => 7
+
+          end
+
           erb :manifest, :locals => {:brand => $brand}, :content_type => "application/json"
+
         end
 
         # Episode search listing
