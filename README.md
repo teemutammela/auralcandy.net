@@ -78,14 +78,11 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 	* [Web Application Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 	* Support for [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary.html) and [Open Graph](http://ogp.me/) embedding
 
-* Performance Optimization __2)__
-	* Test results
-		* [GTmetrix](https://gtmetrix.com/reports/www.auralcandy.net/givstS9J)
-		* [PageSpeed](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.auralcandy.net%2F)
-		* [Web Page Test](https://www.webpagetest.org/result/190404_CK_62a479b5a1b29ae1b77baf480f8396a8/)
+* Performance Optimization
 	* Efficient use of caching, content compression and headers on the application level
 	* Low amount of HTTP requests (29) and memory usage (~5MB)
 	* JavaScript and SASS asset pipeline via [Grunt](https://gruntjs.com/)
+	* Full [Cloudflare](https://www.cloudflare.com/) compatibility
 
 * Certification
 	* [Valid HTML5](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.auralcandy.net%2F)
@@ -93,8 +90,6 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 	* [Valid RSS 2.0](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.auralcandy.net%2Fpodcast)
 
 __1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details.
-
-__2)__ Performance tests conducted while application is hosted on Heroku running on [Hobby dyno](https://devcenter.heroku.com/articles/dyno-types). Additional caching layer provided by [Cloudflare](https://www.cloudflare.com/).
 
 ## Requirements
 
@@ -158,7 +153,7 @@ $ rackup -p 9292
 
 Application is now running at [http://localhost:9292](http://localhost:9292).
 
-Alternatively, use the [rerun](https://github.com/alexch/rerun/) gem to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor file changes in `*.rb*` in the `app/` directory. Settings are found in the `.rerun` configuration file.
+Alternatively, use the [rerun](https://github.com/alexch/rerun/) gem to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
 
 ```shell
 $ rerun rackup
@@ -210,7 +205,7 @@ Install the required _npm_ packages listed in `package.json`.
 $ npm install
 ```
 
-Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
+Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/JavaScripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/JavaScripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
 
 ```shell
 $ grunt watch
@@ -222,7 +217,7 @@ Configuration for _development_ and _production_ environments is set in `app.rb`
 
 |Directory			|Description																																					|
 |---------------|-------------------------------------------------------------------------------------|
-|`app/assets`		|Javascript as SASS files.																														|
+|`app/assets`		|JavaScript as SASS files.																														|
 |`app/classes`	|Classes for wrapping content objects.																								|
 |`app/modules`	|Modules for handling routes, shared defaults, content queries and generic helpers.	 	|
 |`app/public`		|Static files (images, compiled JavaScript and CSS files etc.).												|
@@ -236,11 +231,11 @@ Modules are included and registered in `app.rb`. Modules follow Sinatra's standa
 |---------------------|-------------------------------------------------------------------------------|
 |`module.defaults.rb` |Contentful client and shared defaults.																					|
 |`module.helpers.rb`	|Generic helpers, mostly for parsing strings for various purposes.							|
-|`module.legacy.rb`		|Legacy redirections __*__.																											|
+|`module.legacy.rb`		|Legacy redirections __1)__.																											|
 |`module.queries.rb`	|Query content from Contentful and wrap it to objects (registered as helpers).	|
 |`module.routing.rb`	|Route and URL parameter handling.																							|
 
-__*__ Legacy module handles URL redirections from old AuralCandy.Net versions. You may disable this feature by remove the following lines from `app.rb` and delete and `app/modules/module.legacy.rb` and `app/legacy` directory.
+__1)__ Legacy module handles URL redirections from old AuralCandy.Net versions. You may disable this feature by remove the following lines from `app.rb` and delete and `app/modules/module.legacy.rb` and `app/legacy` directory.
 
 ```ruby
 require_relative("modules/module.legacy.rb")
