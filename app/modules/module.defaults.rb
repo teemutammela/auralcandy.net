@@ -69,8 +69,8 @@ module Sinatra
                 :url   => $brand.paypal_url
               },
               {
-                :title => "Merchandise",
-                :url    => $brand.merchandise_url
+                :title => "Contact",
+                :url    => "#contact"
               }
             ],
             :search => {

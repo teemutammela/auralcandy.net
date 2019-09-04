@@ -255,7 +255,7 @@ Classes are included in `app.rb`. Classes are wrappers for corresponding Content
 |Content Model	|Contentful ID	|Class							|Description																				 |
 |---------------|---------------|-------------------|----------------------------------------------------|
 |Brand					|brand					|`class.brand.rb`		|Podcast brand (used also for site default settings) |
-|DJ							|author					|`class.dj.rb`			|Author of a podcast episode												 |
+|DJ							|author					|`class.dj.rb`			|Author DJ of a podcast episode											 |
 |Episode				|episode				|`class.episode.rb` |Podcast episode																		 |
 |Label					|label					|`class.label.rb`		|Recording recording label related to an episode		 |
 
@@ -272,5 +272,5 @@ Perform unit tests for all routes defined in `module.routing.rb` using the [Rack
 |`--environment`	|`-e`		|Sinatra environment (`development` or `production`) |
 
 ```shell
-$ ruby app/tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
+$ ruby app/test/unit_tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
 ```

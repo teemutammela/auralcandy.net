@@ -24,7 +24,7 @@ OptionParser.new do |option|
 end.parse!
 
 # Include main application
-require_relative("app")
+require_relative("../app")
 
 # Test Suite
 class PodcastTest < Test::Unit::TestCase
@@ -100,11 +100,9 @@ class PodcastTest < Test::Unit::TestCase
 
     # Body - Main navigation links
     assert last_response.body.include?("<a href=\"/\" class=\"navbar-brand\" title=\"Home\">Primary Brand</a>")
-    assert last_response.body.include?("<a href=\"https://itunes.apple.com/podcast/auralcandy-net/id291192514\" class=\"nav-link\" title=\"iTunes\" itemprop=\"relatedLink\">iTunes</a>")
+    assert last_response.body.include?("<a href=\"https://podcasts.apple.com/podcast/auralcandy-net/id291192514\" class=\"nav-link\" title=\"Apple Podcasts\" itemprop=\"relatedLink\">Apple Podcasts</a>")
     assert last_response.body.include?("<a href=\"https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9\" class=\"nav-link\" title=\"Spotify\" itemprop=\"relatedLink\">Spotify</a>")
     assert last_response.body.include?("<a href=\"https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA\" class=\"nav-link\" title=\"Google Podcasts\" itemprop=\"relatedLink\">Google Podcasts</a>")
-    assert last_response.body.include?("<a href=\"https://www.mixcloud.com/AuralCandyNet/\" class=\"nav-link\" title=\"Mixcloud\" itemprop=\"relatedLink\">Mixcloud</a>")
-    assert last_response.body.include?("<a href=\"https://shop.spreadshirt.fi/acdn/\" class=\"nav-link\" title=\"Merchandise\" itemprop=\"relatedLink\">Merchandise</a>")
 
     # Body - Search form elements
     assert last_response.body.include?("<form id=\"episode-search\">")
