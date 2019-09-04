@@ -252,7 +252,7 @@ Classes are included in `app.rb`. Classes are wrappers for corresponding Content
 |Brand					|brand					|`class.brand.rb`		|Podcast brand (used also for site default settings) |
 |DJ							|author					|`class.dj.rb`			|Author DJ of a podcast episode											 |
 |Episode				|episode				|`class.episode.rb` |Podcast episode																		 |
-|Label					|label					|`class.label.rb`		|Recording recording label related to an episode		 |
+|Label					|label					|`class.label.rb`		|Recording label related to an episode		           |
 
 ## Testing
 

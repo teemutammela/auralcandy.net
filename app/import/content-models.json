@@ -486,7 +486,7 @@
         "id": "brand",
         "type": "ContentType",
         "createdAt": "2017-03-08T12:10:14.461Z",
-        "updatedAt": "2019-08-20T07:33:51.673Z",
+        "updatedAt": "2019-09-04T07:22:07.723Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -494,8 +494,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 137,
-        "publishedAt": "2019-08-20T07:33:51.673Z",
+        "publishedVersion": 143,
+        "publishedAt": "2019-09-04T07:22:07.723Z",
         "firstPublishedAt": "2017-03-08T12:10:14.950Z",
         "createdBy": {
           "sys": {
@@ -511,8 +511,8 @@
             "id": null
           }
         },
-        "publishedCounter": 69,
-        "version": 138,
+        "publishedCounter": 72,
+        "version": 144,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -829,22 +829,6 @@
           ],
           "disabled": false,
           "omitted": false
-        },
-        {
-          "id": "merchandiseUrl",
-          "name": "Merchandise URL",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "regexp": {
-                "pattern": "^(http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
-              }
-            }
-          ],
-          "disabled": false,
-          "omitted": false
         }
       ]
     }
@@ -1126,7 +1110,7 @@
             "linkType": "Space"
           }
         },
-        "version": 138,
+        "version": 144,
         "createdAt": "2017-03-08T12:10:15.091Z",
         "createdBy": {
           "sys": {
@@ -1135,7 +1119,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2019-08-20T07:33:52.799Z",
+        "updatedAt": "2019-09-04T07:22:08.521Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -1298,11 +1282,6 @@
         },
         {
           "fieldId": "paypalUrl",
-          "widgetId": "urlEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "merchandiseUrl",
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
         }
