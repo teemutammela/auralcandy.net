@@ -19,6 +19,7 @@ module Sinatra
 
             last_modified(Time.now - (60 * 60 * 24 * 7))
             cache_control :public, :must_revalidate, :max_age => 30
+            headers["Expires"] = "access plus 1 month"
 
           end
 
