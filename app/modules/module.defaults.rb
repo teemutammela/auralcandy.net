@@ -65,7 +65,7 @@ module Sinatra
                 :url   => $brand.spotify_url
               },
               {
-                :title => "Support",
+                :title => "Donate",
                 :url   => $brand.paypal_url
               },
               {
