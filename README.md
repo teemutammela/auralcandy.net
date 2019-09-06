@@ -133,7 +133,7 @@ $ contentful space import --content-file app/import/content-models.json
 $ contentful space import --content-file app/import/example-content.json
 ```
 
-**NOTE!** Unit tests (`app/tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces (e.g. `Production` and `Testing`) and keep unmodified test content in the latter.
+**NOTE!** Unit tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces (e.g. `Production` and `Testing`) and keep the unmodified example content in the latter.
 
 ## Deployment
 
