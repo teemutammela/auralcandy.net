@@ -213,7 +213,7 @@ $ grunt watch
 
 ## Application Structure
 
-Configuration for _development_ and _production_ environments is set in `app.rb`. See [Sinatra documentation](http://sinatrarb.com/configuration.html) for further details about configuration settings.
+Configuration for `development` and `production` environments is set in `app.rb`. See [Sinatra documentation](http://sinatrarb.com/configuration.html) for further details about configuration settings.
 
 |Directory			|Description																																					|
 |---------------|-------------------------------------------------------------------------------------|
