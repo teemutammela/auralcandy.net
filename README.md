@@ -20,17 +20,17 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 
 ## Table of Contents
 
-* [Features](#markdown-features)
-* [Requirements](#markdown-header-requirements)
-* [Installation](#markdown-header-installation)
-* [Deployment](#markdown-header-deployment)
-	* [Development (Local)](#markdown-header-development-local)
-	* [Production (Heroku)](#markdown-header-production-heroku)
-* [Asset Pipeline](#markdown-header-asset-pipeline)
-* [Application Structure](#markdown-header-application-structure)
-	* [Modules](#markdown-header-modules)
-	* [Content Models & Classes](#markdown-header-content-models-classes)
-* [Testing](#markdown-header-testing)
+* [Features](#features)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Deployment](#deployment)
+	* [Development (Local)](#development-local)
+	* [Production (Heroku)](#production-heroku)
+* [Asset Pipeline](#asset-pipeline)
+* [Application Structure](#application-structure)
+	* [Modules](#modules)
+	* [Content Models & Classes](#content-models-classes)
+* [Testing](#testing)
 
 ## Features
 
@@ -44,6 +44,7 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 * Mobile-friendly responsive layout
 	* Built with [Bootstrap](http://getbootstrap.com/)
 	* Vector icons by [Fontawesome](https://fontawesome.com/)
+	* [WebP](https://developers.google.com/speed/webp/) image support on Chrome (JPEG fallback for Firefox, Safari etc.)
 
 * Episode search
 	* Search by brand and genre
@@ -80,7 +81,7 @@ This source code can be used for NON-COMMERICIAL PURPOSES ONLY. Any commercial u
 
 * Performance Optimization
 	* Efficient use of caching, content compression and headers on the application level
-	* Low amount of HTTP requests (29) and memory usage (~5MB)
+	* Low amount of HTTP requests (27) and memory usage (~5MB)
 	* JavaScript and SASS asset pipeline via [Grunt](https://gruntjs.com/)
 	* Full [Cloudflare](https://www.cloudflare.com/) compatibility
 

@@ -1,6 +1,10 @@
 <% content_tag :article, :itemscope => true, :class => "card mb-4 box-shadow", :itemtype => "http://schema.org/MusicRecording" do %>
   <%= content_tag :h2, preview ? title : "Track List", :class => "card-header text-center text-muted", :itemprop => "name" %>
-  <%= image_tag "#{image_url}?w=300&h=300&fm=jpg&q=80", :alt => title, :title => title, :srcset => "#{image_url}?w=450&h=450&fm=jpg&q=80 450w, #{image_url}?w=600&h=600&fm=jpg&q=80 600w", :class => "img-fluid", :itemprop => "image" if preview %>
+  <% content_tag :picture do %>
+  	<%= tag :source, :srcset => "#{image_url}?w=450&h=450&fm=webp&q=85 450w, #{image_url}?w=600&h=600&fm=webp&q=85 600w", :sizes => "100vw", :type => "image/webp" %>
+  	<%= tag :source, :srcset => "#{image_url}?w=450&h=450&fm=jpg&q=80 450w, #{image_url}?w=600&h=600&fm=jpg&q=80 600w", :sizes => "100vw", :type => "image/jpeg" %>
+		<%= image_tag "#{image_url}?w=300&h=300&fm=jpg&q=80", :alt => title, :title => title , :class => "img-fluid", :itemprop => "image" %>
+	<% end if preview %>
   <% content_tag :div, :class => "list-group list-group-flush px-0 text-center" do %>
     <% content_tag :ul, :class => "list-group-item genre-list #{preview ? "px-0" : false} pt-2", :itemprop => "genre" do %>
       <%
