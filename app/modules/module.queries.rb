@@ -19,8 +19,7 @@ module Sinatra
         options = {
           content_type: "brand",
           include:      2,
-          limit:        5,
-          order:        "fields.name"
+          order:        "sys.createdAt"
         }
 
         get_objects("Brand", options)
