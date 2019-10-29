@@ -6,11 +6,7 @@ module Sinatra
 
       # Query entries and wrap them as requested objects
       def get_objects(wrapper, options)
-
-        $client.entries(options).to_a.map do |item|
-          wrapper.constantize.new(item)
-        end
-
+        $client.entries(options).to_a.map { |item| wrapper.constantize.new(item) }
       end
 
       # Get all brands and wrap them as 'Brand' objects
@@ -32,7 +28,7 @@ module Sinatra
         genres = Hash.new
 
         # Extract genres from the 'Episode' content type's validation rules
-        $client.content_type("episode").fields[8].items.raw["validations"][0]["in"].each do |genre|
+        $client.content_type("episode").fields.select { |field| field.id == 'genre'}.first.items.raw["validations"].first["in"].each do |genre|
           genres[parse_genre(genre)] = genre
         end
 
@@ -84,9 +80,7 @@ module Sinatra
         }
 
         # Query slugs and map to array
-        $client.entries(options).map do |episode|
-          episode.fields[:slug]
-        end
+        $client.entries(options).map { |episode| episode.fields[:slug] }
 
       end
 
