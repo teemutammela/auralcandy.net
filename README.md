@@ -107,7 +107,7 @@ __1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index]
 
 ## Installation
 
-**1)** Clone or fork the repository and install the required Ruby gems listed in ``Gemfile`` via Bundler.
+**1)** Clone or fork the repository and install the required Ruby gems listed in `Gemfile` via Bundler.
 
 ```shell
 $ git clone https://github.com/teemutammela/auralcandy.net.git
