@@ -17,9 +17,9 @@ module Sinatra
       def get_brands
 
         options = {
-          content_type: "brand",
-          include:      2,
-          order:        "sys.createdAt"
+          :content_type => "brand",
+          :include      => 2,
+          :order        => "sys.createdAt"
         }
 
         get_objects("Brand", options)
@@ -57,8 +57,8 @@ module Sinatra
 
         # Query options
         options = {
-          content_type: "episode",
-          include:      2,
+          :content_type => "episode",
+          :include      => 2,
           "fields.slug" => parse_slug(slug)
         }
 
@@ -76,11 +76,11 @@ module Sinatra
 
         # Query options
         options = {
-          content_type: "episode",
-          include:      0,
-          order:        "fields.releaseDate",
-          select:       "fields.slug",
-          limit:        settings.limit
+          :content_type => "episode",
+          :include      => 0,
+          :order        => "fields.releaseDate",
+          :select       => "fields.slug",
+          :limit        => settings.limit
         }
 
         # Query slugs and map to array

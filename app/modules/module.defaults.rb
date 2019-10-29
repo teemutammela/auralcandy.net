@@ -12,14 +12,14 @@ module Sinatra
           # Attempt to initialize Contentful Delivery API client
           # NOTE: It's possible to initialize client with invalid API key and/or space ID
           begin
-            $client = Contentful::Client.new(access_token: ENV["CONTENTFUL_DELIVERY_KEY"], space: ENV["CONTENTFUL_SPACE_ID"])
+            $client = Contentful::Client.new(:access_token => ENV["CONTENTFUL_DELIVERY_KEY"], :space => ENV["CONTENTFUL_SPACE_ID"])
           rescue
             halt 500, "Unable to initialize Contentful Delivery API client. Environmental variables CONTENTFUL_DELIVERY_KEY and CONTENTFUL_SPACE_ID not set."
           end
 
           # Attempt to query brands and catch errors for invalid API key or space ID
           begin
-            defaults = $client.entries(content_type: "brand", include: 2, "fields.default" => true)
+            defaults = $client.entries(:content_type => "brand", :include => 2, "fields.default" => true)
           rescue
             halt 500, "Unable to connect to Contentful Delivery API. Most likely invalid API key or space ID."
           end
