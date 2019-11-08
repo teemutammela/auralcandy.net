@@ -138,9 +138,9 @@ $ contentful space import --content-file import/example-content.json
 
 ## Deployment
 
-Contentful Delivery API key and Space ID must be set using environment variables. In production environment variables are set via application settings in the [Heroku dashboard](https://dashboard.heroku.com/apps/). Contentful API keys are managed in _Space settings → API keys_.
+Contentful Delivery API key and Space ID must be set as environment variables. In production, environment variables are set via the application settings in [Heroku dashboard](https://dashboard.heroku.com/apps/). In Contentful Web App, the API keys are managed via _Space settings → API keys_.
 
-**NOTE!** [Chartable](https://chartable.com/) ID is optional; It can be set for neither or both environments. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+**NOTE!** [Chartable](https://chartable.com/) ID is optional; It can be set for neither or both (local and production) environments. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
 ### Development (Local)
 
