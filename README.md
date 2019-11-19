@@ -206,7 +206,7 @@ Install the required _npm_ packages listed in `package.json`.
 $ npm install
 ```
 
-Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/JavaScripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/JavaScripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
+Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
 
 ```shell
 $ grunt watch
@@ -214,7 +214,7 @@ $ grunt watch
 
 ## Application Structure
 
-Configuration for `development` and `production` environments is set in `app.rb`. See [Sinatra documentation](http://sinatrarb.com/configuration.html) for further details about configuration settings.
+Configuration for `development` and `production` environments is set in `app/app.rb`. See [Sinatra documentation](http://sinatrarb.com/configuration.html) for further details about configuration settings.
 
 |Directory			|Description																																					|
 |---------------|-------------------------------------------------------------------------------------|
@@ -226,7 +226,7 @@ Configuration for `development` and `production` environments is set in `app.rb`
 
 ### Modules
 
-Modules are included and registered in `app.rb`. Modules follow Sinatra's standard [modular extensions](http://sinatrarb.com/extensions.html) pattern.
+Modules are included and registered in `app/app.rb`. Modules follow Sinatra's standard [modular extensions](http://sinatrarb.com/extensions.html) pattern.
 
 |Module								|Description																																		|
 |---------------------|-------------------------------------------------------------------------------|
@@ -236,7 +236,7 @@ Modules are included and registered in `app.rb`. Modules follow Sinatra's standa
 |`module.queries.rb`	|Query content from Contentful and wrap it to objects (registered as helpers).	|
 |`module.routing.rb`	|Route and URL parameter handling.																							|
 
-__1)__ Legacy module handles URL redirections from old AuralCandy.Net versions. You may disable this feature by remove the following lines from `app.rb` and delete and `app/modules/module.legacy.rb` and `app/legacy` directory.
+__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by remove the following lines from `app/app.rb` and delete and `app/modules/module.legacy.rb` and `app/legacy` directory.
 
 ```ruby
 require_relative("modules/module.legacy.rb")
@@ -246,7 +246,7 @@ register Sinatra::Podcast::Legacy
 
 ### Content Models & Classes
 
-Classes are included in `app.rb`. Classes are wrappers for corresponding Contentful content models. Classes are used for formatting field values, handling related content by wrapping them with appropriate classes, adding helper methods as object properties and defining the accessible properties of said class.
+Classes are included in `app/app.rb`. Classes are wrappers for corresponding Contentful content models. Classes are used for formatting field values, handling related content by wrapping them with appropriate classes, adding helper methods as object properties and defining the accessible properties of said class.
 
 |Content Model	|Contentful ID	|Class							|Description																				 |
 |---------------|---------------|-------------------|----------------------------------------------------|
