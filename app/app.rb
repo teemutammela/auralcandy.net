@@ -15,6 +15,7 @@ require "eat"
 require "json"
 
 # Modules
+require_relative("modules/module.client.rb")
 require_relative("modules/module.defaults.rb")
 require_relative("modules/module.helpers.rb")
 require_relative("modules/module.queries.rb")
@@ -33,6 +34,7 @@ require_relative("classes/class.label.rb")
 class Podcast < Sinatra::Base
 
   register Sinatra::MultiRoute
+  register Sinatra::Podcast::Client
   register Sinatra::Podcast::Defaults
   register Sinatra::Podcast::Routing
   register Sinatra::Podcast::Legacy   # Safe to remove (remove 'require_relative("modules/module.legacy.rb")' first)

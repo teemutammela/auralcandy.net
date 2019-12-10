@@ -125,8 +125,8 @@ module Sinatra
         end
 
         # Merge genre filter to search options
-        # NOTE: [match] filter is used to enable search with genre names converted to URL-friendly form
-        # NOTE: [match] filter returns all partial matches, i.e. search phrase "Funk" matches both "Funk" and "Funky House"
+        # NOTE! [match] filter is used to enable search with genre names converted to URL-friendly form
+        # NOTE! [match] filter returns all partial matches, i.e. search phrase "Funk" matches both "Funk" and "Funky House"
         options.merge!("fields.genre[match]".to_sym => genre) if $genres.key?(genre)
 
         # Merge leave-out ID to query options
