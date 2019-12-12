@@ -1,6 +1,6 @@
 # AuralCandy.Net - Premium House Music Podcast
 
-This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is **tailored to our needs** - it's **not a generic, turn-key podcast platform**. This source code is released for **educational** purposes for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
+This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is **tailored to our needs** - it's **not a generic, turn-key podcast platform**. This source code is released for **educational purposes** for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
 
 This source code can be used for **non-commericial purposes only**. Any commercial use of this source code requires **explicit permission** from the author. This application comes with **absolutely no warranty**. The author assumes no responsibility of data loss or any other unintended side-effect.
 
@@ -95,14 +95,12 @@ __1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index]
 ## Requirements
 
 * [Git](http://git-scm.com/)
-* [Ruby](https://www.ruby-lang.org/en/)
+* [Ruby](https://www.ruby-lang.org/en/) (2.6.5)
 * [Bundler](http://bundler.io/)
 * [npm](http://www.npmjs.com/)
 * [Grunt](https://gruntjs.com/)
-* [Contentful account](https://www.contentful.com/)
-* [Contentful CLI](https://github.com/contentful/contentful-cli)
-* [Heroku account](https://www.heroku.com/)
-* [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+* [Contentful account](https://www.contentful.com/) & [Contentful CLI](https://github.com/contentful/contentful-cli)
+* [Heroku account](https://www.heroku.com/) & [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 * [Chartable account](http://chartable.com) (optional)
 
 ## Installation
@@ -154,7 +152,7 @@ $ rackup -p 9292
 
 Application is now running at [http://localhost:9292](http://localhost:9292).
 
-Alternatively, use the [rerun](https://github.com/alexch/rerun/) gem to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
+Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
 
 ```shell
 $ rerun rackup
