@@ -216,25 +216,26 @@ $ grunt watch
 
 Configuration for `development` and `production` environments is set in `app/app.rb`. See [Sinatra documentation](http://sinatrarb.com/configuration.html) for further details about configuration settings.
 
-|Directory			|Description																																					|
-|---------------|-------------------------------------------------------------------------------------|
-|`app/assets`		|JavaScript as SASS files.																														|
-|`app/classes`	|Classes for wrapping content objects.																								|
-|`app/modules`	|Modules for handling routes, shared defaults, content queries and generic helpers.	 	|
-|`app/public`		|Static files (images, compiled JavaScript and CSS files etc.).												|
-|`app/views`		|ERB view templates and partials.																											|
+| Directory			| Description																																						|
+|---------------|---------------------------------------------------------------------------------------|
+| `app/assets`	| JavaScript as SASS files.																															|
+| `app/classes`	| Classes for wrapping content objects.																									|
+| `app/modules`	| Modules for handling routes, shared defaults, content queries and generic helpers.	 	|
+| `app/public`	| Static files (images, compiled JavaScript and CSS files etc.).												|
+| `app/views`		| ERB view templates and partials.																											|
 
 ### Modules
 
 Modules are included and registered in `app/app.rb`. Modules follow Sinatra's standard [modular extensions](http://sinatrarb.com/extensions.html) pattern.
 
-|Module								|Description																																		|
-|---------------------|-------------------------------------------------------------------------------|
-|`module.defaults.rb` |Contentful client and shared defaults.																					|
-|`module.helpers.rb`	|Generic helpers, mostly for parsing strings for various purposes.							|
-|`module.legacy.rb`		|Legacy redirections __1)__.																											|
-|`module.queries.rb`	|Query content from Contentful and wrap it to objects (registered as helpers).	|
-|`module.routing.rb`	|Route and URL parameter handling.																							|
+| Module								| Description																																		|
+|-----------------------|-------------------------------------------------------------------------------|
+| `module.client.rb` 		| Contentful client.																														|
+| `module.defaults.rb`	| Shared defaults (brands, genres, search form parameters and footer).					|
+| `module.helpers.rb`		| Generic helpers, mostly for parsing strings for various purposes.							|
+| `module.legacy.rb`		| Legacy redirections __1)__.																										|
+| `module.queries.rb`		| Query content from Contentful and wrap it to objects (registered as helpers).	|
+| `module.routing.rb`		| Route and URL parameter handling.																							|
 
 __1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by remove the following lines from `app/app.rb` and delete and `app/modules/module.legacy.rb` and `app/legacy` directory.
 
@@ -248,12 +249,12 @@ register Sinatra::Podcast::Legacy
 
 Classes are included in `app/app.rb`. Classes are wrappers for corresponding Contentful content models. Classes are used for formatting field values, handling related content by wrapping them with appropriate classes, adding helper methods as object properties and defining the accessible properties of said class.
 
-|Content Model	|Contentful ID	|Class							|Description																				 |
-|---------------|---------------|-------------------|----------------------------------------------------|
-|Brand					|brand					|`class.brand.rb`		|Podcast brand (used also for site default settings) |
-|DJ							|author					|`class.dj.rb`			|Author DJ of a podcast episode											 |
-|Episode				|episode				|`class.episode.rb` |Podcast episode																		 |
-|Label					|label					|`class.label.rb`		|Recording label related to an episode		           |
+| Content Model	| Contentful ID	| Class								| Description																				 	|
+|---------------|---------------|---------------------|-----------------------------------------------------|
+| `Brand`				| `brand`				| `class.brand.rb`		| Podcast brand (used also for site default settings)	|
+| `DJ`					| `author`			| `class.dj.rb`				| Author DJ of a podcast episode											|
+| `Episode`			| `episode`			| `class.episode.rb`	| Podcast episode																		 	|
+| `Label`				| `label`				| `class.label.rb`		| Recording label related to an episode		           	|
 
 ## Testing
 
@@ -261,11 +262,11 @@ Perform unit tests for all routes defined in `module.routing.rb` using the [Rack
 
 ### Parameters
 
-|Long							|Short	|Description																				 |
-|-----------------|-------|----------------------------------------------------|
-|`--key`					|`-k`		|Contentful Delivery API key								 	 			 |
-|`--space`				|`-s`		|Contentful space ID																 |
-|`--environment`	|`-e`		|Sinatra environment (`development` or `production`) |
+| Long						| Short		| Description																				 	|
+|-----------------|---------|-----------------------------------------------------|
+| `--key`					| `-k`		| Contentful Delivery API key								 	 			 	|
+| `--space`				| `-s`		| Contentful space ID																 	|
+| `--environment`	| `-e`		| Sinatra environment (`development` or `production`)	|
 
 ```shell
 $ ruby app/test/unit_tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
