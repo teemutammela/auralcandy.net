@@ -51,7 +51,6 @@ Player = {
     data.share_urls = {
       "twitter"    : "https://twitter.com/intent/tweet?text=" + encodeURI(data.dj + " - " + data.title) + "&url=" + encodeURI(data.episodeUrl),
       "facebook"   : "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(data.episodeUrl),
-      "googleplus" : "https://plus.google.com/share?url=" + encodeURI(data.episodeUrl),
       "pinterest"  : "https://pinterest.com/pin/create/button/?url=" + encodeURI(data.episodeUrl),
       "email"      : "mailto:?subject=" + encodeURI(data.dj + " - " + data.title) + "&body=" + encodeURI(data.episodeUrl)
     }
