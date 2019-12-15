@@ -38,7 +38,7 @@ This source code can be used for **non-commericial purposes only**. Any commerci
 	* Built upon the [Sinatra](http://www.sinatrarb.com/) framework
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
-	* Ready to be deployed on [Heroku](https://www.heroku.com/)
+	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-18` stack)
 	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) unit tests
 
 * Mobile-friendly responsive layout
