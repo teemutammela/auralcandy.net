@@ -90,7 +90,7 @@ This source code can be used for **non-commericial purposes only**. Any commerci
 	* [Valid CSS3](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.auralcandy.net%2F&profile=css3svg&usermedium=all&warning=no&vextwarning=&lang=en)
 	* [Valid RSS 2.0](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.auralcandy.net%2Fpodcast)
 
-__1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details.
+__1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details. Some browsers like [Brave](https://brave.com/) will require explicit permission from user to allow autoplay.
 
 ## Requirements
 
