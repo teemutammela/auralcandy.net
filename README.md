@@ -235,7 +235,7 @@ Modules are included and registered in `app/app.rb`. Modules follow Sinatra's st
 | `module.queries.rb`		| Query content from Contentful and wrap it to objects (registered as helpers).	|
 | `module.routing.rb`		| Route and URL parameter handling.																							|
 
-__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by remove the following lines from `app/app.rb` and delete and `app/modules/module.legacy.rb` and `app/legacy` directory.
+__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by remove the following lines from `app/app.rb` and delete file `app/modules/module.legacy.rb`.
 
 ```ruby
 require_relative("modules/module.legacy.rb")
