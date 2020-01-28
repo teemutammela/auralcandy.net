@@ -99,10 +99,10 @@ module Sinatra
         # Parse option variables
         brand = parse_slug(brand)
         order = parse_slug(order)
-        limit = parse_id(limit).to_i
+        limit = parse_id(limit)
         genre = parse_slug(genre)
         id    = parse_slug(id)
-        page  = parse_id(page).to_i - 1
+        page  = parse_id(page) - 1
 
         # Allowed sorting methods
         sort = {

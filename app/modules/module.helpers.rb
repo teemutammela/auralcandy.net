@@ -11,7 +11,7 @@ module Sinatra
 
       # Filter unwanted characters from ID
       def parse_id(string)
-        string.tr("^0-9", "")
+        string.tr("^0-9", "").to_i
       end
 
       # Parse genre name to URL friendly form

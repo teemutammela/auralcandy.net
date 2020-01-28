@@ -35,7 +35,7 @@ module Sinatra
           # Pass variables to template
           erb :list, :locals => {
             :episodes => results[:episodes],
-            :current  => parse_id(page).to_i,
+            :current  => parse_id(page),
             :pages    => results[:pages].to_i,
             :page_url => results[:page_url],
             :genre    => parse_slug(genre)
