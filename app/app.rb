@@ -11,7 +11,6 @@ require "date"
 require "active_support/core_ext/integer/inflections"
 require "redcarpet"
 require "redcarpet/render_strip"
-require "eat"
 require "json"
 
 # Modules
