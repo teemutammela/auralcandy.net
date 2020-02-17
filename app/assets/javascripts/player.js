@@ -6,19 +6,19 @@ Player = {
     $(".play-button").click(function() {
 
       // Get episode properties from data-parameters
-      var data = $(this).data();
+      var episode= $(this).data();
 
       // Add default duration, elapsed time and play state
-      data.duration = "00:00:00";
-      data.elapsed  = 0;
-      data.state    = "play";
+      episode.duration = "00:00:00";
+      episode.elapsed  = 0;
+      episode.state    = "play";
 
       // Set episode properties to media player and save to local storage
-      Player.setPlayerProperties(data);
-      Player.setLocalStorage(data);
+      Player.setPlayerProperties(episode);
+      Player.setLocalStorage(episode);
 
       // Set full size cover image to lightbox
-      Lightbox.setImage(data.imageFullUrl);
+      Lightbox.setImage(episode.imageFullUrl);
 
       // Load audio file to media player
       audio.load();
@@ -35,29 +35,29 @@ Player = {
   },
 
   /* Set episode properties to media player */
-  setPlayerProperties: function(data) {
+  setPlayerProperties: function(episode) {
 
     // Set episode title, cover image and source URLs
-    $("#media-dj").html(data.dj);
-    $("#media-title").html(data.title);
-    $("#media-duration").html(data.duration);
-    $("#media-image-url").attr("data-image-url", data.imageUrl);
-    $("#media-image-full-url").attr("data-image-full-url", data.imageFullUrl);
-    $("#media-audio-url").attr("src", data.audioUrl);
-    $("#media-episode-url").attr("href", data.episodeUrl);
-    $("#media-download").attr("href", data.audioUrl);
+    $("#media-dj").html(episode.dj);
+    $("#media-title").html(episode.title);
+    $("#media-duration").html(episode.duration);
+    $("#media-image-url").attr("data-image-url", episode.imageUrl);
+    $("#media-image-full-url").attr("data-image-full-url", episode.imageFullUrl);
+    $("#media-audio-url").attr("src", episode.audioUrl);
+    $("#media-episode-url").attr("href", episode.episodeUrl);
+    $("#media-download").attr("href", episode.audioUrl);
 
     // Social media sharing URLs
-    data.share_urls = {
-      "twitter"    : "https://twitter.com/intent/tweet?text=" + encodeURI(data.dj + " - " + data.title) + "&url=" + encodeURI(data.episodeUrl),
-      "facebook"   : "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(data.episodeUrl),
-      "pinterest"  : "https://pinterest.com/pin/create/button/?url=" + encodeURI(data.episodeUrl),
-      "email"      : "mailto:?subject=" + encodeURI(data.dj + " - " + data.title) + "&body=" + encodeURI(data.episodeUrl)
+    episode.share_urls = {
+      "twitter"    : "https://twitter.com/intent/tweet?text=" + encodeURI(episode.dj + " - " + episode.title) + "&url=" + encodeURI(episode.episodeUrl),
+      "facebook"   : "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(episode.episodeUrl),
+      "pinterest"  : "https://pinterest.com/pin/create/button/?url=" + encodeURI(episode.episodeUrl),
+      "email"      : "mailto:?subject=" + encodeURI(episode.dj + " - " + episode.title) + "&body=" + encodeURI(episode.episodeUrl)
     }
 
     // Set values to share menu
-    for (var key in data.share_urls) {
-      $("#media-" + key + "-url").attr("href", data.share_urls[key]);
+    for (var key in episode.share_urls) {
+      $("#media-" + key + "-url").attr("href", episode.share_urls[key]);
     }
 
   },
@@ -65,13 +65,13 @@ Player = {
   /* Restore media player state */
   restorePlayerState: function() {
 
-    if (localStorage.data) {
+    if (localStorage.episode) {
 
-      // Get data from local storage
-      data = Player.getLocalStorage();
+      // Get episode data from local storage
+      episode = Player.getLocalStorage();
 
       // Set player properties from local storage
-      Player.setPlayerProperties(data);
+      Player.setPlayerProperties(episode);
 
       // Load source file to media player's audio instance
       audio.load();
@@ -151,32 +151,32 @@ Player = {
   /* Get episode properties from local storage */
   getLocalStorage: function(key) {
 
-    var data = JSON.parse(localStorage.data);
-    return typeof(key) == "undefined" ? data : data[key];
+    var episode = JSON.parse(localStorage.episode);
+    return typeof(key) == "undefined" ? episode : episode[key];
 
   },
 
   /* Set episode properties to local storage */
-  setLocalStorage: function(data) {
+  setLocalStorage: function(episode) {
 
-    localStorage.clear();
+    localStorage.removeItem("episode")
 
     // Strip Chartable redirection from audio URL to prevent unnecessary redirections when restoring state
-    if (data.audioUrl.includes("chtbl.com")) {
-      audio_url = "https:/" + data.audioUrl.replace("https://chtbl.com/track/", "").replace(/^[0-9A-Z]{5}?/, "");
-      data.audioUrl = audio_url;
+    if (episode.audioUrl.includes("chtbl.com")) {
+      audio_url = "https:/" + episode.audioUrl.replace("https://chtbl.com/track/", "").replace(/^[0-9A-Z]{5}?/, "");
+      episode.audioUrl = audio_url;
     }
 
-    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("episode", JSON.stringify(episode));
 
   },
 
   /* Update episode properties in local storage */
   updateLocalStorage: function(key, value) {
 
-    var data = Player.getLocalStorage();
-    data[key] = value;
-    Player.setLocalStorage(data);
+    var episode = Player.getLocalStorage();
+    episode[key] = value;
+    Player.setLocalStorage(episode);
 
   },
 
@@ -191,7 +191,7 @@ Player = {
     /* Restore current time index from local storage */
     audio.onprogress = function() {
 
-      if (localStorage.data && audio.currentTime == 0) {
+      if (localStorage.episode && audio.currentTime == 0) {
 
         // Setting current time only once prevents jumps in audio playback
         audio.currentTime = Player.getLocalStorage("elapsed");
@@ -235,7 +235,7 @@ Player = {
     audio.onended = function() {
 
       // Clear episode properties from local storage
-      localStorage.clear();
+      localStorage.removeItem("episode");
 
       // Hide media player
       player.fadeOut("slow");
@@ -277,7 +277,7 @@ $(document).ready(function() {
   $("#media-close").click(function() {
 
     // Clear episode properties from local storage
-    localStorage.clear();
+    localStorage.removeItem("episode");
 
     // Fade out media player
     player.fadeOut("slow");
