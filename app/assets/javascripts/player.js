@@ -13,7 +13,7 @@ Player = {
       episode.elapsed  = 0;
       episode.state    = "play";
 
-      // Set episode properties to media player and save to local storage
+      // Set episode properties to media player and save to localStorage
       Player.setPlayerProperties(episode);
       Player.setLocalStorage(episode);
 
@@ -67,10 +67,10 @@ Player = {
 
     if (localStorage.episode) {
 
-      // Get episode data from local storage
+      // Get episode data from localStorage
       episode = Player.getLocalStorage();
 
-      // Set player properties from local storage
+      // Set player properties from localStorage
       Player.setPlayerProperties(episode);
 
       // Load source file to media player's audio instance
@@ -135,7 +135,7 @@ Player = {
       // Update duration and elapsed time only when playback is active
       if (!audio.paused) {
 
-        // Update duration and elapsed time in local storage
+        // Update duration and elapsed time in localStorage
         Player.updateLocalStorage("duration", duration);
         Player.updateLocalStorage("elapsed", current);
 
@@ -148,7 +148,7 @@ Player = {
 
   },
 
-  /* Get episode properties from local storage */
+  /* Get episode properties from localStorage */
   getLocalStorage: function(key) {
 
     var episode = JSON.parse(localStorage.episode);
@@ -156,7 +156,7 @@ Player = {
 
   },
 
-  /* Set episode properties to local storage */
+  /* Set episode properties to localStorage */
   setLocalStorage: function(episode) {
 
     localStorage.removeItem("episode")
@@ -171,7 +171,7 @@ Player = {
 
   },
 
-  /* Update episode properties in local storage */
+  /* Update episode properties in localStorage */
   updateLocalStorage: function(key, value) {
 
     var episode = Player.getLocalStorage();
@@ -188,7 +188,7 @@ Player = {
       $("#media-image-url").attr("src", "/images/layout/loading-dark.gif");
     }
 
-    /* Restore current time index from local storage */
+    /* Restore current time index from localStorage */
     audio.onprogress = function() {
 
       if (localStorage.episode && audio.currentTime == 0) {
@@ -234,7 +234,7 @@ Player = {
     /* Playback ended */
     audio.onended = function() {
 
-      // Clear episode properties from local storage
+      // Clear episode properties from localStorage
       localStorage.removeItem("episode");
 
       // Hide media player
@@ -276,7 +276,7 @@ $(document).ready(function() {
   /* Media player close button */
   $("#media-close").click(function() {
 
-    // Clear episode properties from local storage
+    // Clear episode properties from localStorage
     localStorage.removeItem("episode");
 
     // Fade out media player
