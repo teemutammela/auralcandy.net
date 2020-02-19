@@ -60,7 +60,7 @@ class Podcast < Sinatra::Base
   # Development environment configuration
   configure :development do
 
-    use Rack::Session::Pool, :expire_after => 0
+    use Rack::Session::Pool, :expire_after => 0, :same_site => :strict
 
     set :environment, :development
     set :static_cache_control, [:public, max_age: 0]
@@ -73,7 +73,7 @@ class Podcast < Sinatra::Base
   # Production environment configuration
   configure :production do
 
-    use Rack::Session::Pool, :expire_after => 60 * 60 * 24 * 30
+    use Rack::Session::Pool, :expire_after => 60 * 60 * 24 * 30, :same_site => :strict
     use Rack::Cache
     use Rack::Deflater
     use Rack::Protection
