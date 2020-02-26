@@ -13,6 +13,5 @@ gem "rack-protection", "2.0.8.1"
 gem "contentful", "2.15.2"
 gem "activesupport", "6.0.2.1"
 gem "redcarpet", "3.5.0"
-gem "sass", "3.7.4"
 gem "json", "2.3.0"
 gem "rerun", "0.13.0", require: false
