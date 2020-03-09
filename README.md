@@ -198,13 +198,13 @@ The default URL of the application is `https://appname.herokuapp.com`. More doma
 
 ## Asset Pipeline
 
-Install the required _npm_ packages listed in `package.json`.
+**1)** Install the required _npm_ packages listed in `package.json`.
 
 ```shell
 $ npm install
 ```
 
-Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
+**2)** Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
 
 ```shell
 $ grunt watch
