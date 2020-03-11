@@ -34,35 +34,35 @@ This source code can be used for **non-commericial purposes only**. Any commerci
 
 ## Features
 
-* Architecture
+* __Technology Stack__
 	* Built upon the [Sinatra](http://www.sinatrarb.com/) framework
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
 	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-18` stack)
 	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) unit tests
 
-* Mobile-friendly responsive layout
-	* Built with [Bootstrap](http://getbootstrap.com/)
-	* Vector icons by [Fontawesome](https://fontawesome.com/)
-	* [WebP](https://developers.google.com/speed/webp/) image support on Chrome (JPEG fallback for Firefox, Safari etc.)
+* __Mobile-friendly responsive layout__
+	* Built with [Bootstrap 4](http://getbootstrap.com/)
+	* Vector icons by [Fontawesome 5](https://fontawesome.com/)
+	* [WebP](https://developers.google.com/speed/webp/) image support on [Chromium](https://www.chromium.org/) based browsers (JPEG fallback for Firefox, Safari etc.)
 
-* Episode search
+* __Episode search__
 	* Search by brand and genre
 	* Pagination and variable items per page
 	* Sort by title and date
 
-* Embedded media player
+* __Embedded media player__
 	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
 	* Continuous playback between page loads __1)__
 
-* Episode landing pages
+* __Episode landing pages__
 	* Episode description
 	* Genre tags (as defined in [MusicRecording](http://schema.org/MusicRecording) schema)
 	* Track listing
 	* Related recording labels
 	* Related episodes
 
-* RSS/XML feed
+* __RSS/XML feed__
 	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Spotify](https://www.spotify.com/download), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
 	* Episode descriptions
 	* Episode images (as defined in iTunes Podcast DTD)
@@ -70,22 +70,22 @@ This source code can be used for **non-commericial purposes only**. Any commerci
 	* Track listing
 	* Related recording labels
 
-* Statistics
+* __Statistics__
   * Download tracking via [Chartable](http://chartable.com) (optional)
 
-* Search Engine Optimization
+* __Search Engine Optimization__
 	* Machine-readable [microdata schemas](https://schema.org/)
 	* [Sitemap XML](https://en.wikipedia.org/wiki/Sitemaps)
 	* [Web Application Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 	* Support for [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary.html) and [Open Graph](http://ogp.me/) embedding
 
-* Performance Optimization
+* __Performance Optimization__
 	* Efficient use of caching, content compression and headers on the application level
 	* Low amount of HTTP requests (27) and memory usage (~5MB)
 	* JavaScript and SASS asset pipeline via [Grunt](https://gruntjs.com/)
 	* Full [Cloudflare](https://www.cloudflare.com/) compatibility
 
-* Certification
+* __Certification__
 	* [Valid HTML5](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.auralcandy.net%2F)
 	* [Valid CSS3](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.auralcandy.net%2F&profile=css3svg&usermedium=all&warning=no&vextwarning=&lang=en)
 	* [Valid RSS 2.0](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.auralcandy.net%2Fpodcast)
