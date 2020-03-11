@@ -18,7 +18,7 @@ module Sinatra
           unless settings.development?
 
             last_modified(Time.now - (60 * 60 * 24 * 7))
-            cache_control :public, :must_revalidate, :max_age => 30
+            cache_control :public, :must_revalidate, :max_age => 60 * 60 * 24
 
           end
 
