@@ -63,7 +63,7 @@ This source code can be used for **non-commericial purposes only**. Any commerci
 	* Related episodes
 
 * __RSS/XML feed__
-	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Spotify](https://www.spotify.com/download), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
+	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
 	* Episode descriptions
 	* Episode images (as defined in iTunes Podcast DTD)
 	* Genre keywords (as defined in iTunes Podcast DTD)

@@ -53,16 +53,16 @@ module Sinatra
                 :url   => $brand.google_podcasts_url
               },
               {
-                :title => "Spotify",
-                :url   => $brand.spotify_url
-              },
-              {
-                :title => "Donate",
-                :url   => $brand.paypal_url
+                :title => "About",
+                :url    => "#about"
               },
               {
                 :title => "Contact",
                 :url    => "#contact"
+              },
+              {
+                :title => "Donate",
+                :url   => $brand.paypal_url
               }
             ],
             :search => {
