@@ -795,24 +795,6 @@
           "omitted": false
         },
         {
-          "id": "spotifyUrl",
-          "name": "Spotify URL",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "regexp": {
-                "pattern": "^https?:\\/\\/?open\\.spotify\\.com(\\/.*)?$",
-                "flags": "g"
-              },
-              "message": "Not a valid Spotify URL"
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
           "id": "paypalUrl",
           "name": "PayPal URL",
           "type": "Symbol",
@@ -1272,11 +1254,6 @@
         },
         {
           "fieldId": "googlePodcastsUrl",
-          "widgetId": "urlEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "spotifyUrl",
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
         },

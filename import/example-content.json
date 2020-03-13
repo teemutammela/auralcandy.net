@@ -116,9 +116,6 @@
         "googlePodcastsUrl": {
           "en-US": "https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
         },
-        "spotifyUrl": {
-          "en-US": "https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9"
-        },
         "paypalUrl": {
           "en-US": "https://www.paypal.me/teemutammela"
         }
@@ -375,9 +372,6 @@
         },
         "googlePodcastsUrl": {
           "en-US": "https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
-        },
-        "spotifyUrl": {
-          "en-US": "https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9"
         },
         "paypalUrl": {
           "en-US": "https://www.paypal.me/teemutammela"
