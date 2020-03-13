@@ -5,7 +5,7 @@ require "optparse"
 
 # Command line options
 OptionParser.new do |option|
-	
+
 	# Contentful Delivery API key
   option.on("-k", "--key KEY") do |key|
     ENV["CONTENTFUL_DELIVERY_KEY"] = key.strip
@@ -101,7 +101,6 @@ class PodcastTest < Test::Unit::TestCase
     # Body - Main navigation links
     assert last_response.body.include?("<a href=\"/\" class=\"navbar-brand\" title=\"Home\">Primary Brand</a>")
     assert last_response.body.include?("<a href=\"https://podcasts.apple.com/podcast/auralcandy-net/id291192514\" class=\"nav-link\" title=\"Apple Podcasts\" itemprop=\"relatedLink\">Apple Podcasts</a>")
-    assert last_response.body.include?("<a href=\"https://open.spotify.com/show/7MWjeYZx0YYscTn1fIDcR9\" class=\"nav-link\" title=\"Spotify\" itemprop=\"relatedLink\">Spotify</a>")
     assert last_response.body.include?("<a href=\"https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA\" class=\"nav-link\" title=\"Google Podcasts\" itemprop=\"relatedLink\">Google Podcasts</a>")
 
     # Body - Search form elements
@@ -171,29 +170,29 @@ class PodcastTest < Test::Unit::TestCase
 		assert last_response.body.include?("<div class=\"col text-right text-nowrap\" itemprop=\"author\">DJ First</div>")
 
   end
-  
+
   # Error - Invalid episode slug
   def test_invalid_episode_slug
-	  
+
 	  get "/episodes/does-not-exist"
 
 		assert_equal 404, last_response.status
-		
+
 		assert last_response.body.include?("<h1 class=\"jumbotron-heading\">404 Not Found</h1>")
 		assert last_response.body.include?("<div class=\"lead\" itemprop=\"description\">The content you are looking for was not found.</div>")
 
 	end
-	
+
 	# Error - Invalid route
 	def test_invalid_route
-		
+
 		get "/does-not-exist"
-		
+
 		assert_equal 404, last_response.status
-		
+
 		assert last_response.body.include?("<h1 class=\"jumbotron-heading\">404 Not Found</h1>")
 		assert last_response.body.include?("<div class=\"lead\" itemprop=\"description\">The content you are looking for was not found.</div>")
-		
+
 	end
 
 end
