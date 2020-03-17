@@ -101,7 +101,7 @@ class PodcastTest < Test::Unit::TestCase
     # Body - Main navigation links
     assert last_response.body.include?("<a href=\"/\" class=\"navbar-brand\" title=\"Home\">Primary Brand</a>")
     assert last_response.body.include?("<a href=\"https://podcasts.apple.com/podcast/auralcandy-net/id291192514\" class=\"nav-link\" title=\"Apple Podcasts\" itemprop=\"relatedLink\">Apple Podcasts</a>")
-    assert last_response.body.include?("<a href=\"https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA\" class=\"nav-link\" title=\"Google Podcasts\" itemprop=\"relatedLink\">Google Podcasts</a>")
+    assert last_response.body.include?("<a href=\"https://podcasts.google.com/?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA\" class=\"nav-link\" title=\"Google Podcasts\" itemprop=\"relatedLink\">Google Podcasts</a>")
 
     # Body - Search form elements
     assert last_response.body.include?("<form id=\"episode-search\">")
