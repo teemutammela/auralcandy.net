@@ -9,10 +9,10 @@
             "id": null
           }
         },
-        "id": "2nQyi1UOLrDhV91kKkIJbw",
+        "id": "2aUl2vwF05DKl3ay2umXlW",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:14:07.157Z",
-        "updatedAt": "2019-08-20T07:07:09.330Z",
+        "createdAt": "2020-03-17T07:30:15.710Z",
+        "updatedAt": "2020-03-17T07:33:22.860Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,287 +20,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 130,
-        "publishedAt": "2019-08-20T07:07:09.330Z",
-        "firstPublishedAt": "2019-04-11T10:21:07.288Z",
+        "publishedVersion": 2,
+        "publishedAt": "2020-03-17T07:33:22.860Z",
+        "firstPublishedAt": "2020-03-17T07:33:22.860Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "publishedCounter": 6,
-        "version": 131,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "brand"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Primary Brand"
-        },
-        "default": {
-          "en-US": true
-        },
-        "slug": {
-          "en-US": "primary-brand"
-        },
-        "tagline": {
-          "en-US": "Primary Brand Tagline"
-        },
-        "image": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "5QPtjMlzYtnVLvC7JxMM4l"
-            }
-          }
-        },
-        "shortDescription": {
-          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus."
-        },
-        "longDescription": {
-          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis. Quisque sed pellentesque lacus. Curabitur laoreet elit vel vehicula cursus. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam."
-        },
-        "compatibility": {
-          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
-        },
-        "privacyPolicy": {
-          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi."
-        },
-        "keywords": {
-          "en-US": [
-            "dj",
-            "podcast",
-            "music"
-          ]
-        },
-        "email": {
-          "en-US": "contact@email.com"
-        },
-        "phone": {
-          "en-US": "+358 12 3456 789"
-        },
-        "streetAddress": {
-          "en-US": "Testing Street 123"
-        },
-        "zipCode": {
-          "en-US": "12345"
-        },
-        "locality": {
-          "en-US": "Testville, Testland"
-        },
-        "applePodcastsUrl": {
-          "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
-        },
-        "googlePodcastsUrl": {
-          "en-US": "https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
-        },
-        "paypalUrl": {
-          "en-US": "https://www.paypal.me/teemutammela"
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
             "id": null
           }
         },
-        "id": "6uZtjEnJF2qj3lp9fbmkg4",
-        "type": "Entry",
-        "createdAt": "2019-04-11T10:22:30.722Z",
-        "updatedAt": "2019-04-11T10:43:09.301Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 55,
-        "publishedAt": "2019-04-11T10:43:09.301Z",
-        "firstPublishedAt": "2019-04-11T10:43:09.301Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 1,
-        "version": 56,
+        "version": 3,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "episode"
-          }
-        }
-      },
-      "fields": {
-        "dj": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "6wPXzEMrbx80raVgHWYjOS"
-              }
-            }
-          ]
-        },
-        "title": {
-          "en-US": "Example Episode 1"
-        },
-        "slug": {
-          "en-US": "example-episode-1"
-        },
-        "releaseDate": {
-          "en-US": "2019-04-11"
-        },
-        "brand": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "2nQyi1UOLrDhV91kKkIJbw"
-            }
-          }
-        },
-        "description": {
-          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis."
-        },
-        "trackList": {
-          "en-US": "Producer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]"
-        },
-        "duration": {
-          "en-US": "00:00:27"
-        },
-        "genre": {
-          "en-US": [
-            "Deep House",
-            "House Music",
-            "Progressive House"
-          ]
-        },
-        "label": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "7nGfh6clf0prdJc7drnDR"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "24bwcozeB2o1WfNvjcFXxy"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "6WUOG2PAIDPQU7pOvMBZEt"
-              }
-            }
-          ]
-        },
-        "audio": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "7mhP8l36JN57SvwgTlQFCN"
-            }
-          }
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
             "id": null
-          }
-        },
-        "id": "2aUl2vwF05DKl3ay2umXlW",
-        "type": "Entry",
-        "createdAt": "2019-04-11T10:22:43.220Z",
-        "updatedAt": "2019-08-20T07:07:43.410Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 26,
-        "publishedAt": "2019-08-20T07:07:43.410Z",
-        "firstPublishedAt": "2019-04-11T10:23:21.109Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "publishedCounter": 5,
-        "version": 27,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
           }
         },
         "contentType": {
@@ -371,7 +114,7 @@
           "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
         },
         "googlePodcastsUrl": {
-          "en-US": "https://www.google.com/podcasts?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
+          "en-US": "https://podcasts.google.com/?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
         },
         "paypalUrl": {
           "en-US": "https://www.paypal.me/teemutammela"
@@ -387,10 +130,10 @@
             "id": null
           }
         },
-        "id": "6wPXzEMrbx80raVgHWYjOS",
+        "id": "2nQyi1UOLrDhV91kKkIJbw",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:25:26.346Z",
-        "updatedAt": "2019-04-11T10:26:46.532Z",
+        "createdAt": "2020-03-17T07:30:15.712Z",
+        "updatedAt": "2020-03-17T07:33:12.885Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -398,46 +141,167 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 24,
-        "publishedAt": "2019-04-11T10:26:46.532Z",
-        "firstPublishedAt": "2019-04-11T10:25:47.429Z",
+        "publishedVersion": 2,
+        "publishedAt": "2020-03-17T07:33:12.885Z",
+        "firstPublishedAt": "2020-03-17T07:33:12.885Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 2,
-        "version": 25,
+        "publishedCounter": 1,
+        "version": 3,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "author"
+            "id": "brand"
           }
         }
       },
       "fields": {
-        "handle": {
-          "en-US": "DJ First"
-        },
         "name": {
-          "en-US": "First Example DJ"
+          "en-US": "Primary Brand"
+        },
+        "default": {
+          "en-US": true
+        },
+        "slug": {
+          "en-US": "primary-brand"
+        },
+        "tagline": {
+          "en-US": "Primary Brand Tagline"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5QPtjMlzYtnVLvC7JxMM4l"
+            }
+          }
+        },
+        "shortDescription": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus."
+        },
+        "longDescription": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis. Quisque sed pellentesque lacus. Curabitur laoreet elit vel vehicula cursus. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam."
+        },
+        "compatibility": {
+          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
+        },
+        "privacyPolicy": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi."
+        },
+        "keywords": {
+          "en-US": [
+            "dj",
+            "podcast",
+            "music"
+          ]
+        },
+        "email": {
+          "en-US": "contact@email.com"
+        },
+        "phone": {
+          "en-US": "+358 12 3456 789"
+        },
+        "streetAddress": {
+          "en-US": "Testing Street 123"
+        },
+        "zipCode": {
+          "en-US": "12345"
+        },
+        "locality": {
+          "en-US": "Testville, Testland"
+        },
+        "applePodcastsUrl": {
+          "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
+        },
+        "googlePodcastsUrl": {
+          "en-US": "https://podcasts.google.com/?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
+        },
+        "paypalUrl": {
+          "en-US": "https://www.paypal.me/teemutammela"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "2VYYX2PyyZP9CQOfenUEq5",
+        "type": "Entry",
+        "createdAt": "2020-03-17T07:30:15.714Z",
+        "updatedAt": "2020-03-17T07:33:19.859Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:19.859Z",
+        "firstPublishedAt": "2020-03-17T07:30:25.014Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "label"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Sinatra Recordings"
+        },
+        "linkUrl": {
+          "en-US": "http://sinatrarb.com/"
         }
       }
     },
@@ -452,8 +316,8 @@
         },
         "id": "4PUgVQOOpMYcL9gaf1qBEw",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:25:54.214Z",
-        "updatedAt": "2019-04-11T10:26:34.323Z",
+        "createdAt": "2020-03-17T07:30:15.714Z",
+        "updatedAt": "2020-03-17T07:33:21.130Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -461,30 +325,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 33,
-        "publishedAt": "2019-04-11T10:26:34.323Z",
-        "firstPublishedAt": "2019-04-11T10:26:26.765Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:21.130Z",
+        "firstPublishedAt": "2020-03-17T07:30:26.171Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
-        "version": 34,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -515,8 +379,8 @@
         },
         "id": "7nGfh6clf0prdJc7drnDR",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:26:56.226Z",
-        "updatedAt": "2019-04-11T10:27:17.210Z",
+        "createdAt": "2020-03-17T07:30:15.727Z",
+        "updatedAt": "2020-03-17T07:33:20.452Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -524,30 +388,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 28,
-        "publishedAt": "2019-04-11T10:27:17.210Z",
-        "firstPublishedAt": "2019-04-11T10:27:17.210Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:20.452Z",
+        "firstPublishedAt": "2020-03-17T07:30:25.457Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 29,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -576,10 +440,10 @@
             "id": null
           }
         },
-        "id": "2VYYX2PyyZP9CQOfenUEq5",
+        "id": "6wPXzEMrbx80raVgHWYjOS",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:27:22.481Z",
-        "updatedAt": "2019-04-11T10:27:45.185Z",
+        "createdAt": "2020-03-17T07:30:15.890Z",
+        "updatedAt": "2020-03-17T07:33:21.787Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -587,235 +451,46 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 12,
-        "publishedAt": "2019-04-11T10:27:45.185Z",
-        "firstPublishedAt": "2019-04-11T10:27:45.185Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:21.787Z",
+        "firstPublishedAt": "2020-03-17T07:30:26.912Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 13,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "label"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Sinatra Recordings"
-        },
-        "linkUrl": {
-          "en-US": "http://sinatrarb.com/"
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
             "id": null
           }
         },
-        "id": "24bwcozeB2o1WfNvjcFXxy",
-        "type": "Entry",
-        "createdAt": "2019-04-11T10:27:51.257Z",
-        "updatedAt": "2019-04-11T10:28:09.163Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 20,
-        "publishedAt": "2019-04-11T10:28:09.163Z",
-        "firstPublishedAt": "2019-04-11T10:28:09.163Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 21,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "label"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Heroku Music"
-        },
-        "linkUrl": {
-          "en-US": "https://www.heroku.com/"
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
             "id": null
           }
         },
-        "id": "6WUOG2PAIDPQU7pOvMBZEt",
-        "type": "Entry",
-        "createdAt": "2019-04-11T10:29:00.177Z",
-        "updatedAt": "2019-04-11T10:29:14.316Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 11,
-        "publishedAt": "2019-04-11T10:29:14.316Z",
-        "firstPublishedAt": "2019-04-11T10:29:14.316Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 12,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "label"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Ruby Music"
-        },
-        "linkUrl": {
-          "en-US": "https://www.ruby-lang.org/"
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
             "id": null
           }
         },
-        "id": "40gUlBAxTalXpHnHPK04UW",
-        "type": "Entry",
-        "createdAt": "2019-04-11T10:32:15.302Z",
-        "updatedAt": "2019-04-11T10:32:28.599Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 12,
-        "publishedAt": "2019-04-11T10:32:28.599Z",
-        "firstPublishedAt": "2019-04-11T10:32:28.599Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 13,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
-          }
-        },
         "contentType": {
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "label"
+            "id": "author"
           }
         }
       },
       "fields": {
-        "name": {
-          "en-US": "Bootstrap Publishing"
+        "handle": {
+          "en-US": "DJ First"
         },
-        "linkUrl": {
-          "en-US": "https://getbootstrap.com/"
+        "name": {
+          "en-US": "First Example DJ"
         }
       }
     },
@@ -830,8 +505,8 @@
         },
         "id": "3BkAlY9bVptp7jvKV4UwIH",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:32:54.940Z",
-        "updatedAt": "2019-04-11T10:33:07.195Z",
+        "createdAt": "2020-03-17T07:30:16.509Z",
+        "updatedAt": "2020-03-17T07:33:16.027Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -839,30 +514,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 9,
-        "publishedAt": "2019-04-11T10:33:07.195Z",
-        "firstPublishedAt": "2019-04-11T10:33:07.195Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:16.027Z",
+        "firstPublishedAt": "2020-03-17T07:30:22.564Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 10,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -893,8 +568,8 @@
         },
         "id": "6L4bBqz8ZVF01HVr2zRDQQ",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:43:46.042Z",
-        "updatedAt": "2019-04-11T10:44:53.455Z",
+        "createdAt": "2020-03-17T07:30:16.513Z",
+        "updatedAt": "2020-03-17T07:33:15.070Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -902,30 +577,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 14,
-        "publishedAt": "2019-04-11T10:44:53.455Z",
-        "firstPublishedAt": "2019-04-11T10:44:53.455Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:15.070Z",
+        "firstPublishedAt": "2020-03-17T07:30:21.819Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 15,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "contentType": {
@@ -1027,10 +702,10 @@
             "id": null
           }
         },
-        "id": "3BKvBtYL2wFzVy4XryVOQU",
+        "id": "40gUlBAxTalXpHnHPK04UW",
         "type": "Entry",
-        "createdAt": "2019-04-11T10:45:27.323Z",
-        "updatedAt": "2019-04-11T10:51:07.521Z",
+        "createdAt": "2020-03-17T07:30:16.514Z",
+        "updatedAt": "2020-03-17T07:33:17.081Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1038,30 +713,93 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 20,
-        "publishedAt": "2019-04-11T10:51:07.521Z",
-        "firstPublishedAt": "2019-04-11T10:46:33.087Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:17.081Z",
+        "firstPublishedAt": "2020-03-17T07:30:23.210Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
-        "version": 21,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "label"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Bootstrap Publishing"
+        },
+        "linkUrl": {
+          "en-US": "https://getbootstrap.com/"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "3BKvBtYL2wFzVy4XryVOQU",
+        "type": "Entry",
+        "createdAt": "2020-03-17T07:30:16.518Z",
+        "updatedAt": "2020-03-17T07:33:14.506Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:14.506Z",
+        "firstPublishedAt": "2020-03-17T07:30:20.734Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
           }
         },
         "contentType": {
@@ -1172,10 +910,10 @@
             "id": null
           }
         },
-        "id": "6CGsfWafDZsEpe0xG7ftJP",
+        "id": "6uZtjEnJF2qj3lp9fbmkg4",
         "type": "Entry",
-        "createdAt": "2019-04-15T09:31:24.261Z",
-        "updatedAt": "2019-04-15T09:33:20.642Z",
+        "createdAt": "2020-03-17T07:30:16.518Z",
+        "updatedAt": "2020-03-17T07:33:13.308Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1183,30 +921,166 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 12,
-        "publishedAt": "2019-04-15T09:33:20.642Z",
-        "firstPublishedAt": "2019-04-15T09:33:20.642Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:13.308Z",
+        "firstPublishedAt": "2020-03-17T07:30:18.731Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 13,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "episode"
+          }
+        }
+      },
+      "fields": {
+        "dj": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6wPXzEMrbx80raVgHWYjOS"
+              }
+            }
+          ]
+        },
+        "title": {
+          "en-US": "Example Episode 1"
+        },
+        "slug": {
+          "en-US": "example-episode-1"
+        },
+        "releaseDate": {
+          "en-US": "2019-04-11"
+        },
+        "brand": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2nQyi1UOLrDhV91kKkIJbw"
+            }
+          }
+        },
+        "description": {
+          "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis."
+        },
+        "trackList": {
+          "en-US": "Producer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]\nProducer feat. Vocalist - Track Name [Mix Name]"
+        },
+        "duration": {
+          "en-US": "00:00:27"
+        },
+        "genre": {
+          "en-US": [
+            "Deep House",
+            "House Music",
+            "Progressive House"
+          ]
+        },
+        "label": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7nGfh6clf0prdJc7drnDR"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "24bwcozeB2o1WfNvjcFXxy"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6WUOG2PAIDPQU7pOvMBZEt"
+              }
+            }
+          ]
+        },
+        "audio": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7mhP8l36JN57SvwgTlQFCN"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "6CGsfWafDZsEpe0xG7ftJP",
+        "type": "Entry",
+        "createdAt": "2020-03-17T07:30:16.521Z",
+        "updatedAt": "2020-03-17T07:35:23.080Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:35:23.080Z",
+        "firstPublishedAt": "2020-03-17T07:35:23.080Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
           }
         },
         "contentType": {
@@ -1263,6 +1137,31 @@
             "Psytrance"
           ]
         },
+        "label": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7nGfh6clf0prdJc7drnDR"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "24bwcozeB2o1WfNvjcFXxy"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6WUOG2PAIDPQU7pOvMBZEt"
+              }
+            }
+          ]
+        },
         "audio": {
           "en-US": {
             "sys": {
@@ -1271,6 +1170,132 @@
               "id": "7mhP8l36JN57SvwgTlQFCN"
             }
           }
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "6WUOG2PAIDPQU7pOvMBZEt",
+        "type": "Entry",
+        "createdAt": "2020-03-17T07:30:17.362Z",
+        "updatedAt": "2020-03-17T07:33:18.050Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:18.050Z",
+        "firstPublishedAt": "2020-03-17T07:30:23.811Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "label"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Ruby Music"
+        },
+        "linkUrl": {
+          "en-US": "https://www.ruby-lang.org/"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "24bwcozeB2o1WfNvjcFXxy",
+        "type": "Entry",
+        "createdAt": "2020-03-17T07:30:17.363Z",
+        "updatedAt": "2020-03-17T07:33:18.984Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2020-03-17T07:33:18.984Z",
+        "firstPublishedAt": "2020-03-17T07:30:24.604Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "label"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Heroku Music"
+        },
+        "linkUrl": {
+          "en-US": "https://www.heroku.com/"
         }
       }
     }
@@ -1287,8 +1312,8 @@
         },
         "id": "5QPtjMlzYtnVLvC7JxMM4l",
         "type": "Asset",
-        "createdAt": "2019-04-01T11:29:11.757Z",
-        "updatedAt": "2019-04-11T10:16:22.394Z",
+        "createdAt": "2020-03-17T07:30:04.913Z",
+        "updatedAt": "2020-03-17T07:33:07.205Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1296,30 +1321,30 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 24,
-        "publishedAt": "2019-04-11T10:16:22.394Z",
-        "firstPublishedAt": "2019-04-01T11:29:44.049Z",
+        "publishedVersion": 5,
+        "publishedAt": "2020-03-17T07:33:07.205Z",
+        "firstPublishedAt": "2020-03-17T07:30:12.384Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "publishedCounter": 2,
-        "version": 25,
+        "version": 6,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
@@ -1329,7 +1354,7 @@
         },
         "file": {
           "en-US": {
-            "url": "//images.ctfassets.net/dku45kq1y9wb/5QPtjMlzYtnVLvC7JxMM4l/efeb1648b9954d67db9139919b97ec6b/the_funk_formula.png",
+            "url": "//images.ctfassets.net/bfsakvlry45q/5QPtjMlzYtnVLvC7JxMM4l/07534e18aed4a671798698276f6ec139/the_funk_formula.png",
             "details": {
               "size": 80602,
               "image": {
@@ -1352,10 +1377,10 @@
             "id": null
           }
         },
-        "id": "7E7nq1Wk6hyaf1vcTVM97Y",
+        "id": "7mhP8l36JN57SvwgTlQFCN",
         "type": "Asset",
-        "createdAt": "2019-04-11T10:16:27.863Z",
-        "updatedAt": "2019-04-11T10:16:59.374Z",
+        "createdAt": "2020-03-17T07:30:04.921Z",
+        "updatedAt": "2020-03-17T07:33:08.011Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1363,49 +1388,48 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 13,
-        "publishedAt": "2019-04-11T10:16:59.374Z",
-        "firstPublishedAt": "2019-04-11T10:16:59.374Z",
+        "publishedVersion": 5,
+        "publishedAt": "2020-03-17T07:33:08.011Z",
+        "firstPublishedAt": "2020-03-17T07:30:13.324Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 14,
+        "publishedCounter": 2,
+        "version": 6,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
       "fields": {
         "title": {
-          "en-US": "Secondary Brand Logo"
+          "en-US": "Sample Audio"
+        },
+        "description": {
+          "en-US": "Length 00:00:27"
         },
         "file": {
           "en-US": {
-            "url": "//images.ctfassets.net/dku45kq1y9wb/7E7nq1Wk6hyaf1vcTVM97Y/1df1e9f48c0dda594816acd126e8087a/ghost_of_disco_past.png",
+            "url": "//assets.ctfassets.net/bfsakvlry45q/7mhP8l36JN57SvwgTlQFCN/f009e5a33d02f581ab73cd8689cca15f/sample_audio.mp3",
             "details": {
-              "size": 17634,
-              "image": {
-                "width": 900,
-                "height": 900
-              }
+              "size": 443926
             },
-            "fileName": "ghost_of_disco_past.png",
-            "contentType": "image/png"
+            "fileName": "sample_audio.mp3",
+            "contentType": "audio/mpeg"
           }
         }
       }
@@ -1419,10 +1443,10 @@
             "id": null
           }
         },
-        "id": "7mhP8l36JN57SvwgTlQFCN",
+        "id": "7E7nq1Wk6hyaf1vcTVM97Y",
         "type": "Asset",
-        "createdAt": "2019-04-11T10:41:51.350Z",
-        "updatedAt": "2019-04-11T10:42:36.497Z",
+        "createdAt": "2020-03-17T07:30:05.080Z",
+        "updatedAt": "2020-03-17T07:33:09.175Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1430,48 +1454,49 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2019-04-11T10:42:36.497Z",
-        "firstPublishedAt": "2019-04-11T10:42:36.497Z",
+        "publishedVersion": 5,
+        "publishedAt": "2020-03-17T07:33:09.175Z",
+        "firstPublishedAt": "2020-03-17T07:30:14.584Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 16,
+        "publishedCounter": 2,
+        "version": 6,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "1uT7CdKKwdKpMXDlNV8TIt"
+            "id": null
           }
         }
       },
       "fields": {
         "title": {
-          "en-US": "Sample Audio"
-        },
-        "description": {
-          "en-US": "Length 00:00:27"
+          "en-US": "Secondary Brand Logo"
         },
         "file": {
           "en-US": {
-            "url": "//assets.ctfassets.net/dku45kq1y9wb/7mhP8l36JN57SvwgTlQFCN/a728251a4cfe7b50845201f1dc1171aa/sample_audio.mp3",
+            "url": "//images.ctfassets.net/bfsakvlry45q/7E7nq1Wk6hyaf1vcTVM97Y/2d0f6605dbf5eb7fa16496a0fe683cb7/ghost_of_disco_past.png",
             "details": {
-              "size": 443926
+              "size": 17634,
+              "image": {
+                "width": 900,
+                "height": 900
+              }
             },
-            "fileName": "sample_audio.mp3",
-            "contentType": "audio/mpeg"
+            "fileName": "ghost_of_disco_past.png",
+            "contentType": "image/png"
           }
         }
       }

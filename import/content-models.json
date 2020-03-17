@@ -11,8 +11,8 @@
         },
         "id": "episode",
         "type": "ContentType",
-        "createdAt": "2017-03-07T08:27:58.485Z",
-        "updatedAt": "2019-04-09T09:54:51.558Z",
+        "createdAt": "2020-03-17T07:28:54.590Z",
+        "updatedAt": "2020-03-17T07:28:58.378Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,9 +20,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 139,
-        "publishedAt": "2019-04-09T09:54:51.558Z",
-        "firstPublishedAt": "2017-03-07T08:27:58.772Z",
+        "publishedVersion": 1,
+        "publishedAt": "2020-03-17T07:28:58.378Z",
+        "firstPublishedAt": "2020-03-17T07:28:58.378Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -37,8 +37,8 @@
             "id": null
           }
         },
-        "publishedCounter": 70,
-        "version": 140,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -314,91 +314,10 @@
             "id": null
           }
         },
-        "id": "author",
-        "type": "ContentType",
-        "createdAt": "2017-03-07T08:44:22.322Z",
-        "updatedAt": "2019-04-10T11:21:24.893Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 49,
-        "publishedAt": "2019-04-10T11:21:24.893Z",
-        "firstPublishedAt": "2017-03-07T08:44:22.643Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": null
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": null
-          }
-        },
-        "publishedCounter": 25,
-        "version": 50,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": null
-          }
-        }
-      },
-      "displayField": "handle",
-      "name": "DJ",
-      "description": "Author of a podcast episode",
-      "fields": [
-        {
-          "id": "handle",
-          "name": "Handle",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "name",
-          "name": "Name",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": null
-          }
-        },
         "id": "label",
         "type": "ContentType",
-        "createdAt": "2017-03-08T08:35:36.741Z",
-        "updatedAt": "2019-04-09T06:05:45.386Z",
+        "createdAt": "2020-03-17T07:28:54.592Z",
+        "updatedAt": "2020-03-17T07:28:59.302Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -406,9 +325,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 19,
-        "publishedAt": "2019-04-09T06:05:45.386Z",
-        "firstPublishedAt": "2017-03-08T08:35:37.096Z",
+        "publishedVersion": 1,
+        "publishedAt": "2020-03-17T07:28:59.302Z",
+        "firstPublishedAt": "2020-03-17T07:28:59.302Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -423,8 +342,8 @@
             "id": null
           }
         },
-        "publishedCounter": 10,
-        "version": 20,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -483,10 +402,10 @@
             "id": null
           }
         },
-        "id": "brand",
+        "id": "author",
         "type": "ContentType",
-        "createdAt": "2017-03-08T12:10:14.461Z",
-        "updatedAt": "2019-09-04T07:22:07.723Z",
+        "createdAt": "2020-03-17T07:28:54.600Z",
+        "updatedAt": "2020-03-17T07:28:59.748Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -494,9 +413,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 143,
-        "publishedAt": "2019-09-04T07:22:07.723Z",
-        "firstPublishedAt": "2017-03-08T12:10:14.950Z",
+        "publishedVersion": 1,
+        "publishedAt": "2020-03-17T07:28:59.748Z",
+        "firstPublishedAt": "2020-03-17T07:28:59.748Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -511,8 +430,89 @@
             "id": null
           }
         },
-        "publishedCounter": 72,
-        "version": 144,
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        }
+      },
+      "displayField": "handle",
+      "name": "DJ",
+      "description": "Author of a podcast episode",
+      "fields": [
+        {
+          "id": "handle",
+          "name": "Handle",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "brand",
+        "type": "ContentType",
+        "createdAt": "2020-03-17T07:28:54.629Z",
+        "updatedAt": "2020-03-17T07:28:58.829Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2020-03-17T07:28:58.829Z",
+        "firstPublishedAt": "2020-03-17T07:28:58.829Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -827,8 +827,8 @@
             "linkType": "Space"
           }
         },
-        "version": 140,
-        "createdAt": "2017-03-07T08:27:59.073Z",
+        "version": 2,
+        "createdAt": "2020-03-17T07:28:58.464Z",
         "createdBy": {
           "sys": {
             "id": null,
@@ -836,7 +836,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2019-04-09T09:54:52.360Z",
+        "updatedAt": "2020-03-17T07:29:00.713Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -971,8 +971,8 @@
             "linkType": "Space"
           }
         },
-        "version": 50,
-        "createdAt": "2017-03-07T08:44:22.851Z",
+        "version": 2,
+        "createdAt": "2020-03-17T07:28:59.383Z",
         "createdBy": {
           "sys": {
             "id": null,
@@ -980,7 +980,66 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2019-04-10T11:21:25.894Z",
+        "updatedAt": "2020-03-17T07:29:00.616Z",
+        "updatedBy": {
+          "sys": {
+            "id": null,
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "label",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Name of the recording label (e.g. 'Defected Records')"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "linkUrl",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": null,
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2020-03-17T07:28:59.833Z",
+        "createdBy": {
+          "sys": {
+            "id": null,
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-03-17T07:29:00.620Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -1033,8 +1092,8 @@
             "linkType": "Space"
           }
         },
-        "version": 20,
-        "createdAt": "2017-03-08T08:35:37.268Z",
+        "version": 2,
+        "createdAt": "2020-03-17T07:28:58.914Z",
         "createdBy": {
           "sys": {
             "id": null,
@@ -1042,66 +1101,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2019-04-09T06:05:46.020Z",
-        "updatedBy": {
-          "sys": {
-            "id": null,
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "label",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "name",
-          "settings": {
-            "helpText": "Name of the recording label (e.g. 'Defected Records')"
-          },
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "linkUrl",
-          "widgetId": "urlEditor",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": null,
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
-        "version": 144,
-        "createdAt": "2017-03-08T12:10:15.091Z",
-        "createdBy": {
-          "sys": {
-            "id": null,
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2019-09-04T07:22:08.521Z",
+        "updatedAt": "2020-03-17T07:29:00.714Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -1276,8 +1276,8 @@
       "optional": false,
       "sys": {
         "type": "Locale",
-        "id": "6oQ3cqAQiWof9N7kHoukui",
-        "version": 0,
+        "id": "2rlDuHlRUQYkJnkXhmT0BV",
+        "version": 2,
         "space": {
           "sys": {
             "type": "Link",
@@ -1299,7 +1299,7 @@
             "id": null
           }
         },
-        "createdAt": "2017-03-02T14:52:46Z",
+        "createdAt": "2020-03-17T07:17:41Z",
         "updatedBy": {
           "sys": {
             "type": "Link",
@@ -1307,7 +1307,7 @@
             "id": null
           }
         },
-        "updatedAt": "2017-03-02T14:52:46Z"
+        "updatedAt": "2020-03-17T07:28:53Z"
       }
     }
   ]
