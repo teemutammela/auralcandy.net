@@ -54,11 +54,11 @@ module Sinatra
               },
               {
                 :title => "About",
-                :url    => "#about"
+                :url   => "#about"
               },
               {
                 :title => "Contact",
-                :url    => "#contact"
+                :url   => "#contact"
               },
               {
                 :title => "Donate",

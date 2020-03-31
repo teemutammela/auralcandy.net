@@ -39,7 +39,7 @@ module Sinatra
       # Get episodes using requested options and wrap them as 'Episode' objects
       def get_episodes(options)
 
-        # Set default options unless defined in options hash
+        # Set default options unless defined in the options hash
         options[:content_type] = "episode"
         options[:include]      = 2 unless options.key?(:include)
         options[:order]        = "-fields.releaseDate" unless options.key?(:order)

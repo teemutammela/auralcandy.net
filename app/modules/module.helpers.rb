@@ -25,7 +25,7 @@ module Sinatra
         coder.render(string).html_safe
       end
 
-      # Strip Markdown to plain text and removes links
+      # Strip Markdown to plain text and remove links
       def st(string)
         coder = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
         coder.render(string).html_safe.gsub(/(\(?:f|ht)tps?:\/[^\s]+\)/, "").gsub(" (", "")
