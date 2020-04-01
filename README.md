@@ -2,7 +2,7 @@
 
 This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is **tailored to our needs** - it's **not a generic, turn-key podcast platform**. This source code is released for **educational purposes** for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
 
-This source code can be used for **non-commericial purposes only**. Any commercial use of this source code requires **explicit permission** from the author. This application comes with **absolutely no warranty**. The author assumes no responsibility of data loss or any other unintended side-effect.
+This source code is distributed under [Unlicense](https://unlicense.org/) and can be used for **non-commericial purposes only**. Any commercial use of this source code requires **explicit permission** from the author. This application comes with **absolutely no warranty**. The author assumes no responsibility of data loss or any other unintended side-effect.
 
 ## Author
 
