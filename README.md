@@ -41,28 +41,28 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-18` stack)
 	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) unit tests
 
-* __Mobile-friendly responsive layout__
+* __Mobile Friendly Responsive Layout__
 	* Built with [Bootstrap 4](http://getbootstrap.com/)
 	* Vector icons by [Fontawesome 5](https://fontawesome.com/)
 	* [WebP](https://developers.google.com/speed/webp/) image support on [Chromium](https://www.chromium.org/) based browsers (JPEG fallback for Firefox, Safari etc.)
 
-* __Episode search__
+* __Episode Search__
 	* Search by brand and genre
 	* Pagination and variable items per page
 	* Sort by title and date
 
-* __Embedded media player__
+* __Embedded Media Player__
 	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
 	* Continuous playback between page loads __1)__
 
-* __Episode landing pages__
+* __Episode Landing Pages__
 	* Episode description
 	* Genre tags (as defined in [MusicRecording](http://schema.org/MusicRecording) schema)
 	* Track listing
 	* Related recording labels
 	* Related episodes
 
-* __RSS/XML feed__
+* __RSS/XML Feed__
 	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
 	* Episode descriptions
 	* Episode images (as defined in iTunes Podcast DTD)
