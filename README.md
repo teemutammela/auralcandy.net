@@ -216,10 +216,10 @@ Configuration for `development` and `production` environments is set in `app/app
 
 | Directory			| Description																																						|
 |---------------|---------------------------------------------------------------------------------------|
-| `app/assets`	| JavaScript as SASS files.																															|
+| `app/assets`	| JavaScripts and SASS stylesheets.																											|
 | `app/classes`	| Classes for wrapping content objects.																									|
 | `app/modules`	| Modules for handling routes, shared defaults, content queries and generic helpers.	 	|
-| `app/public`	| Static files (images, compiled JavaScript and CSS files etc.).												|
+| `app/public`	| Static files (images, compiled JavaScripts and CSS stylesheets etc.).									|
 | `app/views`		| ERB view templates and partials.																											|
 
 ### Modules
@@ -228,7 +228,7 @@ Modules are included and registered in `app/app.rb`. Modules follow Sinatra's st
 
 | Module								| Description																																		|
 |-----------------------|-------------------------------------------------------------------------------|
-| `module.client.rb` 		| Contentful client.																														|
+| `module.client.rb` 		| Contentful Delivery API client.																								|
 | `module.defaults.rb`	| Shared defaults (brands, genres, search form parameters and footer).					|
 | `module.helpers.rb`		| Generic helpers, mostly for parsing strings for various purposes.							|
 | `module.legacy.rb`		| Legacy redirections __1)__.																										|
