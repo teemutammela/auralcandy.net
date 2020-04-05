@@ -21,8 +21,16 @@ module Sinatra
 
       # Convert Markdown to HTML
       def md(string)
-        coder = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: false, tables: true, escape_html: false)
+
+        coder = Redcarpet::Markdown.new(
+        	Redcarpet::Render::HTML,
+        	:autolink    => false,
+        	:tables			 => true,
+        	:escape_html => false
+        )
+
         coder.render(string).html_safe
+
       end
 
       # Strip Markdown to plain text and remove links
