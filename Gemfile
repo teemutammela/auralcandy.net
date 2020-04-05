@@ -11,7 +11,7 @@ gem "rack-test", "1.1.0"
 gem "rack-cache", "1.11.0"
 gem "rack-protection", "2.0.8.1"
 gem "contentful", "2.15.2"
-gem "activesupport", "6.0.2.1"
+gem "activesupport", "6.0.2.2"
 gem "redcarpet", "3.5.0"
 gem "json", "2.3.0"
 gem "rerun", "0.13.0", require: false
