@@ -94,7 +94,12 @@ module Sinatra
 
         # Page not found
         app.not_found do
-          erb :not_found, :locals => {:title => "404 Not Found", :message => "The content you are looking for was not found."}
+
+          erb :not_found, :locals => {
+            :title    => "404 Not Found",
+            :message  => "The content you are looking for was not found."
+          }
+
         end
 
       end

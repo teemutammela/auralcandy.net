@@ -11,7 +11,13 @@ module Sinatra
 
           # Attempt to query brands and catch errors for invalid API key or space ID
           begin
-            defaults = $client.entries(:content_type => "brand", :include => 2, "fields.default" => true)
+
+            defaults = $client.entries(
+              :content_type     => "brand",
+              :include          => 2,
+              "fields.default"  => true
+            )
+
           rescue
             halt 500, "Unable to connect to Contentful Delivery API. Most likely invalid API key or space ID."
           end

@@ -28,9 +28,11 @@ module Sinatra
         genres = Hash.new
 
         # Extract genres from the 'Episode' content type's validation rules
-        $client.content_type("episode").fields.select { |field| field.id == 'genre'}.first.items.raw["validations"].first["in"].each do |genre|
+        $client.content_type("episode").fields.select { |field|
+          field.id == 'genre'
+        }.first.items.raw["validations"].first["in"].each { |genre|
           genres[parse_genre(genre)] = genre
-        end
+        }
 
         return genres
 
@@ -40,9 +42,9 @@ module Sinatra
       def get_episodes(options)
 
         # Set default options unless defined in the options hash
-        options[:content_type] = "episode"
-        options[:include]      = 2 unless options.key?(:include)
-        options[:order]        = "-fields.releaseDate" unless options.key?(:order)
+        options[:content_type]  = "episode"
+        options[:include]       = 2 unless options.key?(:include)
+        options[:order]         = "-fields.releaseDate" unless options.key?(:order)
 
         get_objects("Episode", options)
 

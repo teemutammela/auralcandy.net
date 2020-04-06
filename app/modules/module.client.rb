@@ -13,7 +13,10 @@ module Sinatra
       begin
 
         # NOTE! It's possible to initialize client with invalid API key and/or space ID
-        $client = Contentful::Client.new(:access_token => ENV["CONTENTFUL_DELIVERY_KEY"], :space => ENV["CONTENTFUL_SPACE_ID"])
+        $client = Contentful::Client.new(
+          :access_token => ENV["CONTENTFUL_DELIVERY_KEY"],
+          :space        => ENV["CONTENTFUL_SPACE_ID"]
+        )
 
       rescue
         halt 500, "Unable to initialize Contentful Delivery API client."

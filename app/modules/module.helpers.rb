@@ -24,9 +24,9 @@ module Sinatra
 
         coder = Redcarpet::Markdown.new(
         	Redcarpet::Render::HTML,
-        	:autolink    => false,
-        	:tables			 => true,
-        	:escape_html => false
+        	:autolink     => false,
+        	:tables       => true,
+        	:escape_html  => false
         )
 
         coder.render(string).html_safe
