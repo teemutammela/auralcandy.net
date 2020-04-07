@@ -34,7 +34,7 @@ module Sinatra
 
           # Set base URL (force HTTPS in production mode)
           $base_url = request.base_url
-          $base_url.sub!("http://", "https://") unless settings.development?
+          $base_url = $base_url.sub("http://", "https://") unless settings.development?
 
           # RSS subscription URL (opens default client)
           $subscribe_url = "pcast://#{request.host_with_port}/podcast"
