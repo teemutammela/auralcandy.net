@@ -12,7 +12,7 @@ module Sinatra
           # Attempt to query brands and catch errors for invalid API key or space ID
           begin
 
-            defaults = $client.entries(
+            defaults = $delivery.entries(
               :content_type     => "brand",
               :include          => 2,
               "fields.default"  => true
@@ -90,6 +90,8 @@ module Sinatra
                   :options => [
                     ["Latest &rarr; Eldest".html_safe, "date-desc"],
                     ["Eldest &rarr; Latest".html_safe, "date-asc"],
+                    ["Most Popular &rarr; Least Popular".html_safe, "popularity-desc"],
+                    ["Least Popular &rarr; Most Popular".html_safe, "popularity-asc"],
                     ["Title A &rarr; Z".html_safe, "title-asc"],
                     ["Title Z &rarr; A".html_safe, "title-desc"]
                   ]

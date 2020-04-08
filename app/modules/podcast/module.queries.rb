@@ -6,7 +6,7 @@ module Sinatra
 
       # Query entries and wrap them as requested objects
       def get_objects(wrapper, options)
-        $client.entries(options).to_a.map { |item| wrapper.constantize.new(item) }
+        $delivery.entries(options).to_a.map { |item| wrapper.constantize.new(item) }
       end
 
       # Get all brands and wrap them as 'Brand' objects
@@ -28,7 +28,7 @@ module Sinatra
         genres = Hash.new
 
         # Extract genres from the 'Episode' content type's validation rules
-        $client.content_type("episode").fields.select { |field|
+        $delivery.content_type("episode").fields.select { |field|
           field.id == 'genre'
         }.first.items.raw["validations"].first["in"].each { |genre|
           genres[parse_genre(genre)] = genre
@@ -61,7 +61,7 @@ module Sinatra
         }
 
         # Query single episode with first matching slug
-        episode = $client.entries(options).first
+        episode = $delivery.entries(options).first
 
         # Parse to object or halt if not found
         halt 404 if episode.nil?
@@ -82,14 +82,14 @@ module Sinatra
         }
 
         # Query slugs and map to array
-        $client.entries(options).map { |episode| episode.fields[:slug] }
+        $delivery.entries(options).map { |episode| episode.fields[:slug] }
 
       end
 
       # Get a single episode by ID and wrap as 'Episode' object, halt if not found
       def get_episode_by_id(id)
 
-        episode = $client.entry(id, include: 2)
+        episode = $delivery.entry(id, include: 2)
         halt 404 if episode.nil?
         episode = Episode.new(episode)
 
@@ -108,10 +108,12 @@ module Sinatra
 
         # Allowed sorting methods
         sort = {
-          "date-desc"  => "-fields.releaseDate",
-          "date-asc"   => "fields.releaseDate",
-          "title-desc" => "-fields.title",
-          "title-asc"  => "fields.title"
+          "date-desc"       => "-fields.releaseDate",
+          "date-asc"        => "fields.releaseDate",
+          "popularity-desc" => "-fields.downloads",
+          "popularity-asc"  => "fields.downloads",
+          "title-desc"      => "-fields.title",
+          "title-asc"       => "fields.title"
         }
 
         # Query options (limit, ordering method)
@@ -140,7 +142,7 @@ module Sinatra
         # Query episodes, get total sum of episodes, pass parameters back for pagination link
         return results = {
           :episodes => get_episodes(options),
-          :pages    => ($client.entries(options.merge!(:content_type => "episode")).total / options[:limit].to_f).ceil,
+          :pages    => ($delivery.entries(options.merge!(:content_type => "episode")).total / options[:limit].to_f).ceil,
           :page_url => create_page_url(brand, genre, limit, order, id)
         }
 
