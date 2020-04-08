@@ -1,7 +1,7 @@
 class Episode
 
   # Accessible properties
-  attr_accessor :id, :published, :updated, :dj, :title, :slug, :brand, :description, :track_list, :duration, :genre, :labels, :image_url, :audio_url, :file_size
+  attr_accessor :id, :published, :updated, :dj, :title, :slug, :brand, :description, :track_list, :duration, :genre, :labels, :image_url, :audio_url, :file_size, :downloads
 
   # Initialize properties
   def initialize(entry)
@@ -22,6 +22,7 @@ class Episode
     @image_url    = (entry.fields[:image] ? "https:" + entry.fields[:image].url : @brand.image_url)
     @audio_url    = "https:" + entry.fields[:audio].url
     @file_size    = entry.fields[:audio].file.details["size"].to_i
+    @downloads    = entry.fields[:downloads]
 
   end
 
