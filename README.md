@@ -30,7 +30,8 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 * [Application Structure](#application-structure)
 	* [Modules](#modules)
 	* [Content Models & Classes](#content-models-classes)
-* [Testing](#testing)
+* [Importing Chartable Downloads](#importing-chartable-downloads)
+* [Unit Testing](#unit-testing)
 
 ## Features
 
@@ -49,7 +50,7 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 * __Episode Search__
 	* Search by brand and genre
 	* Pagination and variable items per page
-	* Sort by title and date
+	* Sort by date, title or popularity (requires Chartable integration)
 
 * __Embedded Media Player__
 	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
@@ -70,8 +71,9 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 	* Track listing
 	* Related recording labels
 
-* __Statistics__
-  * Download tracking via [Chartable](http://chartable.com) (optional)
+* __Statistics (Optional)__
+  * Download tracking via [Chartable](http://chartable.com)
+  * Import Chartable download count to Contentful
 
 * __Search Engine Optimization__
 	* Machine-readable [microdata schemas](https://schema.org/)
@@ -132,42 +134,63 @@ $ contentful space import --content-file import/content-models.json
 $ contentful space import --content-file import/example-content.json
 ```
 
-**NOTE!** Unit tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces (e.g. `Production` and `Testing`) and keep the unmodified example content in the latter.
+**NOTE!** Unit tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
 
 ## Deployment
 
-Contentful Delivery API key and Space ID must be set as environment variables. In production, environment variables are set via the application settings in [Heroku dashboard](https://dashboard.heroku.com/apps/). In Contentful Web App, the API keys are managed via _Space settings → API keys_.
+Contentful API keys, space ID and Chartable credentials must be set as environment variables.
 
-**NOTE!** [Chartable](https://chartable.com/) ID is optional; It can be set for neither or both (local and production) environments. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+```shell
+$ export VARIABLE_NAME=variable_value
+$ source ~/.bashrc
+```
+
+On Heroku environment variables, also known as _Config Vars_, can be set either via the [Dashboard](https://dashboard.heroku.com/apps/) or via [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+```shell
+$ heroku config:set VARIABLE_NAME=variable_value
+```
+
+| Variable Name               | Description                                                 |
+|-----------------------------|-------------------------------------------------------------|
+| `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content)                     |
+| `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key                                 |
+| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key **1)**                        |
+| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`) **1)**          |
+| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`) **1)** |
+| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token **1)** **2)**                 |
+| `CHARTBLE_ID`               | Chartable link ID (e.g. `1234`) **3)**                      |
+
+**1)** Required only by the [Chartable](https://chartable.com/) import functionality.
+
+**2)** Chartable does not officially offer a public API, but it possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open Developer Tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
+
+**3)** Chartable link ID is optional.If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
 ### Development (Local)
 
+**1)** Start the application via the `rackup` command. Application is now running at [http://localhost:9292](http://localhost:9292).
+
 ```shell
-$ export CONTENTFUL_DELIVERY_KEY=xyz123
-$ export CONTENTFUL_SPACE_ID=xyz123
-$ export CHARTABLE_ID=xyz123
-$ source ~/.bashrc
 $ rackup -p 9292
 ```
 
-Application is now running at [http://localhost:9292](http://localhost:9292).
-
-Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
+**2)** Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
 
 ```shell
 $ rerun rackup
 ```
 
-Default environment is `development`. Set production environment via the `APP_ENV` variable.
+**3)** Default environment is `development`. Set production environment via the `APP_ENV` variable.
 
 ```shell
 $ export APP_ENV=production
 ```
 
-**NOTE!** Global variable `$base_url` (set in `app/modules/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/module.defaults.rb`.
+**NOTE!** Global variable `$base_url` (set in `app/modules/podcast/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/module.defaults.rb`.
 
 ```ruby
-$base_url.sub!("http://", "https://") unless settings.development?
+$base_url = $base_url.sub("http://", "https://") unless settings.development?
 ```
 
 ### Production (Heroku)
@@ -218,7 +241,7 @@ Configuration for `development` and `production` environments is set in `app/app
 |---------------|---------------------------------------------------------------------------------------|
 | `app/assets`	| JavaScripts and SASS stylesheets.																											|
 | `app/classes`	| Classes for wrapping content objects.																									|
-| `app/modules`	| Modules for handling routes, shared defaults, content queries and generic helpers.	 	|
+| `app/modules`	| Contentful clients, Chartable functionality and application modules.	 	              |
 | `app/public`	| Static files (images, compiled JavaScripts and CSS stylesheets etc.).									|
 | `app/views`		| ERB view templates and partials.																											|
 
@@ -226,16 +249,18 @@ Configuration for `development` and `production` environments is set in `app/app
 
 Modules are included and registered in `app/app.rb`. Modules follow Sinatra's standard [modular extensions](http://sinatrarb.com/extensions.html) pattern.
 
-| Module								| Description																																		|
-|-----------------------|-------------------------------------------------------------------------------|
-| `module.client.rb` 		| Contentful Delivery API client.																								|
-| `module.defaults.rb`	| Shared defaults (brands, genres, search form parameters and footer).					|
-| `module.helpers.rb`		| Generic helpers, mostly for parsing strings for various purposes.							|
-| `module.legacy.rb`		| Legacy redirections __1)__.																										|
-| `module.queries.rb`		| Query content from Contentful and wrap it to objects (registered as helpers).	|
-| `module.routing.rb`		| Route and URL parameter handling.																							|
+| Module								            | Description																																		|
+|-----------------------------------|-------------------------------------------------------------------------------|
+| `contentful/module.delivery.rb`   | Contentful Delivery API client.																								|
+| `contentful/module.management.rb` | Contentful Management API client.																							|
+| `chartable/module.chartable.rb`   | Chartable functionality.																					            |
+| `podcast/module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
+| `podcast/module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
+| `podcast/module.legacy.rb`        | Legacy redirections __1)__.																										|
+| `podcast/module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
+| `podcast/module.routing.rb`       | Route and URL parameter handling.																							|
 
-__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/module.legacy.rb`.
+__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
 
 ```ruby
 require_relative("modules/module.legacy.rb")
@@ -254,7 +279,15 @@ Classes are included in `app/app.rb`. Classes are wrappers for corresponding Con
 | `Episode`			| `episode`			| `class.episode.rb`	| Podcast episode																		 	|
 | `Label`				| `label`				| `class.label.rb`		| Recording label related to an episode		           	|
 
-## Testing
+## Importing Chartable Downloads
+
+Run the dedicated [Rake](https://github.com/ruby/rake) task to import download statistics from Chartable. On Heroku it's recommended to execute the task daily via the free [Heroku Scheduler](https://elements.heroku.com/addons/scheduler) add-on.
+
+```shell
+$ rake chartable:import
+```
+
+## Unit Testing
 
 Perform unit tests for all routes defined in `module.routing.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library.
 

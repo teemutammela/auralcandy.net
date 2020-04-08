@@ -1,4 +1,3 @@
-# Gems
 require "test/unit"
 require "rack/test"
 require "optparse"
