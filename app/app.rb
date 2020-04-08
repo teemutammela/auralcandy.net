@@ -1,4 +1,3 @@
-# Gems
 require "sinatra/base"
 require "sinatra/multi_route"
 require "sinatra/partial"
@@ -14,14 +13,14 @@ require "redcarpet/render_strip"
 require "json"
 
 # Modules
-require_relative("modules/module.client.rb")
-require_relative("modules/module.defaults.rb")
-require_relative("modules/module.helpers.rb")
-require_relative("modules/module.queries.rb")
-require_relative("modules/module.routing.rb")
+require_relative("modules/contentful/module.delivery.rb")
+require_relative("modules/podcast/module.defaults.rb")
+require_relative("modules/podcast/module.helpers.rb")
+require_relative("modules/podcast/module.queries.rb")
+require_relative("modules/podcast/module.routing.rb")
 
 # Legacy handlers (safe to remove)
-require_relative("modules/module.legacy.rb")
+require_relative("modules/podcast/module.legacy.rb")
 
 # Object wrapper classes
 require_relative("classes/class.brand.rb")
@@ -32,11 +31,11 @@ require_relative("classes/class.label.rb")
 # Main application
 class Podcast < Sinatra::Base
 
+  register Contentful::Delivery
   register Sinatra::MultiRoute
-  register Sinatra::Podcast::Client
   register Sinatra::Podcast::Defaults
   register Sinatra::Podcast::Routing
-  register Sinatra::Podcast::Legacy   # Safe to remove (remove 'require_relative("modules/module.legacy.rb")' first)
+  register Sinatra::Podcast::Legacy # Safe to remove
   register Sinatra::Partial
   register Padrino::Helpers
 
