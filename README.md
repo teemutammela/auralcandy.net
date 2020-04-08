@@ -2,7 +2,7 @@
 
 This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is __tailored to our needs__ - it's __not a generic, turn-key podcast platform__. This source code is released for __educational purposes__ for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
 
-This source code is distributed under [Unlicense](https://unlicense.org/) and can be used for __non-commericial purposes only__. Any commercial use of this source code requires __explicit permission__ from the author. This application comes with __absolutely no warranty__. The author assumes no responsibility of data loss or any other unintended side-effect.
+This source code is distributed under [Unlicense](https://unlicense.org/) and can be used for __non-commericial purposes only__. Any commercial use of this source code requires __explicit permission__ from the author. This application comes with __absolutely no warranty__. The author assumes no responsibility of data loss or any other unintended side-effects.
 
 ## Author
 
@@ -281,7 +281,7 @@ Classes are included in `app/app.rb`. Classes are wrappers for corresponding Con
 
 ## Importing Chartable Downloads
 
-Run the dedicated [Rake](https://github.com/ruby/rake) task to import download statistics from Chartable. On Heroku it's recommended to execute the task daily via the free [Heroku Scheduler](https://elements.heroku.com/addons/scheduler) add-on.
+Run the dedicated [Rake](https://github.com/ruby/rake) task to import download statistics from Chartable. On Heroku it's recommended to execute the task daily via the free [Scheduler](https://elements.heroku.com/addons/scheduler) add-on.
 
 ```shell
 $ rake chartable:import
