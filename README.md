@@ -35,7 +35,7 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 
 ## Features
 
-* __Technology Stack__
+* **Technology Stack__
 	* Built upon the [Sinatra](http://www.sinatrarb.com/) framework
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
@@ -54,9 +54,9 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 
 * __Embedded Media Player__
 	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
-	* Continuous playback between page loads __1)__
+	* Continuous playback between page loads __1)**
 
-* __Episode Landing Pages__
+* **Episode Landing Pages__
 	* Episode description
 	* Genre tags (as defined in [MusicRecording](http://schema.org/MusicRecording) schema)
 	* Track listing
@@ -71,11 +71,11 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 	* Track listing
 	* Related recording labels
 
-* __Statistics (Optional)__
+* __Statistics (Optional)**
   * Download tracking via [Chartable](http://chartable.com)
   * Import Chartable download count to Contentful
 
-* __Search Engine Optimization__
+* **Search Engine Optimization__
 	* Machine-readable [microdata schemas](https://schema.org/)
 	* [Sitemap XML](https://en.wikipedia.org/wiki/Sitemaps)
 	* [Web Application Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
@@ -92,7 +92,7 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 	* [Valid CSS3](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.auralcandy.net%2F&profile=css3svg&usermedium=all&warning=no&vextwarning=&lang=en)
 	* [Valid RSS 2.0](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.auralcandy.net%2Fpodcast)
 
-__1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details. Some browsers like [Brave](https://brave.com/) will require explicit permission from user to allow autoplay.
+__1)** Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details. Some browsers like [Brave](https://brave.com/) will require explicit permission from user to allow autoplay.
 
 ## Requirements
 
@@ -151,21 +151,21 @@ On Heroku environment variables, also known as _Config Vars_, can be set either 
 $ heroku config:set VARIABLE_NAME=variable_value
 ```
 
-| Variable Name               | Description                                                 |
-|-----------------------------|-------------------------------------------------------------|
-| `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content)                     |
-| `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key                                 |
-| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key **1)**                        |
-| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`) **1)**          |
-| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`) **1)** |
-| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token **1)** **2)**                 |
-| `CHARTBLE_ID`               | Chartable link ID (e.g. `123XY`) **3)**                     |
+| Variable Name               | Description                                                  |
+|-----------------------------|--------------------------------------------------------------|
+| `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content).                     |
+| `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key.                                 |
+| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key. **1)**                        |
+| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). **1)**          |
+| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). **1)** |
+| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. **1)** **2)**                 |
+| `CHARTBLE_ID`               | Chartable link ID (e.g. `123XY`). **3)**                     |
 
 **1)** Required only by the [Chartable](https://chartable.com/) import functionality.
 
 **2)** Chartable does not officially offer a public API, but it possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open Developer Tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
 
-**3)** Chartable link ID is optional.If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+**3)** Chartable link ID is optional. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
 ### Development (Local)
 
@@ -253,14 +253,14 @@ Modules are included and registered in `app/app.rb`. Modules follow Sinatra's st
 |-----------------------------------|-------------------------------------------------------------------------------|
 | `contentful/module.delivery.rb`   | Contentful Delivery API client.																								|
 | `contentful/module.management.rb` | Contentful Management API client.																							|
-| `chartable/module.chartable.rb`   | Chartable functionality.																					            |
+| `chartable/module.chartable.rb`   | Chartable download count import.																					    |
 | `podcast/module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
 | `podcast/module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
-| `podcast/module.legacy.rb`        | Legacy redirections __1)__.																										|
+| `podcast/module.legacy.rb`        | Legacy redirections **1)**.																										|
 | `podcast/module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
 | `podcast/module.routing.rb`       | Route and URL parameter handling.																							|
 
-__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
+**1)** Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
 
 ```ruby
 require_relative("modules/module.legacy.rb")
@@ -272,12 +272,12 @@ register Sinatra::Podcast::Legacy
 
 Classes are included in `app/app.rb`. Classes are wrappers for corresponding Contentful content models. Classes are used for formatting field values, handling related content by wrapping them with appropriate classes, adding helper methods as object properties and defining the accessible properties of said class.
 
-| Content Model	| Contentful ID	| Class								| Description																				 	|
-|---------------|---------------|---------------------|-----------------------------------------------------|
-| `Brand`				| `brand`				| `class.brand.rb`		| Podcast brand (used also for site default settings)	|
-| `DJ`					| `author`			| `class.dj.rb`				| Author DJ of a podcast episode											|
-| `Episode`			| `episode`			| `class.episode.rb`	| Podcast episode																		 	|
-| `Label`				| `label`				| `class.label.rb`		| Recording label related to an episode		           	|
+| Content Model	| Contentful ID	| Class								| Description                                           |
+|---------------|---------------|---------------------|-------------------------------------------------------|
+| `Brand`				| `brand`				| `class.brand.rb`		| Podcast brand (used also for site default settings).  |
+| `DJ`					| `author`			| `class.dj.rb`				| Author DJ of a podcast episode.											  |
+| `Episode`			| `episode`			| `class.episode.rb`	| Podcast episode.																		 	|
+| `Label`				| `label`				| `class.label.rb`		| Recording label related to an episode.		           	|
 
 ## Importing Chartable Downloads
 
@@ -293,11 +293,11 @@ Perform unit tests for all routes defined in `module.routing.rb` using the [Rack
 
 ### Parameters
 
-| Long						| Short		| Description																				 	|
-|-----------------|---------|-----------------------------------------------------|
-| `--key`					| `-k`		| Contentful Delivery API key								 	 			 	|
-| `--space`				| `-s`		| Contentful space ID																 	|
-| `--environment`	| `-e`		| Sinatra environment (`development` or `production`)	|
+| Long						| Short		| Description                                          |
+|-----------------|---------|------------------------------------------------------|
+| `--key`					| `-k`		| Contentful Delivery API key.                         |
+| `--space`				| `-s`		| Contentful space ID.                                 |
+| `--environment`	| `-e`		| Sinatra environment (`development` or `production`). |
 
 ```shell
 $ ruby app/test/unit_tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
