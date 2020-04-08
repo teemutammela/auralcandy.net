@@ -159,7 +159,7 @@ $ heroku config:set VARIABLE_NAME=variable_value
 | `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). **1)**          |
 | `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). **1)** |
 | `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. **1)** **2)**                 |
-| `CHARTBLE_ID`               | Chartable link ID (e.g. `123XY`). **3)**                     |
+| `CHARTABLE_ID`              | Chartable link ID (e.g. `123XY`). **3)**                     |
 
 **1)** Required only by the [Chartable](https://chartable.com/) import functionality.
 
