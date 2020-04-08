@@ -1,12 +1,12 @@
 # AuralCandy.Net - Premium House Music Podcast
 
-This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is **tailored to our needs** - it's **not a generic, turn-key podcast platform**. This source code is released for **educational purposes** for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
+This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is __tailored to our needs__ - it's __not a generic, turn-key podcast platform__. This source code is released for __educational purposes__ for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
 
-This source code is distributed under [Unlicense](https://unlicense.org/) and can be used for **non-commericial purposes only**. Any commercial use of this source code requires **explicit permission** from the author. This application comes with **absolutely no warranty**. The author assumes no responsibility of data loss or any other unintended side-effect.
+This source code is distributed under [Unlicense](https://unlicense.org/) and can be used for __non-commericial purposes only__. Any commercial use of this source code requires __explicit permission__ from the author. This application comes with __absolutely no warranty__. The author assumes no responsibility of data loss or any other unintended side-effect.
 
 ## Author
 
-**Teemu Tammela**
+__Teemu Tammela__
 
 * [teemu.tammela@auralcandy.net](mailto:teemu.tammela@auralcandy.net)
 * [www.auralcandy.net](https://www.auralcandy.net/)
@@ -35,7 +35,7 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 
 ## Features
 
-* **Technology Stack__
+* __Technology Stack__
 	* Built upon the [Sinatra](http://www.sinatrarb.com/) framework
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
@@ -54,9 +54,9 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 
 * __Embedded Media Player__
 	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
-	* Continuous playback between page loads __1)**
+	* Continuous playback between page loads __1)__
 
-* **Episode Landing Pages__
+* __Episode Landing Pages__
 	* Episode description
 	* Genre tags (as defined in [MusicRecording](http://schema.org/MusicRecording) schema)
 	* Track listing
@@ -71,11 +71,11 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 	* Track listing
 	* Related recording labels
 
-* __Statistics (Optional)**
+* __Statistics (Optional)__
   * Download tracking via [Chartable](http://chartable.com)
   * Import Chartable download count to Contentful
 
-* **Search Engine Optimization__
+* __Search Engine Optimization__
 	* Machine-readable [microdata schemas](https://schema.org/)
 	* [Sitemap XML](https://en.wikipedia.org/wiki/Sitemaps)
 	* [Web Application Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
@@ -92,7 +92,7 @@ This source code is distributed under [Unlicense](https://unlicense.org/) and ca
 	* [Valid CSS3](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.auralcandy.net%2F&profile=css3svg&usermedium=all&warning=no&vextwarning=&lang=en)
 	* [Valid RSS 2.0](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.auralcandy.net%2Fpodcast)
 
-__1)** Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details. Some browsers like [Brave](https://brave.com/) will require explicit permission from user to allow autoplay.
+__1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) documentation for further details. Some browsers like [Brave](https://brave.com/) will require explicit permission from user to allow autoplay.
 
 ## Requirements
 
@@ -107,7 +107,7 @@ __1)** Unless prevented by browser autoplay policy. See [Media Engagement Index]
 
 ## Installation
 
-**1)** Clone or fork the repository and install the required Ruby gems listed in `Gemfile` via Bundler.
+__1)__ Clone or fork the repository and install the required Ruby gems listed in `Gemfile` via Bundler.
 
 ```shell
 $ git clone https://github.com/teemutammela/auralcandy.net.git
@@ -115,26 +115,26 @@ $ cd auralcandy.net
 $ bundle install
 ```
 
-**2)** Login to [Contentful CLI](https://github.com/contentful/contentful-cli) and select the target space.
+__2)__ Login to [Contentful CLI](https://github.com/contentful/contentful-cli) and select the target space.
 
 ```shell
 $ contentful login
 $ contentful space use
 ```
 
-**3)** Import content models to target space.
+__3)__ Import content models to target space.
 
 ```shell
 $ contentful space import --content-file import/content-models.json
 ```
 
-**4)** Import example content to target space.
+__4)__ Import example content to target space.
 
 ```shell
 $ contentful space import --content-file import/example-content.json
 ```
 
-**NOTE!** Unit tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
+__NOTE!__ Unit tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
 
 ## Deployment
 
@@ -155,39 +155,39 @@ $ heroku config:set VARIABLE_NAME=variable_value
 |-----------------------------|--------------------------------------------------------------|
 | `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content).                     |
 | `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key.                                 |
-| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key. **1)**                        |
-| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). **1)**          |
-| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). **1)** |
-| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. **1)** **2)**                 |
-| `CHARTABLE_ID`              | Chartable link ID (e.g. `123XY`). **3)**                     |
+| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key. __1)__                        |
+| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). __1)__          |
+| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). __1)__ |
+| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. __1)__ __2)__                 |
+| `CHARTABLE_ID`              | Chartable link ID (e.g. `123XY`). __3)__                     |
 
-**1)** Required only by the [Chartable](https://chartable.com/) import functionality.
+__1)__ Required only by the [Chartable](https://chartable.com/) import functionality.
 
-**2)** Chartable does not officially offer a public API, but it possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open Developer Tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
+__2)__ Chartable does not officially offer a public API, but it possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open Developer Tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
 
-**3)** Chartable link ID is optional. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+__3)__ Chartable link ID is optional. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
 ### Development (Local)
 
-**1)** Start the application via the `rackup` command. Application is now running at [http://localhost:9292](http://localhost:9292).
+__1)__ Start the application via the `rackup` command. Application is now running at [http://localhost:9292](http://localhost:9292).
 
 ```shell
 $ rackup -p 9292
 ```
 
-**2)** Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
+__2)__ Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
 
 ```shell
 $ rerun rackup
 ```
 
-**3)** Default environment is `development`. Set production environment via the `APP_ENV` variable.
+__3)__ Default environment is `development`. Set production environment via the `APP_ENV` variable.
 
 ```shell
 $ export APP_ENV=production
 ```
 
-**NOTE!** Global variable `$base_url` (set in `app/modules/podcast/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/module.defaults.rb`.
+__NOTE!__ Global variable `$base_url` (set in `app/modules/podcast/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/module.defaults.rb`.
 
 ```ruby
 $base_url = $base_url.sub("http://", "https://") unless settings.development?
@@ -195,16 +195,16 @@ $base_url = $base_url.sub("http://", "https://") unless settings.development?
 
 ### Production (Heroku)
 
-**1)** Create a new Heroku application via the [dashboard](https://dashboard.heroku.com/apps).
+__1)__ Create a new Heroku application via the [dashboard](https://dashboard.heroku.com/apps).
 
-**2)** Login to Heroku and associate the repository with the Heroku application.
+__2)__ Login to Heroku and associate the repository with the Heroku application.
 
 ```shell
 $ heroku login
 $ heroku git:remote -a <APP_NAME>
 ```
 
-**3)** Deploy commits to production by pushing to Heroku master repository.
+__3)__ Deploy commits to production by pushing to Heroku master repository.
 
 ```shell
 $ git push heroku master
@@ -212,7 +212,7 @@ $ git push heroku master
 
 The default URL of the application is `https://appname.herokuapp.com`. More domains can be attached to the application via the _Settings_ tab in the [dashboard](https://dashboard.heroku.com/apps).
 
-**NOTE!** Before deploying your site to public production environment, change the line `Sitemap: https://www.auralcandy.net/sitemap.xml` in `public/robots.txt` to match the domain of your production site.
+__NOTE!__ Before deploying your site to public production environment, change the line `Sitemap: https://www.auralcandy.net/sitemap.xml` in `public/robots.txt` to match the domain of your production site.
 
 #### Webhooks
 
@@ -221,13 +221,13 @@ The default URL of the application is `https://appname.herokuapp.com`. More doma
 
 ## Asset Pipeline
 
-**1)** Install the required _npm_ packages listed in `package.json`.
+__1)__ Install the required _npm_ packages listed in `package.json`.
 
 ```shell
 $ npm install
 ```
 
-**2)** Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
+__2)__ Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
 
 ```shell
 $ grunt watch
@@ -256,11 +256,11 @@ Modules are included and registered in `app/app.rb`. Modules follow Sinatra's st
 | `chartable/module.chartable.rb`   | Chartable download count import.																					    |
 | `podcast/module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
 | `podcast/module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
-| `podcast/module.legacy.rb`        | Legacy redirections **1)**.																										|
+| `podcast/module.legacy.rb`        | Legacy redirections __1)__.																										|
 | `podcast/module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
 | `podcast/module.routing.rb`       | Route and URL parameter handling.																							|
 
-**1)** Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
+__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
 
 ```ruby
 require_relative("modules/module.legacy.rb")
