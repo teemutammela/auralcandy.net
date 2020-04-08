@@ -569,7 +569,7 @@
         "id": "6L4bBqz8ZVF01HVr2zRDQQ",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.513Z",
-        "updatedAt": "2020-03-17T07:33:15.070Z",
+        "updatedAt": "2020-04-08T07:51:17.241Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -577,8 +577,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2020-03-17T07:33:15.070Z",
+        "publishedVersion": 6,
+        "publishedAt": "2020-04-08T07:51:17.241Z",
         "firstPublishedAt": "2020-03-17T07:30:21.819Z",
         "createdBy": {
           "sys": {
@@ -594,8 +594,8 @@
             "id": null
           }
         },
-        "publishedCounter": 2,
-        "version": 4,
+        "publishedCounter": 3,
+        "version": 7,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -690,6 +690,9 @@
               "id": "7mhP8l36JN57SvwgTlQFCN"
             }
           }
+        },
+        "downloads": {
+          "en-US": 100
         }
       }
     },
@@ -768,7 +771,7 @@
         "id": "3BKvBtYL2wFzVy4XryVOQU",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.518Z",
-        "updatedAt": "2020-03-17T07:33:14.506Z",
+        "updatedAt": "2020-04-08T07:51:17.309Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -776,8 +779,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2020-03-17T07:33:14.506Z",
+        "publishedVersion": 6,
+        "publishedAt": "2020-04-08T07:51:17.309Z",
         "firstPublishedAt": "2020-03-17T07:30:20.734Z",
         "createdBy": {
           "sys": {
@@ -793,8 +796,8 @@
             "id": null
           }
         },
-        "publishedCounter": 2,
-        "version": 4,
+        "publishedCounter": 3,
+        "version": 7,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -898,6 +901,9 @@
               "id": "7mhP8l36JN57SvwgTlQFCN"
             }
           }
+        },
+        "downloads": {
+          "en-US": 75
         }
       }
     },
@@ -913,7 +919,7 @@
         "id": "6uZtjEnJF2qj3lp9fbmkg4",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.518Z",
-        "updatedAt": "2020-03-17T07:33:13.308Z",
+        "updatedAt": "2020-04-08T07:51:17.232Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -921,8 +927,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2020-03-17T07:33:13.308Z",
+        "publishedVersion": 6,
+        "publishedAt": "2020-04-08T07:51:17.232Z",
         "firstPublishedAt": "2020-03-17T07:30:18.731Z",
         "createdBy": {
           "sys": {
@@ -938,8 +944,8 @@
             "id": null
           }
         },
-        "publishedCounter": 2,
-        "version": 4,
+        "publishedCounter": 3,
+        "version": 7,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1034,6 +1040,9 @@
               "id": "7mhP8l36JN57SvwgTlQFCN"
             }
           }
+        },
+        "downloads": {
+          "en-US": 150
         }
       }
     },
@@ -1049,7 +1058,7 @@
         "id": "6CGsfWafDZsEpe0xG7ftJP",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.521Z",
-        "updatedAt": "2020-03-17T07:35:23.080Z",
+        "updatedAt": "2020-04-08T07:52:25.193Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1057,8 +1066,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2020-03-17T07:35:23.080Z",
+        "publishedVersion": 7,
+        "publishedAt": "2020-04-08T07:52:25.193Z",
         "firstPublishedAt": "2020-03-17T07:35:23.080Z",
         "createdBy": {
           "sys": {
@@ -1074,8 +1083,8 @@
             "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 4,
+        "publishedCounter": 3,
+        "version": 8,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1170,6 +1179,9 @@
               "id": "7mhP8l36JN57SvwgTlQFCN"
             }
           }
+        },
+        "downloads": {
+          "en-US": 150
         }
       }
     },

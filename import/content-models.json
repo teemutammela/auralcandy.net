@@ -12,7 +12,7 @@
         "id": "episode",
         "type": "ContentType",
         "createdAt": "2020-03-17T07:28:54.590Z",
-        "updatedAt": "2020-03-17T07:28:58.378Z",
+        "updatedAt": "2020-04-08T07:49:29.347Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 1,
-        "publishedAt": "2020-03-17T07:28:58.378Z",
+        "publishedVersion": 3,
+        "publishedAt": "2020-04-08T07:49:29.347Z",
         "firstPublishedAt": "2020-03-17T07:28:58.378Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 2,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -302,6 +302,23 @@
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
+        },
+        {
+          "id": "downloads",
+          "name": "Downloads",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "range": {
+                "min": 0,
+                "max": 9999
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
         }
       ]
     },
@@ -827,7 +844,7 @@
             "linkType": "Space"
           }
         },
-        "version": 2,
+        "version": 4,
         "createdAt": "2020-03-17T07:28:58.464Z",
         "createdBy": {
           "sys": {
@@ -836,7 +853,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2020-03-17T07:29:00.713Z",
+        "updatedAt": "2020-04-08T07:49:30.758Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -956,6 +973,14 @@
             "helpText": "Recommended audio file type MP3, AAC or WMA."
           },
           "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "downloads",
+          "settings": {
+            "helpText": "Updated automatically; Do not edit manually."
+          },
+          "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
         }
       ]
