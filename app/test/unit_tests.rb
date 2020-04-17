@@ -146,6 +146,16 @@ class PodcastTest < Test::Unit::TestCase
 
   end
 
+  # Search - Popularity
+  def test_search_popularity
+
+    get "/search/any/any/12/popularity-desc/none/1"
+
+    assert last_response.ok?
+    assert last_response.body.include?("<h2 class=\"card-header text-center text-muted\" itemprop=\"name\">Example Episode 4</h2>")
+
+  end
+
   # Episode view
   def test_episode_view
 
