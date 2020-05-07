@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       target: {
         files: {
           "app/public/javascripts/scripts.min.js": [
-            "app/assets/javascripts/jquery-3.4.1.js",
+            "app/assets/javascripts/jquery-3.5.1.js",
             "app/assets/javascripts/popper-1.14.3.js",
             "app/assets/javascripts/bootstrap-4.1.3.js",
             "app/assets/javascripts/search.js",
