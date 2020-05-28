@@ -33,7 +33,7 @@
       <%= link_to "Play", false, :title => "Play Episode (#{duration})", :class => "btn btn-block btn-outline-primary play-button", :data => data %>
     <% end %>
     <% content_tag :div, :class => "col" do %>
-      <%= link_to "Details", episode_url, :title => "Show Episode Details", :class => "btn btn-block btn-outline-primary details-button" %>
+      <%= link_to "Show More", episode_url, :title => "Show Episode Details", :class => "btn btn-block btn-outline-primary details-button" %>
     <% end %>
   <% end if preview %>
   <% content_tag :div, :class => "card-body px-0 py-0", :itemprop => "description" do %>
