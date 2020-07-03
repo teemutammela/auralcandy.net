@@ -43,8 +43,9 @@
         <% content_tag :li, :class => "list-group-item" do %>
           <% content_tag :div, :class => "row" do %>
             <% content_tag :div, :class => "col-10 pr-0" do %>
-              <%= content_tag :div, track.split(" - ")[0], :class => "text-muted" %>
-              <%= content_tag :div, track.split(" - ")[1], :class => "small" %>
+            	<% track = scramble_track_name(track) %>
+              <%= content_tag :div, (track.split(" - ")[0]).html_safe, :class => "text-muted" %>
+              <%= content_tag :div, (track.split(" - ")[1]).html_safe, :class => "small" %>
             <% end %>
             <% content_tag :div, :class => "col-2 d-none d-md-block d-lg-block d-xl-block" do %>
               <%= content_tag :span, "#{(i = i + 1).to_s.rjust(2, "0")}", :class => "track-list-number float-right" %>
