@@ -4,7 +4,7 @@ module Contentful
 
     # Abort if required environmental variables are not set
     if ENV["CONTENTFUL_MANAGEMENT_KEY"].nil? || ENV["CONTENTFUL_SPACE_ID"].nil? || ENV["CONTENTFUL_ENVIRONMENT"].nil?
-      abort("Environmental variables CONTENTFUL_MANAGEMENT_KEY, CONTENTFUL_SPACE_ID or CONTENTFUL_ENVIRONMEN not set.")
+      abort("Environmental variables CONTENTFUL_MANAGEMENT_KEY, CONTENTFUL_SPACE_ID or CONTENTFUL_ENVIRONMENT not set.")
     end
 
     # Attempt to initialize Contentful Management API client
