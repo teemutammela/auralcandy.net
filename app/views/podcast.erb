@@ -33,7 +33,7 @@
         <%= content_tag :guid, episode.audio_url %>
         <%= content_tag :category, cd("Podcasts") %>
         <%
-          track_list  = episode.track_list.map { |track| content_tag(:li, track.gsub("[SCRAMBLE]", "").strip) }
+          track_list  = episode.track_list.map { |track| content_tag(:li, track) }
           track_list  = content_tag :ol, track_list.join("\n").html_safe
           labels      = (episode.labels.to_a.map { |label| link_to label.name, label.link }).join(", ")
           labels      = "This podcast episode features music published by #{labels} and others."

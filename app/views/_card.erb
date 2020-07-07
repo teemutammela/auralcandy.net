@@ -43,7 +43,6 @@
         <% content_tag :li, :class => "list-group-item" do %>
           <% content_tag :div, :class => "row" do %>
             <% content_tag :div, :class => "col-10 pr-0" do %>
-            	<% track = scramble_track_name(track) %>
               <%= content_tag :div, (track.split(" - ")[0]).html_safe, :class => "text-muted" %>
               <%= content_tag :div, (track.split(" - ")[1]).html_safe, :class => "small" %>
             <% end %>
