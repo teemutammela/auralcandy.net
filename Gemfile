@@ -18,4 +18,5 @@ gem "json", "2.3.1"
 gem "rake", "13.0.1"
 gem "faraday", "1.0.1"
 gem "http", "4.4.1"
+gem "sass", "3.7.4"
 gem "rerun", "0.13.0", require: false
