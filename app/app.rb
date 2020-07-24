@@ -78,7 +78,7 @@ class Podcast < Sinatra::Base
     use Rack::Protection
 
     set :environment, :production
-    set :static_cache_control, [:public, max_age: 60 * 60 * 24 * 30]
+    set :static_cache_control, [:public, max_age: 60 * 60 * 24 * 365]
 
     enable :protection, :quiet
     disable :reload_templates, :logging, :dump_errors, :show_exceptions, :asset_stamp
