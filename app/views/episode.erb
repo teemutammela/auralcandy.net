@@ -46,25 +46,25 @@
       :selected         => false,
       :genre            => episode.genre,
       :duration         => episode.duration
-    } 
+    }
   }
 %>
 <!DOCTYPE HTML>
 <% content_tag :html, :lang => "en" do %>
-  <%= partial :head, :locals => locals[:head] %>
+  <%= erb :head, :locals => locals[:head] %>
   <% content_tag :body, :itemtype => "https://schema.org/WebPage", :itemscope => true do %>
-    <%= partial :header, :locals => locals[:header] %>
+    <%= erb :header, :locals => locals[:header] %>
     <% content_tag :main do %>
-      <%= partial :lightbox %>
+      <%= erb :lightbox %>
       <% content_tag :div, :class => "pt-4 pb-0 bg-light" do %>
         <% content_tag :div, :class => "container" do %>
-          <%= partial :card, :locals => locals[:episode] %>
+          <%= erb :card, :locals => locals[:episode] %>
           <%= content_tag :div, "<!-- Episode List -->".html_safe, :id => "episode-list", :data => {:brand => "any", :genre => parse_genre(episode.genre.sample), :limit => "12", :order => "date-desc", :id => episode.id, :page => "1"} %>
         <% end %>
       <% end %>
     <% end %>
-    <%= partial :footer, :locals => $default_locals[:footer] %>
-    <%= partial :player %>
+    <%= erb :footer, :locals => $default_locals[:footer] %>
+    <%= erb :player %>
     <%= javascript_include_tag "scripts.min.js", :async => "async", :type => false %>
   <% end %>
 <% end %>
