@@ -1,6 +1,5 @@
 require "sinatra/base"
 require "sinatra/multi_route"
-require "sinatra/partial"
 require "padrino-helpers"
 require "tilt/erb"
 require "rack/cache"
@@ -36,7 +35,6 @@ class Podcast < Sinatra::Base
   register Sinatra::Podcast::Defaults
   register Sinatra::Podcast::Routing
   register Sinatra::Podcast::Legacy # Safe to remove
-  register Sinatra::Partial
   register Padrino::Helpers
 
   helpers Sinatra::Podcast::Queries
