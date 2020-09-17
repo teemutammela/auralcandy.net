@@ -249,16 +249,16 @@ Configuration for `development` and `production` environments is set in `app/app
 
 Modules are included and registered in `app/app.rb`. Modules follow Sinatra's standard [modular extensions](http://sinatrarb.com/extensions.html) pattern.
 
-| Module								            | Description																																		|
-|-----------------------------------|-------------------------------------------------------------------------------|
-| `contentful/module.delivery.rb`   | Contentful Delivery API client.																								|
-| `contentful/module.management.rb` | Contentful Management API client.																							|
-| `chartable/module.chartable.rb`   | Chartable download count import.																					    |
-| `podcast/module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
-| `podcast/module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
-| `podcast/module.legacy.rb`        | Legacy redirections __1)__.																										|
-| `podcast/module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
-| `podcast/module.routing.rb`       | Route and URL parameter handling.																							|
+| Directory									| Module								    | Description																																		|
+|---------------------------|---------------------------|-------------------------------------------------------------------------------|
+| `app/modules/contentful`	| `module.delivery.rb`   		| Contentful Delivery API client.																								|
+| `app/modules/contentful`	| `module.management.rb` 		| Contentful Management API client.																							|
+| `app/modules/chartable`		| `module.chartable.rb`   	| Chartable download count import.																					    |
+| `app/modules/podcast`			| `module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
+| `app/modules/podcast`			| `module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
+| `app/modules/podcast`			| `module.legacy.rb`        | Legacy redirections __1)__.																										|
+| `app/modules/podcast`			| `module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
+| `app/modules/podcast`			| `module.routing.rb`       | Route and URL parameter handling.																							|
 
 __1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
 
