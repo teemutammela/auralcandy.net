@@ -102,7 +102,7 @@
               "size": {
                 "max": 255
               },
-              "message": "Should be less than 255 characters"
+              "message": "Should be no more than 255 characters"
             },
             {
               "regexp": {
@@ -581,7 +581,7 @@
               "size": {
                 "max": 255
               },
-              "message": "Should be less than 255 characters"
+              "message": "Should be no more then 255 characters"
             },
             {
               "regexp": {
@@ -646,7 +646,7 @@
               "size": {
                 "max": 140
               },
-              "message": "Should be less than 140 characters"
+              "message": "Should be no more than 140 characters"
             }
           ],
           "disabled": false,
@@ -729,7 +729,7 @@
               "size": {
                 "max": 20
               },
-              "message": "Should be less than 20 characters"
+              "message": "Should be no more than 20 characters"
             }
           ],
           "disabled": false,
@@ -819,7 +819,7 @@
         "id": "navigationLink",
         "type": "ContentType",
         "createdAt": "2020-09-21T06:14:02.437Z",
-        "updatedAt": "2020-09-21T07:00:43.737Z",
+        "updatedAt": "2020-09-21T09:32:32.040Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -827,8 +827,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 19,
-        "publishedAt": "2020-09-21T07:00:43.737Z",
+        "publishedVersion": 27,
+        "publishedAt": "2020-09-21T09:32:32.040Z",
         "firstPublishedAt": "2020-09-21T06:14:02.927Z",
         "createdBy": {
           "sys": {
@@ -844,8 +844,8 @@
             "id": null
           }
         },
-        "publishedCounter": 10,
-        "version": 20,
+        "publishedCounter": 14,
+        "version": 28,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -856,7 +856,7 @@
       },
       "displayField": "name",
       "name": "Navigation Link",
-      "description": "Navigation Menu Internal or External URL",
+      "description": "Navigation menu internal or external URL",
       "fields": [
         {
           "id": "name",
@@ -872,7 +872,7 @@
               "size": {
                 "max": 25
               },
-              "message": "Should be less than 25 characters"
+              "message": "Should be no more than 25 characters"
             }
           ],
           "disabled": false,
@@ -889,7 +889,7 @@
               "size": {
                 "max": 75
               },
-              "message": "Should be less than 75 characters"
+              "message": "Should be no more than 75 characters"
             }
           ],
           "disabled": false,
@@ -909,7 +909,7 @@
               "size": {
                 "max": 255
               },
-              "message": "Should be less than 255 characters"
+              "message": "Should no more than 255 characters"
             },
             {
               "regexp": {
@@ -936,7 +936,7 @@
         "id": "navigationAnchor",
         "type": "ContentType",
         "createdAt": "2020-09-21T06:35:32.704Z",
-        "updatedAt": "2020-09-21T07:08:28.993Z",
+        "updatedAt": "2020-09-21T09:28:13.590Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -944,8 +944,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 7,
-        "publishedAt": "2020-09-21T07:08:28.993Z",
+        "publishedVersion": 11,
+        "publishedAt": "2020-09-21T09:28:13.590Z",
         "firstPublishedAt": "2020-09-21T06:35:33.184Z",
         "createdBy": {
           "sys": {
@@ -961,8 +961,8 @@
             "id": null
           }
         },
-        "publishedCounter": 4,
-        "version": 8,
+        "publishedCounter": 6,
+        "version": 12,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -973,7 +973,7 @@
       },
       "displayField": "name",
       "name": "Navigation Anchor",
-      "description": "Navigation Menu In-Page Anchor",
+      "description": "Navigation menu in-page anchor",
       "fields": [
         {
           "id": "name",
@@ -989,7 +989,7 @@
               "size": {
                 "max": 25
               },
-              "message": "Should be less than 255 characters"
+              "message": "Should be no more than 25 characters"
             }
           ],
           "disabled": false,
@@ -1006,7 +1006,7 @@
               "size": {
                 "max": 75
               },
-              "message": "Should be less than 75 characters"
+              "message": "Should be no more than 75 characters"
             }
           ],
           "disabled": false,
@@ -1026,7 +1026,7 @@
               "size": {
                 "max": 75
               },
-              "message": "Should be less than 75 characters"
+              "message": "Should be no more than 75 characters"
             },
             {
               "regexp": {
@@ -1041,6 +1041,8 @@
         }
       ]
     }
+  ],
+  "tags": [
   ],
   "editorInterfaces": [
     {
@@ -1506,7 +1508,7 @@
             "linkType": "Space"
           }
         },
-        "version": 20,
+        "version": 28,
         "createdAt": "2020-09-21T06:14:03.063Z",
         "createdBy": {
           "sys": {
@@ -1515,7 +1517,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2020-09-21T07:00:44.283Z",
+        "updatedAt": "2020-09-21T09:32:32.745Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -1573,7 +1575,7 @@
             "linkType": "Space"
           }
         },
-        "version": 8,
+        "version": 12,
         "createdAt": "2020-09-21T06:35:33.320Z",
         "createdBy": {
           "sys": {
@@ -1582,7 +1584,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2020-09-21T07:08:29.887Z",
+        "updatedAt": "2020-09-21T09:28:14.377Z",
         "updatedBy": {
           "sys": {
             "id": null,
@@ -1625,7 +1627,7 @@
         {
           "fieldId": "linkAnchor",
           "settings": {
-            "helpText": "Target element ID (e.g.'#contact')"
+            "helpText": "Target element ID (e.g. '#contact')"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
