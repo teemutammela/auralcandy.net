@@ -12,7 +12,7 @@
         "id": "2aUl2vwF05DKl3ay2umXlW",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:15.710Z",
-        "updatedAt": "2020-03-17T07:33:22.860Z",
+        "updatedAt": "2020-09-21T08:49:56.819Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 2,
-        "publishedAt": "2020-03-17T07:33:22.860Z",
+        "publishedVersion": 6,
+        "publishedAt": "2020-09-21T08:49:56.819Z",
         "firstPublishedAt": "2020-03-17T07:33:22.860Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 3,
+        "publishedCounter": 2,
+        "version": 7,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -83,7 +83,7 @@
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis. Quisque sed pellentesque lacus. Curabitur laoreet elit vel vehicula cursus. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam."
         },
         "compatibility": {
-          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
+          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
         },
         "privacyPolicy": {
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi."
@@ -110,14 +110,51 @@
         "locality": {
           "en-US": "Testville, Testland"
         },
-        "applePodcastsUrl": {
-          "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
-        },
-        "googlePodcastsUrl": {
-          "en-US": "https://podcasts.google.com/?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
-        },
-        "paypalUrl": {
-          "en-US": "https://www.paypal.me/teemutammela"
+        "navigationMenu": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6azyB4iQaywOhWDAjscNML"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3xzIkEu0PZJpRum2tDcX7A"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "SaXf1bbDbe4c8E6IfMXsI"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7IzaDL35Ola7zWYCqAto4x"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1s1OaUZNmyd23HYmGei9AI"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1ISh8gbG7y33ac4NMyoRzt"
+              }
+            }
+          ]
         }
       }
     },
@@ -133,7 +170,7 @@
         "id": "2nQyi1UOLrDhV91kKkIJbw",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:15.712Z",
-        "updatedAt": "2020-03-17T07:33:12.885Z",
+        "updatedAt": "2020-09-21T08:29:55.079Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -141,8 +178,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 2,
-        "publishedAt": "2020-03-17T07:33:12.885Z",
+        "publishedVersion": 18,
+        "publishedAt": "2020-09-21T08:29:55.079Z",
         "firstPublishedAt": "2020-03-17T07:33:12.885Z",
         "createdBy": {
           "sys": {
@@ -158,8 +195,8 @@
             "id": null
           }
         },
-        "publishedCounter": 1,
-        "version": 3,
+        "publishedCounter": 7,
+        "version": 19,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -204,7 +241,7 @@
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis. Quisque sed pellentesque lacus. Curabitur laoreet elit vel vehicula cursus. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam."
         },
         "compatibility": {
-          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
+          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3), [iTunes](https://www.apple.com/itunes/),  [VLC Media Player](https://www.videolan.org/vlc/) etc."
         },
         "privacyPolicy": {
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi."
@@ -231,14 +268,51 @@
         "locality": {
           "en-US": "Testville, Testland"
         },
-        "applePodcastsUrl": {
-          "en-US": "https://podcasts.apple.com/podcast/auralcandy-net/id291192514"
-        },
-        "googlePodcastsUrl": {
-          "en-US": "https://podcasts.google.com/?feed=aHR0cDovL3d3dy5hdXJhbGNhbmR5Lm5ldC94bWwvcnNzLnhtbA"
-        },
-        "paypalUrl": {
-          "en-US": "https://www.paypal.me/teemutammela"
+        "navigationMenu": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6azyB4iQaywOhWDAjscNML"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3xzIkEu0PZJpRum2tDcX7A"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "SaXf1bbDbe4c8E6IfMXsI"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7IzaDL35Ola7zWYCqAto4x"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1s1OaUZNmyd23HYmGei9AI"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1ISh8gbG7y33ac4NMyoRzt"
+              }
+            }
+          ]
         }
       }
     },
@@ -1308,6 +1382,402 @@
         },
         "linkUrl": {
           "en-US": "https://www.heroku.com/"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "6azyB4iQaywOhWDAjscNML",
+        "type": "Entry",
+        "createdAt": "2020-09-21T07:15:01.782Z",
+        "updatedAt": "2020-09-21T08:32:34.617Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2020-09-21T08:32:34.617Z",
+        "firstPublishedAt": "2020-09-21T07:16:11.745Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationLink"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Apple Podcasts"
+        },
+        "description": {
+          "en-US": "Listen to AuralCandy.Net on Apple Podcasts"
+        },
+        "linkUrl": {
+          "en-US": "https://apple.co/2Y2xeCz"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "3xzIkEu0PZJpRum2tDcX7A",
+        "type": "Entry",
+        "createdAt": "2020-09-21T07:16:50.356Z",
+        "updatedAt": "2020-09-21T08:32:36.687Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2020-09-21T08:32:36.687Z",
+        "firstPublishedAt": "2020-09-21T07:17:35.642Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationLink"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Google Podcasts"
+        },
+        "description": {
+          "en-US": "Listen to AuralCandy.Net on Google Podcasts"
+        },
+        "linkUrl": {
+          "en-US": "https://goo.gl/a5SMyW"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "7IzaDL35Ola7zWYCqAto4x",
+        "type": "Entry",
+        "createdAt": "2020-09-21T07:18:05.113Z",
+        "updatedAt": "2020-09-21T07:18:49.586Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2020-09-21T07:18:49.586Z",
+        "firstPublishedAt": "2020-09-21T07:18:49.586Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationAnchor"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "About"
+        },
+        "description": {
+          "en-US": "About AuralCandy.Net"
+        },
+        "linkAnchor": {
+          "en-US": "#about"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "SaXf1bbDbe4c8E6IfMXsI",
+        "type": "Entry",
+        "createdAt": "2020-09-21T08:22:41.163Z",
+        "updatedAt": "2020-09-21T08:32:38.361Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2020-09-21T08:32:38.361Z",
+        "firstPublishedAt": "2020-09-21T08:23:02.488Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationLink"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Amazon Music"
+        },
+        "description": {
+          "en-US": "Listen to AuralCandy.Net on Amazon Music"
+        },
+        "linkUrl": {
+          "en-US": "https://amzn.to/2ZPShKR"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "1s1OaUZNmyd23HYmGei9AI",
+        "type": "Entry",
+        "createdAt": "2020-09-21T08:24:42.374Z",
+        "updatedAt": "2020-09-21T08:27:28.484Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2020-09-21T08:27:28.484Z",
+        "firstPublishedAt": "2020-09-21T08:25:05.728Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationAnchor"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Contact"
+        },
+        "description": {
+          "en-US": "Contact AuralCandy.Net via E-Mail or Phone"
+        },
+        "linkAnchor": {
+          "en-US": "#contact"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "1ISh8gbG7y33ac4NMyoRzt",
+        "type": "Entry",
+        "createdAt": "2020-09-21T08:26:18.730Z",
+        "updatedAt": "2020-09-21T08:26:58.311Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2020-09-21T08:26:58.311Z",
+        "firstPublishedAt": "2020-09-21T08:26:58.311Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationLink"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Donate"
+        },
+        "description": {
+          "en-US": "Support AuralCandy.Net via PayPal Donation"
+        },
+        "linkUrl": {
+          "en-US": "https://www.paypal.me/teemutammela"
         }
       }
     }
