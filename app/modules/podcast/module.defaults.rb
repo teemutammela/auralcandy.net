@@ -47,30 +47,30 @@ module Sinatra
           $genres = get_genres
           $slugs  = get_slugs
 
+					# Build navigation menu
+					$navigation_links = Array.new
+
+					$brand.navigation_menu.each do |navigation_item|
+
+						navigation_link = {
+							:name					=> navigation_item.name,
+							:description	=> navigation_item.description
+						}
+
+						case navigation_item.class.to_s
+						when "NavigationLink"
+						  navigation_link[:url] = navigation_item.link_url
+						when "NavigationAnchor"
+						  navigation_link[:url] = navigation_item.link_anchor
+						end
+
+						$navigation_links.push(navigation_link)
+
+					end
+
           # Default variables shared by views
           $default_locals = {
-            :links => [
-              {
-                :title => "Apple Podcasts",
-                :url   => $brand.apple_podcasts_url
-              },
-              {
-                :title => "Google Podcasts",
-                :url   => $brand.google_podcasts_url
-              },
-              {
-                :title => "About",
-                :url   => "#about"
-              },
-              {
-                :title => "Contact",
-                :url   => "#contact"
-              },
-              {
-                :title => "Donate",
-                :url   => $brand.paypal_url
-              }
-            ],
+	          :links => $navigation_links,
             :search => {
               :fields => {
                 :brand => {
