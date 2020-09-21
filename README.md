@@ -16,7 +16,7 @@ __Teemu Tammela__
 
 ## About Us
 
-[AuralCandy.Net](https://www.auralcandy.net/) is a House Music podcast hosted by MK-Ultra & Mesmic - a Finnish DJ duo with a quarter century of combined experience under their belt. Over a decade running, AuralCandy.Net podcasts have reached thousands of listeners all over the world. AuralCandy.Net collaborates with over 50 record labels such as [Bonzai Progressive](http://www.bonzaiprogressive.com/), [Piston Recordings](http://www.pistonrecordings.com/), [Tall House Digital](http://www.tallhousedigital.com/) and [Vision Collective Recordings](http://www.visioncollectiverecordings.com/).
+[AuralCandy.Net](https://www.auralcandy.net/) is a House Music podcast hosted by the Finnish DJ duo __MK-Ultra & Mesmic__ with more than three decades of combined experience under their belt. Ever since its establishment in 2008 AuralCandy.Net podcasts have reached tens of thousands of listeners from over 150 countries. AuralCandy.Net collaborates with over 50 record labels such as [Bonzai Progressive](http://www.bonzaiprogressive.com/), [Piston Recordings](http://www.pistonrecordings.com/) and [Monog Records](https://www.monogrecords.com/).
 
 ## Table of Contents
 
