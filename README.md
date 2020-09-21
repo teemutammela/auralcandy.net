@@ -272,12 +272,16 @@ register Sinatra::Podcast::Legacy
 
 Classes are included in `app/app.rb`. Classes are wrappers for corresponding Contentful content models. Classes are used for formatting field values, handling related content by wrapping them with appropriate classes, adding helper methods as object properties and defining the accessible properties of said class.
 
-| Content Model	| Contentful ID	| Class								| Description                                           |
-|---------------|---------------|---------------------|-------------------------------------------------------|
-| `Brand`				| `brand`				| `class.brand.rb`		| Podcast brand (used also for site default settings).  |
-| `DJ`					| `author`			| `class.dj.rb`				| Author DJ of a podcast episode.											  |
-| `Episode`			| `episode`			| `class.episode.rb`	| Podcast episode.																		 	|
-| `Label`				| `label`				| `class.label.rb`		| Recording label related to an episode.		           	|
+| Content Model				| Contentful ID				| Class														| Description                                           |
+|---------------------|---------------------|---------------------------------|-------------------------------------------------------|
+| `Brand`							| `brand`							| `class.brand.rb`								| Podcast brand __1)__.																	|
+| `DJ`								| `author`						| `class.dj.rb`										| Author DJ of a podcast episode.											  |
+| `Episode`						| `episode`						| `class.episode.rb`							| Podcast episode.																		 	|
+| `Label`							| `label`							| `class.label.rb`								| Recording label related to an episode.		           	|
+| `Navigation Anchor`	| `navigationAnchor`	| `class.navigation_anchor.rb`		| Navigation menu in-page anchor.												|
+| `Navigation Link`		| `navigationLink`		| `class.navigation_link.rb`			| Navigation menu internal or external URL.							|
+
+__1)__ `Brand` content model is also used to manage site's default settings and navigation menu links and anchors. Each `Brand` instance can have its unique navigation menu.
 
 ## Importing Chartable Downloads
 
