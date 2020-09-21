@@ -26,6 +26,8 @@ require_relative("classes/class.brand.rb")
 require_relative("classes/class.dj.rb")
 require_relative("classes/class.episode.rb")
 require_relative("classes/class.label.rb")
+require_relative("classes/class.navigation_anchor.rb")
+require_relative("classes/class.navigation_link.rb")
 
 # Main application
 class Podcast < Sinatra::Base
