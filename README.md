@@ -97,7 +97,7 @@ __1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index]
 ## Requirements
 
 * [Git](http://git-scm.com/)
-* [Ruby](https://www.ruby-lang.org/en/) (2.7.1)
+* [Ruby](https://www.ruby-lang.org/en/) (2.7.2)
 * [Bundler](http://bundler.io/)
 * [npm](http://www.npmjs.com/)
 * [Grunt](https://gruntjs.com/)
