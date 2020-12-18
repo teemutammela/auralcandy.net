@@ -83,7 +83,7 @@ __Teemu Tammela__
 
 * __Performance Optimization__
 	* Efficient use of caching, content compression and headers on the application level
-	* Low amount of HTTP requests (27) and memory usage (~5MB)
+	* Low amount of HTTP requests (25) and memory usage (~5MB)
 	* JavaScript and SASS asset pipeline via [Grunt](https://gruntjs.com/)
 	* Full [Cloudflare](https://www.cloudflare.com/) compatibility
 
