@@ -1,6 +1,6 @@
 # AuralCandy.Net - Premium House Music Podcast
 
-This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is __tailored to our needs__ - it's __not a generic, turn-key podcast platform__. This source code is released for __educational purposes__ for anyone wishing to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
+This repository contains the source code of [AuralCandy.Net](https://www.auralcandy.net/). Please note that this application is __tailored to our needs__ - it's __not a generic, turn-key podcast platform__. This source code is released for __educational purposes__ for anyone who wishes to learn more about developing [Contentful](https://www.contentful.com/) applications using [Ruby](https://www.ruby-lang.org/en/) and [Sinatra](http://sinatrarb.com/).
 
 This source code is distributed under [Unlicense](https://unlicense.org/) and can be used for __non-commericial purposes only__. Any commercial use of this source code requires __explicit permission__ from the author. This application comes with __absolutely no warranty__. The author assumes no responsibility of data loss or any other unintended side-effects.
 
@@ -163,7 +163,7 @@ $ heroku config:set VARIABLE_NAME=variable_value
 
 __1)__ Required only by the [Chartable](https://chartable.com/) import functionality.
 
-__2)__ Chartable does not officially offer a public API, but it possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open Developer Tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
+__2)__ Chartable does not officially offer a public API, but it's possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open the browser's developer tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
 
 __3)__ Chartable link ID is optional. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
 
