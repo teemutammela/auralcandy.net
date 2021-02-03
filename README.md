@@ -169,10 +169,10 @@ __3)__ Chartable link ID is optional. If `ENV["CHARTABLE_ID"]` is not set, `@aud
 
 ### Development (Local)
 
-__1)__ Start the application via the `rackup` command. Application is now running at [http://localhost:9292](http://localhost:9292).
+__1)__ Start the application via the `heroku local` command. Application is now running at [http://localhost:9292](http://localhost:9292).
 
 ```shell
-$ rackup -p 9292
+$ heroku local -p 9292
 ```
 
 __2)__ Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
