@@ -18,4 +18,4 @@ gem "rake", "13.0.3"
 gem "faraday", "1.3.0"
 gem "http", "4.4.1"
 gem "sass", "3.7.4"
-gem "rerun", "0.13.0", require: false
+gem "rerun", "0.13.1", require: false
