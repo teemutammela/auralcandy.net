@@ -47,9 +47,13 @@ module Chartable
   # Fetch downloads from Chartable API
   def get_chartable_data
 
-    downloads = Hash.new
-    total     = $management.entries.all(:content_type => "episode").total.to_i
-    pages     = (total/10)+1
+	  begin
+		  total     = $management.entries.all(:content_type => "episode").total.to_i
+	    downloads = Hash.new
+	    pages     = (total/10)+1
+	  rescue
+	  	abort("Unable to connect to Contentful Management API. Check credentials.")
+	  end
 
     # Fetch data in multiple passes
     (1..pages).each do |page|
