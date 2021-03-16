@@ -62,7 +62,7 @@ module Chartable
 
       # Populate hash with episode titles and downloads counts
       data.each do |episode|
-        downloads[episode["title"].split(" - ")[1]] = episode["total_downloads"]
+        downloads[episode["title"].split(" - ")[1]] = episode["total_downloads"].to_i
       end
 
     end
