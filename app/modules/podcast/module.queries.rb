@@ -89,7 +89,7 @@ module Sinatra
       # Get a single episode by ID and wrap as 'Episode' object, halt if not found
       def get_episode_by_id(id)
 
-        episode = $delivery.entry(id, include: 2)
+        episode = $delivery.entry(id, :include => 2)
         halt 404 if episode.nil?
         episode = Episode.new(episode)
 
@@ -118,8 +118,8 @@ module Sinatra
 
         # Query options (limit, ordering method)
         options = {
-          limit: $search_items.include?(limit) ? limit : $search_items.first,
-          order: sort.key?(order) ? sort[order] : "-fields.releaseDate"
+          :limit => $search_items.include?(limit) ? limit : $search_items.first,
+          :order => sort.key?(order) ? sort[order] : "-fields.releaseDate"
         }
 
         # Merge brand filter to search options
@@ -137,7 +137,7 @@ module Sinatra
         options.merge!("sys.id[ne]".to_sym => id) unless id == "none"
 
         # Merge paging number to query options
-        options.merge!(skip: page * options[:limit])
+        options.merge!(:skip => page * options[:limit])
 
         # Query episodes, get total sum of episodes, pass parameters back for pagination link
         return results = {

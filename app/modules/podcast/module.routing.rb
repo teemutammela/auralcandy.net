@@ -61,7 +61,7 @@ module Sinatra
         app.get "/podcast/?", "/xml/rss.xml" do
 
           # Query episodes
-          episodes = get_episodes(limit: settings.limit)
+          episodes = get_episodes(:limit => settings.limit)
 
           # Set headers
           last_modified(episodes.first.updated) unless settings.development?
@@ -76,7 +76,7 @@ module Sinatra
         app.get "/sitemap.xml", "/xml/sitemap.xml" do
 
           # Query episodes
-          episodes = get_episodes(limit: settings.limit)
+          episodes = get_episodes(:limit => settings.limit)
 
           # Set headers
           last_modified(episodes.first.updated) unless settings.development?
