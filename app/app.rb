@@ -45,8 +45,8 @@ class Podcast < Sinatra::Base
   # Global configuration (all environments)
   configure do
 
-    # Global limit for fetching entries
-    set :limit, 500
+    # RSS & Sitemap XML entry limit
+    set :limit, 100
 
     # Partials template engine
     set :partial_template_engine, :erb

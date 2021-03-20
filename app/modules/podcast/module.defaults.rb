@@ -14,7 +14,7 @@ module Sinatra
 
             defaults = $delivery.entries(
               :content_type     => "brand",
-              :include          => 2,
+              :include          => 1,
               "fields.default"  => true
             )
 

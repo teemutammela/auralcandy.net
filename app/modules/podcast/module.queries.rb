@@ -14,7 +14,7 @@ module Sinatra
 
         options = {
           :content_type => "brand",
-          :include      => 2,
+          :include      => 1,
           :order        => "sys.createdAt"
         }
 
@@ -29,7 +29,7 @@ module Sinatra
 
         # Extract genres from the 'Episode' content type's validation rules
         $delivery.content_type("episode").fields.select { |field|
-          field.id == 'genre'
+          field.id == "genre"
         }.first.items.raw["validations"].first["in"].each { |genre|
           genres[parse_genre(genre)] = genre
         }
@@ -78,7 +78,7 @@ module Sinatra
           :include      => 0,
           :order        => "fields.releaseDate",
           :select       => "fields.slug",
-          :limit        => settings.limit
+          :limit        => 999
         }
 
         # Query slugs and map to array
