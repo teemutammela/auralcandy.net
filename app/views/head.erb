@@ -1,37 +1,37 @@
 <% content_tag :head do %>
-  <%= tag :meta, :charset => "UTF-8" %>
-  <%= tag :meta, :name => "viewport", :content => "width=device-width, initial-scale=1.0, shrink-to-fit=no" %>
-  <%= tag :meta, :name => "mobile-web-app-capable", :content => "yes" %>
-  <%= tag :meta, :name => "apple-mobile-web-app-capable", :content => "yes" %>
-  <%= tag :meta, :name => "application-name", :content => og_site_name %>
-  <%= tag :meta, :name => "apple-mobile-web-app-title", :content => og_site_name %>
-  <%= tag :meta, :name => "author", :content => author %>
-  <%= tag :meta, :name => "description", :content => (description.length > 160 ? description[0,157] + "..." : description) %>
-  <%= tag :meta, :name => "keywords", :content => keywords %>
-  <%= tag :meta, :name => "robots", :content => "follow, index" %>
-  <%= tag :meta, :name => "revisit-after", :content => "5 days" %>
-  <%= tag :meta, :name => "twitter:card", :content => "summary" %>
-  <%= tag :meta, :name => "twitter:title", :content => title %>
-  <%= tag :meta, :name => "twitter:description", :content => description %>
-  <%= tag :meta, :name => "twitter:image", :content => twitter_image %>
-  <%= tag :meta, :name => "theme-color", :content => "#222222" %>
-  <%= tag :meta, :name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent" %>
-  <%= tag :meta, :property => "og:site_name", :content => og_site_name %>
-  <%= tag :meta, :property => "og:title", :content => title %>
-  <%= tag :meta, :property => "og:url", :content => og_url %>
-  <%= tag :meta, :property => "og:type", :content => "website" %>
-  <%= tag :meta, :property => "og:description", :content => description %>
-  <%= tag :meta, :property => "og:locale", :content => "en_US" %>
-  <%= tag :meta, :property => "og:image", :content => og_image %>
-  <%= tag :link, :href => "/manifest.json", :rel => "manifest" %>
-  <%= tag :link, :href => "https://www.auralcandy.net#{request.path}", :rel => "canonical" %>
-  <%= tag :link, :href => previous_url, :rel => "prev" if defined? previous_url %>
-  <%= tag :link, :href => next_url, :rel => "next" if defined? next_url %>
-  <%= tag :link, :href => "https://fonts.gstatic.com", :rel => "preconnect" %>
-  <%= tag :link, :href => "/webfonts/fa-solid-900.woff2", :rel => "preload", :as => "font", :crossorigin => "anonymous" %>
-  <%= stylesheet_link_tag "styles" %>
-  <%= feed_tag :rss, "/podcast", :title => "Podcast" %>
-  <%= favicon_tag "/images/favicon/favicon.png", :rel => "shortcut icon", :type => "image/x-icon" %>
-  <%= favicon_tag "/images/favicon/apple.png", :rel => "apple-touch-icon", :type => "image/x-icon" %>
-  <%= content_tag :title, title %>
+	<%= tag :meta, :charset => "UTF-8" %>
+	<%= tag :meta, :name => "viewport", :content => "width=device-width, initial-scale=1.0, shrink-to-fit=no" %>
+	<%= tag :meta, :name => "mobile-web-app-capable", :content => "yes" %>
+	<%= tag :meta, :name => "apple-mobile-web-app-capable", :content => "yes" %>
+	<%= tag :meta, :name => "application-name", :content => og_site_name %>
+	<%= tag :meta, :name => "apple-mobile-web-app-title", :content => og_site_name %>
+	<%= tag :meta, :name => "author", :content => author %>
+	<%= tag :meta, :name => "description", :content => (description.length > 160 ? description[0,157] + "..." : description) %>
+	<%= tag :meta, :name => "keywords", :content => keywords %>
+	<%= tag :meta, :name => "robots", :content => "follow, index" %>
+	<%= tag :meta, :name => "revisit-after", :content => "5 days" %>
+	<%= tag :meta, :name => "twitter:card", :content => "summary" %>
+	<%= tag :meta, :name => "twitter:title", :content => title %>
+	<%= tag :meta, :name => "twitter:description", :content => description %>
+	<%= tag :meta, :name => "twitter:image", :content => twitter_image %>
+	<%= tag :meta, :name => "theme-color", :content => "#222222" %>
+	<%= tag :meta, :name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent" %>
+	<%= tag :meta, :property => "og:site_name", :content => og_site_name %>
+	<%= tag :meta, :property => "og:title", :content => title %>
+	<%= tag :meta, :property => "og:url", :content => og_url %>
+	<%= tag :meta, :property => "og:type", :content => "website" %>
+	<%= tag :meta, :property => "og:description", :content => description %>
+	<%= tag :meta, :property => "og:locale", :content => "en_US" %>
+	<%= tag :meta, :property => "og:image", :content => og_image %>
+	<%= tag :link, :href => "/manifest.json", :rel => "manifest" %>
+	<%= tag :link, :href => "https://www.auralcandy.net#{request.path}", :rel => "canonical" %>
+	<%= tag :link, :href => previous_url, :rel => "prev" if defined? previous_url %>
+	<%= tag :link, :href => next_url, :rel => "next" if defined? next_url %>
+	<%= tag :link, :href => "https://fonts.gstatic.com", :rel => "preconnect" %>
+	<%= tag :link, :href => "/webfonts/fa-solid-900.woff2", :rel => "preload", :as => "font", :crossorigin => "anonymous" %>
+	<%= tag :link, :href => "/stylesheets/styles.css", :rel => "stylesheet", :type => "text/css", :media => "screen" %>
+	<%= feed_tag :rss, "/podcast", :title => "Podcast" %>
+	<%= favicon_tag "/images/favicon/favicon.png", :rel => "shortcut icon", :type => "image/x-icon" %>
+	<%= favicon_tag "/images/favicon/apple.png", :rel => "apple-touch-icon", :type => "image/x-icon" %>
+	<%= content_tag :title, title %>
 <% end %>
