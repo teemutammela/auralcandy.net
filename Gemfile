@@ -15,7 +15,7 @@ gem "activesupport", "6.1.3.1"
 gem "redcarpet", "3.5.1"
 gem "json", "2.5.1"
 gem "rake", "13.0.3"
-gem "faraday", "1.3.0"
+gem "faraday", "1.4.1"
 gem "http", "4.4.1"
 gem "sass", "3.7.4"
 gem "rerun", "0.13.1", require: false
