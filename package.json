@@ -7,9 +7,9 @@
     "url": "https://github.com/teemutammela/auralcandy.net.git"
   },
   "devDependencies": {
-    "grunt": "1.3.0",
+    "grunt": "1.4.0",
     "grunt-contrib-sass": "2.0.0",
-    "grunt-contrib-uglify": "5.0.0",
+    "grunt-contrib-uglify": "5.0.1",
     "grunt-contrib-watch": "1.1.0"
   }
 }
