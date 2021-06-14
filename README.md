@@ -138,11 +138,11 @@ __NOTE!__ Unit tests (`app/test/unit_tests.rb`) are designed to match the conten
 
 ## Deployment
 
-Contentful API keys, space ID and Chartable credentials must be set as environment variables.
+Contentful API keys, space ID and Chartable credentials must be set as environment variables. Create a new `.env` file by copying the example file.
 
 ```shell
-$ export VARIABLE_NAME=variable_value
-$ source ~/.bashrc
+$ cp .env.example .env
+$ nano .env
 ```
 
 On Heroku environment variables, also known as _Config Vars_, can be set either via the [Dashboard](https://dashboard.heroku.com/apps/) or via [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
