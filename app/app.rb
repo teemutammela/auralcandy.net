@@ -1,7 +1,6 @@
 require "sinatra/base"
 require "sinatra/multi_route"
 require "padrino-helpers"
-require "tilt/erb"
 require "rack/cache"
 require "rack/protection"
 require "contentful"
