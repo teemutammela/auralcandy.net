@@ -293,16 +293,10 @@ $ rake chartable:import
 
 ## Unit Testing
 
-Perform unit tests for all routes defined in `module.routing.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library.
+Run the dedicated [Rake](https://github.com/ruby/rake) task to perform unit tests for all routes defined in `module.routing.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/unit_tests.rb`.
 
-### Parameters
-
-| Long						| Short		| Description                                          |
-|-----------------|---------|------------------------------------------------------|
-| `--key`					| `-k`		| Contentful Delivery API key.                         |
-| `--space`				| `-s`		| Contentful space ID.                                 |
-| `--environment`	| `-e`		| Sinatra environment (`development` or `production`). |
+**NOTE!** Enviromental variables `CONTENTFUL_DELIVERY_KEY_TEST` and `CONTENTFUL_SPACE_ID_TEST` set in the `.env` file enable to use different Contentful space for testing and for actual production content.
 
 ```shell
-$ ruby app/test/unit_tests.rb -k <API_KEY> -s <SPACE_ID> -e <ENVIRONMENT>
+$ rake test:run
 ```
