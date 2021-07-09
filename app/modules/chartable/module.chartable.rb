@@ -1,16 +1,5 @@
 module Chartable
 
-  # Verify the existance of required environmental variables
-  def verify_env
-
-    # List of required environmental variables
-    env_list = ["CHARTABLE_PODCAST_ID", "CHARTABLE_ACCESS_TOKEN"]
-
-    # Verify environmental variables are set
-    env_list.each { |env| abort("Environmental variable #{env} not set.") if ENV[env].nil? }
-
-  end
-
   # Send GET request to Chartable API (returns 10 episodes per page)
   def get_chartable_api_page(page)
 
