@@ -1,6 +1,7 @@
 require "contentful/management"
 require "faraday"
 require "json"
+require "dotenv/load"
 
 # Modules
 require_relative("app/modules/contentful/module.management.rb")
