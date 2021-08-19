@@ -20,4 +20,5 @@ gem "faraday", "1.7.0"
 gem "http", "4.4.1"
 gem "sass", "3.7.4"
 gem "dotenv", "2.7.6"
+gem "addressable", "2.8.0"
 gem "rerun", "0.13.1", require: false
