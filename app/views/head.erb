@@ -16,6 +16,7 @@
 	<%= tag :meta, :name => "twitter:image", :content => twitter_image %>
 	<%= tag :meta, :name => "theme-color", :content => "#222222" %>
 	<%= tag :meta, :name => "apple-mobile-web-app-status-bar-style", :content => "black-translucent" %>
+	<%= tag :meta, :name => "apple-itunes-app", :content => "app-id=" + ENV["APPLE_PODCAST_ID"] unless ENV["APPLE_PODCAST_ID"].to_s.empty? %>
 	<%= tag :meta, :property => "og:site_name", :content => og_site_name %>
 	<%= tag :meta, :property => "og:title", :content => title %>
 	<%= tag :meta, :property => "og:url", :content => og_url %>

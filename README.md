@@ -151,21 +151,24 @@ On Heroku environment variables, also known as _Config Vars_, can be set either 
 $ heroku config:set VARIABLE_NAME=variable_value
 ```
 
-| Variable Name               | Description                                                  |
-|-----------------------------|--------------------------------------------------------------|
-| `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content).                     |
-| `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key.                                 |
-| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key. __1)__                        |
-| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). __1)__          |
-| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). __1)__ |
-| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. __1)__ __2)__                 |
-| `CHARTABLE_ID`              | Chartable link ID (e.g. `123XY`). __3)__                     |
+| Variable Name               | Description                                                   |
+|-----------------------------|---------------------------------------------------------------|
+| `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content).                      |
+| `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key.                                  |
+| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key. __1)__                         |
+| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). __1)__           |
+| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). __1)__  |
+| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. __1)__ __2)__                  |
+| `CHARTABLE_ID`              | Chartable link ID (optional). __3)__                          |
+| `APPLE_PODCAST_ID`          | Apple Podcasts ID (optional). __4)__                          |
 
 __1)__ Required only by the [Chartable](https://chartable.com/) import functionality.
 
 __2)__ Chartable does not officially offer a public API, but it's possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open the browser's developer tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
 
-__3)__ Chartable link ID is optional. If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+__3)__ If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
+
+__4)__ If `ENV["APPLE_PODCAST_ID"]` is set, a `apple-itunes-app` meta tag will be inserted into the `<head>` section of the page. Read Apple's [Smart App Banners](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners) documentation for further information.
 
 ### Development (Local)
 
