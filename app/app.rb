@@ -3,6 +3,7 @@
 require 'active_support/core_ext/integer/inflections'
 require 'contentful'
 require 'date'
+require 'dotenv/load'
 require 'json'
 require 'padrino-helpers'
 require 'rack/cache'

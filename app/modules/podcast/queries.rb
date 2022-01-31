@@ -19,7 +19,7 @@ module Sinatra
         objects('Brand', options)
       end
 
-      # Build a hash list of all genres (e.g. :genre_name => "Genre Name")
+      # Build a hash list of all genres (e.g. genre_name: 'Genre Name')
       def genres
         genres = {}
 
