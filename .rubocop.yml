@@ -1,0 +1,7 @@
+---
+Style/Documentation:
+  Enabled: false
+Metrics/ParameterLists:
+  Max: 10
+Metrics/MethodLength:
+  Max: 50
