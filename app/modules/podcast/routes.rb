@@ -40,7 +40,7 @@ module Sinatra
         # Episode landing page
         app.get '/episodes/:slug/?' do |slug|
           # Query episode
-          episode = get_episode_by_slug(slug)
+          episode = episode_by_slug(slug)
 
           # Set headers
           last_modified(episode.updated) unless settings.development?
@@ -52,7 +52,7 @@ module Sinatra
         # Podcast RSS feed
         app.get '/podcast/?', '/xml/rss.xml' do
           # Query episodes
-          episodes = get_episodes(limit: settings.limit)
+          episodes = episodes(limit: settings.limit)
 
           # Set headers
           last_modified(episodes.first.updated) unless settings.development?
@@ -65,7 +65,7 @@ module Sinatra
         # XML sitemap for Google
         app.get '/sitemap.xml', '/xml/sitemap.xml' do
           # Query episodes
-          episodes = get_episodes(limit: settings.limit)
+          episodes = episodes(limit: settings.limit)
 
           # Set headers
           last_modified(episodes.first.updated) unless settings.development?

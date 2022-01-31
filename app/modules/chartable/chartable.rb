@@ -2,7 +2,7 @@
 
 module Chartable
   # Send GET request to Chartable API (returns 10 episodes per page)
-  def get_chartable_api_page(page)
+  def chartable_api_page(page)
     response = Faraday.new.get do |request|
       # Build Chartable API URL
       chartable_api_url = 'https://chartable.com/api/episodes'
@@ -27,7 +27,7 @@ module Chartable
   end
 
   # Fetch downloads from Chartable API
-  def get_chartable_data
+  def chartable_data
     begin
       total = $management.entries.all(content_type: 'episode').total.to_i
       downloads = {}
@@ -38,7 +38,7 @@ module Chartable
 
     # Fetch data in multiple passes
     (1..pages).each do |page|
-      data = get_chartable_api_page(page)
+      data = chartable_api_page(page)
 
       # Populate hash with episode titles and downloads counts
       data.each do |episode|
@@ -52,7 +52,7 @@ module Chartable
   # Update Contentful entries via Management API
   def update_episode_downloads
     # Get episode downloads from Chartable API
-    chartable_data = get_chartable_data
+    data = chartable_data
 
     # Query options
     options = {
@@ -64,12 +64,12 @@ module Chartable
     # Query and update episode entries
     $management.entries.all(options).each do |episode|
       # Update download count to episode entry if found in Chartable data
-      if episode.published? && chartable_data.key?(episode.fields[:title])
-        episode.update(downloads: chartable_data[episode.fields[:title]])
+      if episode.published? && data.key?(episode.fields[:title])
+        episode.update(downloads: data[episode.fields[:title]])
         episode.publish
 
       # Set download count to zero if not found in Chartable
-      elsif episode.published? && !chartable_data.key?(episode.fields[:title])
+      elsif episode.published? && !data.key?(episode.fields[:title])
         episode.update(downloads: 0)
         episode.publish
       end

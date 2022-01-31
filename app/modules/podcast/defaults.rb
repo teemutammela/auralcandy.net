@@ -38,9 +38,9 @@ module Sinatra
           $search_items = [12, 24, 36, 48]
 
           # Get brands, genres and episode slugs
-          $brands = get_brands
-          $genres = get_genres
-          $slugs  = get_slugs
+          $brands = brands
+          $genres = genres
+          $slugs  = slugs
 
           # Build navigation menu
           $navigation_links = []

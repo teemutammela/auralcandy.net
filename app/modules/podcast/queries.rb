@@ -4,23 +4,23 @@ module Sinatra
   module Podcast
     module Queries
       # Query entries and wrap them as requested objects
-      def get_objects(wrapper, options)
+      def objects(wrapper, options)
         $delivery.entries(options).to_a.map { |item| wrapper.constantize.new(item) }
       end
 
       # Get all brands and wrap them as 'Brand' objects
-      def get_brands
+      def brands
         options = {
           content_type: 'brand',
           include: 1,
           order: 'sys.createdAt'
         }
 
-        get_objects('Brand', options)
+        objects('Brand', options)
       end
 
       # Build a hash list of all genres (e.g. :genre_name => "Genre Name")
-      def get_genres
+      def genres
         genres = {}
 
         # Extract genres from the 'Episode' content type's validation rules
@@ -34,17 +34,17 @@ module Sinatra
       end
 
       # Get episodes using requested options and wrap them as 'Episode' objects
-      def get_episodes(options)
+      def episodes(options)
         # Set default options unless defined in the options hash
         options[:content_type]  = 'episode'
         options[:include]       = 2 unless options.key?(:include)
         options[:order]         = '-fields.releaseDate' unless options.key?(:order)
 
-        get_objects('Episode', options)
+        objects('Episode', options)
       end
 
       # Get episode by URL slug
-      def get_episode_by_slug(slug)
+      def episode_by_slug(slug)
         # Query options
         options = {
           :content_type => 'episode',
@@ -57,11 +57,11 @@ module Sinatra
 
         # Parse to object or halt if not found
         halt 404 if episode.nil?
-        episode = Episode.new(episode)
+        Episode.new(episode)
       end
 
       # Get a list of all episode slugs
-      def get_slugs
+      def slugs
         # Query options
         options = {
           content_type: 'episode',
@@ -76,10 +76,10 @@ module Sinatra
       end
 
       # Get a single episode by ID and wrap as 'Episode' object, halt if not found
-      def get_episode_by_id(id)
+      def episode_by_id(id)
         episode = $delivery.entry(id, include: 2)
         halt 404 if episode.nil?
-        episode = Episode.new(episode)
+        Episode.new(episode)
       end
 
       # Search episodes via filters
@@ -126,8 +126,8 @@ module Sinatra
         options.merge!(skip: page * options[:limit])
 
         # Query episodes, get total sum of episodes, pass parameters back for pagination link
-        results = {
-          episodes: get_episodes(options),
+        {
+          episodes: episodes(options),
           pages: ($delivery.entries(options.merge!(content_type: 'episode')).total / options[:limit].to_f).ceil,
           page_url: create_page_url(brand, genre, limit, order, id)
         }
