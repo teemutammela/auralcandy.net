@@ -44,7 +44,7 @@ module Sinatra
           last_modified(episode.updated) unless settings.development?
 
           # Pass variables to template
-          erb :episode, locals: { episode: episode }
+          erb :episode, locals: { episode: }
         end
 
         # Podcast RSS feed
@@ -57,7 +57,7 @@ module Sinatra
           headers['Accept-Ranges'] = 'bytes'
 
           # Pass variables to template
-          erb :podcast, locals: { episodes: episodes }, content_type: 'application/xml'
+          erb :podcast, locals: { episodes: }, content_type: 'application/xml'
         end
 
         # XML sitemap for Google
@@ -70,7 +70,7 @@ module Sinatra
           headers['Accept-Ranges'] = 'bytes'
 
           # Pass variables to template
-          erb :sitemap, locals: { episodes: episodes }, content_type: 'application/xml'
+          erb :sitemap, locals: { episodes: }, content_type: 'application/xml'
         end
 
         # Options (used only to block certain types of bots)
