@@ -20,9 +20,6 @@ require_relative('modules/podcast/helpers')
 require_relative('modules/podcast/queries')
 require_relative('modules/podcast/routes')
 
-# Legacy handlers (safe to remove)
-require_relative('modules/podcast/legacy')
-
 # Object wrapper classes
 require_relative('classes/brand')
 require_relative('classes/dj')
@@ -37,7 +34,6 @@ class Podcast < Sinatra::Base
   register Sinatra::MultiRoute
   register Sinatra::Podcast::Defaults
   register Sinatra::Podcast::Routes
-  register Sinatra::Podcast::Legacy # Safe to remove
   register Padrino::Helpers
 
   helpers Sinatra::Podcast::Queries

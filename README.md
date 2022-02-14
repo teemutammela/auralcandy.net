@@ -259,17 +259,8 @@ Modules are included and registered in `app/app.rb`. Modules follow Sinatra's st
 | `app/modules/chartable`		| `module.chartable.rb`   	| Chartable download count import.																					    |
 | `app/modules/podcast`			| `module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
 | `app/modules/podcast`			| `module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
-| `app/modules/podcast`			| `module.legacy.rb`        | Legacy redirections __1)__.																										|
 | `app/modules/podcast`			| `module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
 | `app/modules/podcast`			| `module.routing.rb`       | Route and URL parameter handling.																							|
-
-__1)__ Legacy module handles URL redirections from old [AuralCandy.Net](https://www.auralcandy.net/) versions. You may disable this feature by removing the following lines from `app/app.rb` and deleting file `app/modules/podcast/module.legacy.rb`.
-
-```ruby
-require_relative("modules/module.legacy.rb")
-
-register Sinatra::Podcast::Legacy
-```
 
 ### Content Models & Classes
 
