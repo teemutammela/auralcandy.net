@@ -36,7 +36,7 @@
           track_list  = episode.track_list.map { |track| content_tag(:li, track) }
           track_list  = content_tag :ol, track_list.join("\n").html_safe
           labels      = (episode.labels.to_a.map { |label| link_to label.name, label.link_url }).join(", ")
-          labels      = "This podcast episode features music published by #{labels} and others."
+          labels      = "This podcast episode features content created or published by #{labels} and others."
           description = md(episode.description ? episode.description : episode.brand.long_description)
           description.concat(content_tag :p, labels.html_safe) unless episode.labels.size.zero?
           description.concat(content_tag :p, track_list.html_safe)
