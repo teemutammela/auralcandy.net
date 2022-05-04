@@ -6,18 +6,20 @@ module Sinatra
       def self.registered(app)
         # Index
         app.get '/' do
-          erb :index
+          erb :index, locals: { search_params: parse_search_params(params, nil) }
         end
 
-        # Web app manifest
-        app.get '/manifest.json' do
-          # Set headers
-          unless settings.development?
-            last_modified(Time.now - (60 * 60 * 24 * 7))
-            cache_control :public, :must_revalidate, max_age: 60 * 60 * 24 * 30
-          end
+        # Episode landing page
+        app.get '/episodes/:slug/?' do |slug|
+          # Query episode and sample genre for related content
+          episode = episode_by_slug(slug)
+          genre = parse_genre(episode.genre.sample)
 
-          erb :manifest, locals: { brand: $brand }, content_type: 'application/json'
+          # Set headers
+          last_modified(episode.updated) unless settings.development?
+
+          # Pass variables to template
+          erb :episode, locals: { episode:, search_params: parse_search_params(params, genre) }
         end
 
         # Episode search listing
@@ -33,18 +35,6 @@ module Sinatra
             page_url: results[:page_url],
             genre: parse_slug(genre)
           }
-        end
-
-        # Episode landing page
-        app.get '/episodes/:slug/?' do |slug|
-          # Query episode
-          episode = episode_by_slug(slug)
-
-          # Set headers
-          last_modified(episode.updated) unless settings.development?
-
-          # Pass variables to template
-          erb :episode, locals: { episode: }
         end
 
         # Podcast RSS feed
@@ -71,6 +61,17 @@ module Sinatra
 
           # Pass variables to template
           erb :sitemap, locals: { episodes: }, content_type: 'application/xml'
+        end
+
+        # Web app manifest
+        app.get '/manifest.json' do
+          # Set headers
+          unless settings.development?
+            last_modified(Time.now - (60 * 60 * 24 * 7))
+            cache_control :public, :must_revalidate, max_age: 60 * 60 * 24 * 30
+          end
+
+          erb :manifest, locals: { brand: $brand }, content_type: 'application/json'
         end
 
         # Options (used only to block certain types of bots)

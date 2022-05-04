@@ -18,6 +18,25 @@ module Sinatra
         string.downcase.gsub(' ', '_').tr('^a-z-_', '').gsub('__', '_')
       end
 
+      # Parse search parameters from URL
+      def parse_search_params(params, genre)
+        # Map brands, genres and order methods into available URL-parameter values
+        brands = $brands.map(&:slug)
+        genres = $genres.sort.map { |key, _value| key }
+        genre = genre.nil? ? 'any' : genre
+        order = $default_locals[:search][:fields][:order][:options].map { |_key, value| value }
+
+        # Set URL-parameter values for search or use defaults
+        search_params = {
+          brand: brands.include?(params['brand']) ? params['brand'] : 'any',
+          genre: genres.include?(params['genre']) ? params['genre'] : genre,
+          limit: $search_items.include?(params['limit'].to_i) ? params['limit'] : '12',
+          order: order.include?(params['order']) ? params['order'] : 'date-desc',
+          id: 'none',
+          page: !params['page'].to_i.zero? ? parse_slug(params['page']) : '1'
+        }
+      end
+
       # Convert Markdown to HTML
       def md(string)
         coder = Redcarpet::Markdown.new(

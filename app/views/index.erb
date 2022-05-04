@@ -32,8 +32,8 @@
       <%= erb :lightbox %>
       <% content_tag :div, :class => "pt-4 pb-0 bg-light" do %>
         <% content_tag :div, :class => "container" do %>
-          <%= erb :search, :locals => $default_locals[:search] %>
-          <%= content_tag :div, "<!-- Episode List -->".html_safe, :id => "episode-list", :data => {:brand => "any", :genre => "any", :limit => "12", :order => "date-desc", :id => "none", :page => "1"} %>
+          <%= erb :search, :locals => { form: $default_locals[:search], selected: search_params } %>
+          <%= content_tag :div, "<!-- Episode List -->".html_safe, :id => "episode-list", :data => search_params %>
         <% end %>
       <% end %>
     <% end %>

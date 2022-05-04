@@ -2,13 +2,93 @@ Search = {
 
   /* Get current search data-parameters from episode list element */
   getSearchParameters: function() {
-
-    // Get values from element's data-parameters
     var data = $("#episode-list").data();
-    var url  = "/search/" + data.brand + "/" + data.genre + "/" + data.limit + "/" + data.order + "/" + data.id + "/" + data.page
+    Search.setSearchState(data);
+  },
 
-    // Load and insert episode list
-    Search.loadEpisodeList(url);
+  /* Update episode list data-parameters */
+  // NOTE! Page value is updated by paging button events
+  setSearchParameters: function(brand, genre, limit, order) {
+
+    var list = $("#episode-list");
+
+    list.data("brand", brand);
+    list.data("genre", genre);
+    list.data("limit", limit);
+    list.data("order", order);
+
+  },
+
+  /* Update episode list using search parameters (data from history event) */
+  setSearchState: function(data) {
+
+    var search      = $("#episode-search");
+    var queryString = window.location.search;
+
+    // History event has data
+    if (data !== null) {
+
+      var brand = data.brand;
+      var genre = data.genre;
+      var limit = parseInt(data.limit);
+      var order = data.order;
+      var url   = "/search/" + data.brand + "/" + data.genre + "/" + data.limit + "/" + data.order + "/" + data.id + "/" + data.page;
+
+      // Update episode list data-parameters and content
+      Search.setSearchParameters(data.brand, data.genre, data.limit, data.order);
+      Search.loadEpisodeList(url);
+
+    }
+
+    // No history events left
+    else {
+
+      var brand = 'any';
+      var genre = 'any';
+      var limit = 12;
+      var order = 'date-desc';
+
+      // Get page value from URL-parameter if present
+      if (queryString.length != 0) {
+        var urlParameters = new URLSearchParams(queryString);
+        var page          = parseInt(urlParameters.get('page'));
+      }
+      else {
+        var page = 1;
+      }
+
+      // Update episode list page data-parameter
+      $("#episode-list").data("page", page);
+
+      // Initialize episode search with default values
+      Search.initSearchForm(false);
+
+    }
+
+    // Set search form selected values
+    search.find("select#brand").val(brand);
+    search.find("select#genre").val(genre);
+    search.find("select#limit").val(limit);
+    search.find("select#order").val(order);
+
+  },
+
+  /* Init page history event and add search parameters to URL */
+  setUrlParameters: function() {
+
+    // Get values from episode list's data-parameters
+    var data = $("#episode-list").data();
+    var url = new URL(window.location);
+
+    // Set URL-parameters
+    url.searchParams.set("brand", data.brand);
+    url.searchParams.set("genre", data.genre);
+    url.searchParams.set("limit", data.limit);
+    url.searchParams.set("order", data.order);
+    url.searchParams.set("page", data.page);
+
+    // Set history event
+    history.pushState(data, document.title, url);
 
   },
 
@@ -30,11 +110,17 @@ Search = {
       /* Initialze paging links */
       $(".page-link").click(function() {
 
-        var search = document.getElementById("episode-list");
+        var episodeList = document.getElementById("episode-list");
         var url    = $(this).data("url");
 
-        // Scroll page to search form
-        search.scrollIntoView();
+        // Update episode list page data-parameter
+        list.data("page", $(this).data("page"));
+
+        // Set search parameters to URL
+        Search.setUrlParameters();
+
+        // Scroll page to beginning of episode list
+        episodeList.scrollIntoView();
 
         // Load requested page if target URL is present
         if (typeof(url) != "undefined") {
@@ -53,19 +139,26 @@ Search = {
   },
 
   /* Initialize episode search when form values are changed */
-  initSearchForm: function() {
+  initSearchForm: function(setUrlParameters) {
 
     var search = $("#episode-search");
     var list   = $("#episode-list");
 
-    // Set search form values as search data-parameters
-    list.data("brand", search.find("select#brand").val());
-    list.data("genre", search.find("select#genre").val());
-    list.data("limit", search.find("select#limit").val());
-    list.data("order", search.find("select#order").val());
+    // Update episode list data-parameters
+    Search.setSearchParameters(
+      search.find("select#brand").val(),
+      search.find("select#genre").val(),
+      search.find("select#limit").val(),
+      search.find("select#order").val()
+    );
 
     // Initialize episode search by using data-parameters
     Search.getSearchParameters();
+
+    // Set search parameters to URL
+    if (setUrlParameters == true) {
+      Search.setUrlParameters();
+    }
 
   }
 
@@ -79,7 +172,12 @@ $(document).ready(function() {
 
   // Initialize episode search when form values are changed
   $("#episode-search select").change(function() {
-    Search.initSearchForm();
+    Search.initSearchForm(true);
+  });
+
+  // Update search parameters on page change event
+  window.addEventListener("popstate", function(event) {
+    Search.setSearchState(event.state);
   });
 
 });

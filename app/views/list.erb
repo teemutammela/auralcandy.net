@@ -33,12 +33,12 @@
         %>
         <% for page in range %>
           <% content_tag :li, :class => (current == range.first ? "page-item disabled" : "page-item") do %>
-            <% link_to false, :title => "Previous Page", :class => "page-link", :data => {:url => page_url + prev_page.to_s}, :aria => {:label => "Previous Page"} do %>
+            <% link_to false, :title => "Previous Page", :class => "page-link", :data => {:page => prev_page, :url => page_url + prev_page.to_s}, :aria => {:label => "Previous Page"} do %>
               <%= content_tag :span, "<!-- Previous Page -->".html_safe, :class => "fas fa-arrow-left" %>
             <% end %>
           <% end if page == range.first %>
           <% content_tag :li, :title => "Page #{page}", :class => (page == current ? "page-item disabled d-none d-lg-block d-xl-block" : "page-item d-none d-lg-block d-xl-block") do %>
-            <%= link_to page, false, :class => "page-link", :data => {:url => page_url + page.to_s} %>
+            <%= link_to page, false, :class => "page-link", :data => {:page => page, :url => page_url + page.to_s} %>
           <% end if pages > 1 %>
           <% content_tag :li, :class => "page-item" do %>
             <% link_to false, :title => "Back to Top", :class => "page-link", :aria => {:label => "Back to Top"} do %>
@@ -46,7 +46,7 @@
             <% end %>
           <% end if page == range.last %>
           <% content_tag :li, :class => (current == range.last ? "page-item disabled" : "page-item") do %>
-            <% link_to false, :title => "Next Page", :class => "page-link", :data => {:url => page_url + next_page.to_s}, :aria => {:label => "Next Page"} do %>
+            <% link_to false, :title => "Next Page", :class => "page-link", :data => {:page => next_page, :url => page_url + next_page.to_s}, :aria => {:label => "Next Page"} do %>
               <%= content_tag :span, "<!-- Next Page -->".html_safe, :class => "fas fa-arrow-right" %>
             <% end %>
           <% end if page == range.last %>
