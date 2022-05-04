@@ -122,7 +122,7 @@ $ contentful login
 $ contentful space use
 ```
 
-__3)__ Import content models to target space.
+__3)__ Import content models to target space. Alternatively, use `import/migration.js` if you prefer to use [contentful-migration](https://github.com/contentful/contentful-migration) tooling instead.
 
 ```shell
 $ contentful space import --content-file import/content-models.json
