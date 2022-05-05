@@ -1,292 +1,248 @@
-Player = {
+const Player = {
+
+  player: $('#media-player'),
+  audio: document.getElementById('media-audio'),
+  duration: null,
 
   /* Initialize episode play buttons */
-  initPlayButtons: function() {
-
-    $(".play-button").click(function() {
-
+  initPlayButtons: function () {
+    $('.play-button').click(function () {
       // Get episode properties from data-parameters
-      var episode= $(this).data();
+      const episode = $(this).data()
 
       // Add default duration, elapsed time and play state
-      episode.duration = "00:00:00";
-      episode.elapsed  = 0;
-      episode.state    = "play";
+      episode.duration = '00:00:00'
+      episode.elapsed = 0
+      episode.state = 'play'
 
       // Set episode properties to media player and save to localStorage
-      Player.setPlayerProperties(episode);
-      Player.setLocalStorage(episode);
+      Player.setPlayerProperties(episode)
+      Player.setLocalStorage(episode)
 
       // Set full size cover image to lightbox
-      Lightbox.setImage(episode.imageFullUrl);
+      Lightbox.setImage(episode.imageFullUrl)
 
       // Load audio file to media player
-      audio.load();
+      Player.audio.load()
 
       // Fade in media player and start playback
-      player.fadeIn("slow", function() {
-        audio.play();
-      });
+      Player.player.fadeIn('slow', function () {
+        Player.audio.play()
+      })
 
-      return false;
-
-    });
-
+      return false
+    })
   },
 
   /* Set episode properties to media player */
-  setPlayerProperties: function(episode) {
-
+  setPlayerProperties: function (episode) {
     // Set episode title, cover image and source URLs
-    $("#media-dj").html(episode.dj);
-    $("#media-title").html(episode.title);
-    $("#media-duration").html(episode.duration);
-    $("#media-image-url").attr("data-image-url", episode.imageUrl);
-    $("#media-image-full-url").attr("data-image-full-url", episode.imageFullUrl);
-    $("#media-audio-url").attr("src", episode.audioUrl);
-    $("#media-episode-url").attr("href", episode.episodeUrl);
-    $("#media-download").attr("href", episode.audioUrl);
+    $('#media-dj').html(episode.dj)
+    $('#media-title').html(episode.title)
+    $('#media-duration').html(episode.duration)
+    $('#media-image-url').attr('data-image-url', episode.imageUrl)
+    $('#media-image-full-url').attr('data-image-full-url', episode.imageFullUrl)
+    $('#media-audio-url').attr('src', episode.audioUrl)
+    $('#media-episode-url').attr('href', episode.episodeUrl)
+    $('#media-download').attr('href', episode.audioUrl)
 
     // Social media sharing URLs
     episode.share_urls = {
-      "twitter"    : "https://twitter.com/intent/tweet?text=" + encodeURI(episode.dj + " - " + episode.title) + "&url=" + encodeURI(episode.episodeUrl),
-      "facebook"   : "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(episode.episodeUrl),
-      "pinterest"  : "https://pinterest.com/pin/create/button/?url=" + encodeURI(episode.episodeUrl),
-      "email"      : "mailto:?subject=" + encodeURI(episode.dj + " - " + episode.title) + "&body=" + encodeURI(episode.episodeUrl)
+      twitter: 'https://twitter.com/intent/tweet?text=' + encodeURI(episode.dj + ' - ' + episode.title) + '&url=' + encodeURI(episode.episodeUrl),
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURI(episode.episodeUrl),
+      pinterest: 'https://pinterest.com/pin/create/button/?url=' + encodeURI(episode.episodeUrl),
+      email: 'mailto:?subject=' + encodeURI(episode.dj + ' - ' + episode.title) + '&body=' + encodeURI(episode.episodeUrl)
     }
 
     // Set values to share menu
-    for (var key in episode.share_urls) {
-      $("#media-" + key + "-url").attr("href", episode.share_urls[key]);
+    for (const key in episode.share_urls) {
+      $('#media-' + key + '-url').attr('href', episode.share_urls[key])
     }
-
   },
 
   /* Restore media player state */
-  restorePlayerState: function() {
-
+  restorePlayerState: function () {
     if (localStorage.episode) {
-
       // Get episode data from localStorage
-      episode = Player.getLocalStorage();
+      const episode = Player.getLocalStorage()
 
       // Set player properties from localStorage
-      Player.setPlayerProperties(episode);
+      Player.setPlayerProperties(episode)
 
       // Load source file to media player's audio instance
-      audio.load();
+      Player.audio.load()
 
       // Set appropriate play state icon
-      Player.togglePlayIcon();
+      Player.togglePlayIcon()
 
       // Display media player instantly
-      player.show();
-
+      Player.player.show()
     }
-
   },
 
   /* Attempt to resume audio playback if media player is in play state */
-  resumePlayback: function() {
-
-    if (Player.getLocalStorage("state") == "play") {
-      audio.play().catch(function() {
-        console.log("Browser prevented resuming audio playback.");
-      });
+  resumePlayback: function () {
+    if (Player.getLocalStorage('state') === 'play') {
+      Player.audio.play().catch(function () {
+        console.log('Browser prevented resuming audio playback.')
+      })
     }
-
   },
 
   /* Play or pause media player */
-  togglePlayState: function() {
-
-    audio.paused ? audio.play() : audio.pause();
-    audio.paused ? Player.updateLocalStorage("state", "pause") : Player.updateLocalStorage("state", "play");
-
+  togglePlayState: function () {
+    Player.audio.paused ? Player.audio.play() : Player.audio.pause()
+    Player.audio.paused ? Player.updateLocalStorage('state', 'pause') : Player.updateLocalStorage('state', 'play')
   },
 
   /* Set play or pause title and icon */
-  togglePlayIcon: function() {
+  togglePlayIcon: function () {
+    const link = $('#media-playpause')
+    const icon = link.find('span')
 
-    var link = $("#media-playpause");
-    var icon = link.find("span");
-
-    audio.paused ? link.attr("title", "Play") : link.attr("title", "Pause");
-    audio.paused ? icon.attr("class", "fas fa-play") : icon.attr("class", "fas fa-pause");
-
+    Player.audio.paused ? link.attr('title', 'Play') : link.attr('title', 'Pause')
+    Player.audio.paused ? icon.attr('class', 'fas fa-play') : icon.attr('class', 'fas fa-pause')
   },
 
   /* Set media player cover image thumbnail */
-  setThumbnail: function() {
-    $("#media-image-url").attr("src", $("#media-image-url").attr("data-image-url"));
+  setThumbnail: function () {
+    $('#media-image-url').attr('src', $('#media-image-url').attr('data-image-url'))
   },
 
   /* Update media player duration and elapsed time index */
-  updateDuration: function() {
-
+  updateDuration: function () {
     // NaN = audio file not loaded yet
-    if (isNaN(audio.duration) == false) {
-
+    if (isNaN(Player.audio.duration) === false) {
       // Convert seconds to HH:MM:SS
-      var total    = audio.duration;
-      var current  = audio.currentTime;
-      var duration = new Date((parseInt(total) - parseInt(current)) * 1000).toISOString().substr(11, 8);
+      const total = Player.audio.duration
+      const current = Player.audio.currentTime
+      const duration = new Date((parseInt(total) - parseInt(current)) * 1000).toISOString().substr(11, 8)
 
       // Update duration and elapsed time only when playback is active
-      if (!audio.paused) {
-
+      if (!Player.audio.paused) {
         // Update duration and elapsed time in localStorage
-        Player.updateLocalStorage("duration", duration);
-        Player.updateLocalStorage("elapsed", current);
+        Player.updateLocalStorage('duration', duration)
+        Player.updateLocalStorage('elapsed', current)
 
         // Update duration display in media player
-        $("#media-duration").html(duration);
-
+        $('#media-duration').html(duration)
       }
-
     }
-
   },
 
   /* Get episode properties from localStorage */
-  getLocalStorage: function(key) {
-
-    var episode = JSON.parse(localStorage.episode);
-    return typeof(key) == "undefined" ? episode : episode[key];
-
+  getLocalStorage: function (key) {
+    const episode = JSON.parse(localStorage.episode)
+    return typeof (key) === 'undefined' ? episode : episode[key]
   },
 
   /* Set episode properties to localStorage */
-  setLocalStorage: function(episode) {
-
-    localStorage.removeItem("episode")
+  setLocalStorage: function (episode) {
+    localStorage.removeItem('episode')
 
     // Strip Chartable redirection from audio URL to prevent unnecessary redirections when restoring state
-    if (episode.audioUrl.includes("chtbl.com")) {
-      audio_url = "https:/" + episode.audioUrl.replace("https://chtbl.com/track/", "").replace(/^[0-9A-Z]{5}?/, "");
-      episode.audioUrl = audio_url;
+    if (episode.audioUrl.includes('chtbl.com')) {
+      const audioUrl = 'https:/' + episode.audioUrl.replace('https://chtbl.com/track/', '').replace(/^[0-9A-Z]{5}?/, '')
+      episode.audioUrl = audioUrl
     }
 
-    localStorage.setItem("episode", JSON.stringify(episode));
-
+    localStorage.setItem('episode', JSON.stringify(episode))
   },
 
   /* Update episode properties in localStorage */
-  updateLocalStorage: function(key, value) {
-
-    var episode = Player.getLocalStorage();
-    episode[key] = value;
-    Player.setLocalStorage(episode);
-
+  updateLocalStorage: function (key, value) {
+    const episode = Player.getLocalStorage()
+    episode[key] = value
+    Player.setLocalStorage(episode)
   },
 
   /* Define actions for media player events */
-  bindPlayerEvents: function() {
-
+  bindPlayerEvents: function () {
     /* Audio loading started - display loading animation */
-    audio.onloadstart = function() {
-      $("#media-image-url").attr("src", "/images/layout/loading-dark.gif");
+    Player.audio.onloadstart = function () {
+      $('#media-image-url').attr('src', '/images/layout/loading-dark.gif')
     }
 
     /* Restore current time index from localStorage */
-    audio.onprogress = function() {
-
-      if (localStorage.episode && audio.currentTime == 0) {
-
+    Player.audio.onprogress = function () {
+      if (localStorage.episode && Player.audio.currentTime === 0) {
         // Setting current time only once prevents jumps in audio playback
-        audio.currentTime = Player.getLocalStorage("elapsed");
+        Player.audio.currentTime = Player.getLocalStorage('elapsed')
 
         // Attempt to resume audio playback
-        Player.resumePlayback();
-
+        Player.resumePlayback()
       }
-
     }
 
     /* Playback can start - replace loading animation with cover image */
-    audio.oncanplay = function() {
-      Player.setThumbnail();
+    Player.audio.oncanplay = function () {
+      Player.setThumbnail()
     }
 
     /* Playback started */
-    audio.onplay = function() {
-
+    Player.audio.onplay = function () {
       // Set cover image thumbnail
-      Player.setThumbnail();
+      Player.setThumbnail()
 
       // Set icon to pause state
-      Player.togglePlayIcon();
+      Player.togglePlayIcon()
 
       // Set duration interval (runs on the background until playback ends)
-      if (typeof(duration) == "undefined") {
-        duration = setInterval(function() {
-          Player.updateDuration();
-        }, 1000);
+      if (typeof (duration) === 'undefined') {
+        Player.duration = setInterval(function () {
+          Player.updateDuration()
+        }, 1000)
       }
-
-    };
+    }
 
     /* Playback paused - display play icon */
-    audio.onpause = function() {
-      Player.togglePlayIcon();
-    };
+    Player.audio.onpause = function () {
+      Player.togglePlayIcon()
+    }
 
     /* Playback ended */
-    audio.onended = function() {
-
+    Player.audio.onended = function () {
       // Clear episode properties from localStorage
-      localStorage.removeItem("episode");
+      localStorage.removeItem('episode')
 
       // Hide media player
-      player.fadeOut("slow");
+      Player.player.fadeOut('slow')
 
       // Clear duration display interval
-      clearInterval(duration);
-
-    };
+      clearInterval(Player.duration)
+    }
 
     /* Error - display notification */
-    audio.onerror = function() {
-      alert("Unable to load audio file.");
-    };
-
+    Player.audio.onerror = function () {
+      alert('Unable to load audio file.')
+    }
   }
 
-};
+}
 
 /* Document ready state */
-$(document).ready(function() {
-
-  // Media player UI
-  player = $("#media-player");
-
-  // Media player audio tag
-  audio = document.getElementById("media-audio");
-
+$(document).ready(function () {
   // Bind media player events and restore media player state
-  Player.bindPlayerEvents();
-  Player.restorePlayerState();
+  Player.bindPlayerEvents()
+  Player.restorePlayerState()
 
   /* Media player play/pause button */
-  $("#media-playpause").click(function() {
-    Player.togglePlayState();
-    return false;
-  });
+  $('#media-playpause').click(function () {
+    Player.togglePlayState()
+    return false
+  })
 
   /* Media player close button */
-  $("#media-close").click(function() {
-
+  $('#media-close').click(function () {
     // Clear episode properties from localStorage
-    localStorage.removeItem("episode");
+    localStorage.removeItem('episode')
 
     // Fade out media player
-    player.fadeOut("slow");
+    Player.player.fadeOut('slow')
 
     // Stop audio playback
-    audio.pause();
+    Player.audio.pause()
 
-    return false;
-
-  });
-
-});
+    return false
+  })
+})
