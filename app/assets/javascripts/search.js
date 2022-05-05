@@ -28,6 +28,12 @@ const Search = {
     const id = (data !== null ? data.id : null)
     let page = (data !== null ? data.page : 1)
 
+    // Set search form selected values
+    search.find('select#brand').val(brand)
+    search.find('select#genre').val(genre)
+    search.find('select#limit').val(limit)
+    search.find('select#order').val(order)
+
     // Handle history event's data content
     if (data !== null) {
       const url = '/search/' + brand + '/' + genre + '/' + limit + '/' + order + '/' + id + '/' + page
@@ -48,12 +54,6 @@ const Search = {
       // Initialize episode search with default values
       Search.initSearchForm(false)
     }
-
-    // Set search form selected values
-    search.find('select#brand').val(brand)
-    search.find('select#genre').val(genre)
-    search.find('select#limit').val(limit)
-    search.find('select#order').val(order)
   },
 
   /* Init page history event and add search parameters to URL */
