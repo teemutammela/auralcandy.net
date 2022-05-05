@@ -7,6 +7,12 @@
     "url": "https://github.com/teemutammela/auralcandy.net.git"
   },
   "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
     "grunt": "1.5.2",
     "grunt-contrib-sass": "2.0.0",
     "grunt-contrib-uglify": "5.1.0",
