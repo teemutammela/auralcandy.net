@@ -10,8 +10,8 @@ module.exports = function(grunt) {
         files: {
           "app/public/javascripts/scripts.min.js": [
             "app/assets/javascripts/jquery-3.6.0.js",
-            "app/assets/javascripts/popper-1.14.3.js",
-            "app/assets/javascripts/bootstrap-4.1.3.js",
+            "app/assets/javascripts/popper-1.16.1.js",
+            "app/assets/javascripts/bootstrap-4.6.1.js",
             "app/assets/javascripts/search.js",
             "app/assets/javascripts/player.js",
             "app/assets/javascripts/lightbox.js"

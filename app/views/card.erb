@@ -6,7 +6,7 @@
 		<%= image_tag "#{image_url}?w=300&h=300&fm=jpg&q=80", :alt => title, :title => title , :class => "img-fluid", :itemprop => "image" %>
 	<% end if preview %>
   <% content_tag :div, :class => "list-group list-group-flush px-0 text-center" do %>
-    <% content_tag :ul, :class => "list-group-item genre-list #{preview ? "px-0" : false} pt-2", :itemprop => "genre" do %>
+    <% content_tag :ul, :class => "list-group-item genre-list #{preview ? "px-0" : false} pt-2 mb-0", :itemprop => "genre" do %>
       <%
         index = genre.map { |genre_name| parse_genre(genre_name) }.index(selected)
         genres = (index.nil? ? genre : genre.unshift(genre[index])).uniq
