@@ -160,24 +160,4 @@ class PodcastTest < Test::Unit::TestCase
     assert last_response.body.include?('<time class="col text-left text-nowrap" datetime="2019-04-11" itemprop="datePublished">')
     assert last_response.body.include?('<div class="col text-right text-nowrap" itemprop="author">DJ First</div>')
   end
-
-  # Error - Invalid episode slug
-  def test_invalid_episode_slug
-    get '/episodes/does-not-exist'
-
-    assert_equal 404, last_response.status
-
-    assert last_response.body.include?('<h1 class="jumbotron-heading">404 Not Found</h1>')
-    assert last_response.body.include?('<div class="lead" itemprop="description">The content you are looking for was not found.</div>')
-  end
-
-  # Error - Invalid route
-  def test_invalid_route
-    get '/does-not-exist'
-
-    assert_equal 404, last_response.status
-
-    assert last_response.body.include?('<h1 class="jumbotron-heading">404 Not Found</h1>')
-    assert last_response.body.include?('<div class="lead" itemprop="description">The content you are looking for was not found.</div>')
-  end
 end
