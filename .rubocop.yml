@@ -7,6 +7,8 @@ Style/GlobalVars:
   Enabled: false
 Style/FormatString:
   Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
 Lint/LiteralAsCondition:
   Enabled: false
 Lint/UnreachableCode:
@@ -22,7 +24,7 @@ Metrics/ClassLength:
 Metrics/ParameterLists:
   Max: 10
 Metrics/MethodLength:
-  Max: 50
+  Max: 120
 Metrics/BlockLength:
   Max: 180
 Metrics/PerceivedComplexity:
