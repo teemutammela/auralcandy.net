@@ -6,7 +6,30 @@ module Sinatra
       def self.registered(app)
         # Index
         app.get '/' do
-          erb :index, locals: { search_params: parse_search_params(params, nil) }
+          # Parse search parameters
+          search_params = parse_search_params(params, nil)
+
+          # Query default episode set
+          results = search_episodes(
+            search_params[:brand],
+            search_params[:genre],
+            search_params[:limit],
+            search_params[:order],
+            search_params[:id],
+            search_params[:page]
+          )
+
+          # Pass variables to template
+          erb :index, locals: {
+            search_params:,
+            list_result: {
+              episodes: results[:episodes],
+              current: search_params[:page].to_i,
+              pages: results[:pages].to_i,
+              page_url: results[:page_url],
+              genre: search_params[:genre]
+            }
+          }
         end
 
         # Episode landing page
@@ -14,12 +37,33 @@ module Sinatra
           # Query episode and sample genre for related content
           episode = episode_by_slug(slug)
           genre = parse_genre(episode.genre.sample)
+          search_params = parse_search_params(params, genre)
+
+          # Query default episode set
+          results = search_episodes(
+            search_params[:brand],
+            search_params[:genre],
+            search_params[:limit],
+            search_params[:order],
+            search_params[:id],
+            search_params[:page]
+          )
 
           # Set headers
           last_modified(episode.updated) unless settings.development?
 
           # Pass variables to template
-          erb :episode, locals: { episode:, search_params: parse_search_params(params, genre) }
+          erb :episode, locals: {
+            episode:,
+            search_params:,
+            list_result: {
+              episodes: results[:episodes],
+              current: search_params[:page].to_i,
+              pages: results[:pages].to_i,
+              page_url: results[:page_url],
+              genre:
+            }
+          }
         end
 
         # Episode search listing
@@ -81,10 +125,7 @@ module Sinatra
 
         # Page not found
         app.not_found do
-          erb :not_found, locals: {
-            title: '404 Not Found',
-            message: 'The content you are looking for was not found.'
-          }
+          redirect '/'
         end
       end
     end

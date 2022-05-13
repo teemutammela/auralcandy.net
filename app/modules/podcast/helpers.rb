@@ -27,7 +27,7 @@ module Sinatra
         order = $default_locals[:search][:fields][:order][:options].map { |_key, value| value }
 
         # Set URL-parameter values for search or use defaults
-        search_params = {
+        {
           brand: brands.include?(params['brand']) ? params['brand'] : 'any',
           genre: genres.include?(params['genre']) ? params['genre'] : genre,
           limit: $search_items.include?(params['limit'].to_i) ? params['limit'] : '12',
