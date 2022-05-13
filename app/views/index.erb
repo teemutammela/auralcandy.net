@@ -33,12 +33,15 @@
       <% content_tag :div, :class => "pt-4 pb-0 bg-light" do %>
         <% content_tag :div, :class => "container" do %>
           <%= erb :search, :locals => { form: $default_locals[:search], selected: search_params } %>
-          <%= content_tag :div, "<!-- Episode List -->".html_safe, :id => "episode-list", :data => search_params %>
+          <% content_tag :div, :id => "episode-list", :data => search_params do %>
+            <%= erb :list, locals: list_result %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
     <%= erb :footer, :locals => $default_locals[:footer] %>
     <%= erb :player %>
+    <%= erb :loading %>
     <%= javascript_include_tag "scripts.min.js", :async => "async", :type => false %>
   <% end %>
 <% end %>
