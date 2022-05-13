@@ -76,41 +76,51 @@ const Search = {
   /* Load episode list and insert into target element */
   loadEpisodeList: function (url) {
     const list = $('#episode-list')
+    const loading = $('#loading-indicator')
+    const interval = 333
 
-    // Clear search results and show loading animation
-    list.empty()
-    list.css('background-image', "url('/images/layout/loading-light.gif')")
+    // Fade out episode list
+    list.fadeTo(interval, 0)
+    loading.fadeTo(0, 1)
 
     /* Insert response into element */
     list.load(url, function () {
-      // Hide loading animation
-      list.css('background-image', 'none')
+      // Fade in episode list
+      list.fadeTo(interval, 1)
+      loading.fadeTo(0, 0)
 
-      /* Initialze paging links */
-      $('.page-link').click(function () {
-        const episodeList = document.getElementById('episode-list')
-        const url = $(this).data('url')
-
-        // Update episode list page data-parameter
-        list.data('page', $(this).data('page'))
-
-        // Set search parameters to URL
-        Search.setUrlParameters()
-
-        // Scroll page to beginning of episode list
-        episodeList.scrollIntoView()
-
-        // Load requested page if target URL is present
-        if (typeof (url) !== 'undefined') {
-          Search.loadEpisodeList(url)
-        }
-
-        return false
-      })
+      // Initialize paging buttons
+      Search.initPagingButtons()
 
       // Initialize Play-buttons in episode list
       Player.initPlayButtons()
     })
+  },
+
+  /* Initialize paging buttons */
+  initPagingButtons: function () {
+    $('.page-link').click(function () {
+      const list = $('#episode-list')
+      const url = $(this).data('url')
+
+      // Update episode list page data-parameter
+      list.data('page', $(this).data('page'))
+
+      // Set search parameters to URL
+      Search.setUrlParameters()
+
+      // Scroll page to beginning of episode list
+      document.getElementById('episode-list').scrollIntoView()
+
+      // Load requested page if target URL is present
+      if (typeof (url) !== 'undefined') {
+        Search.loadEpisodeList(url)
+      }
+
+      return false
+    })
+
+    return false
   },
 
   /* Initialize episode search when form values are changed */
@@ -138,8 +148,8 @@ const Search = {
 
 /* Document ready state */
 $(document).ready(function () {
-  // Load default episode list on page load
-  Search.getSearchParameters()
+  // Initialize paging buttons
+  Search.initPagingButtons()
 
   // Initialize episode search when form values are changed
   $('#episode-search select').change(function () {
