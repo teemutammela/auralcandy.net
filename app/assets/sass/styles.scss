@@ -143,10 +143,6 @@ h1.card-header, h2, h3 {
 }
 
 #episode-list {
-  background-image: url("/images/layout/loading-light.gif");
-  background-size: 100px 100px;
-  background-position: center 10%;
-  background-repeat: no-repeat;
   min-height: 50vh;
 
   .genre-list {
@@ -184,6 +180,11 @@ h1.card-header, h2, h3 {
 
 }
 
+#loading-indicator {
+  position: fixed;
+  opacity: 0;
+}
+
 @media screen and (orientation:portrait) {
 
   .navbar-brand {
@@ -214,6 +215,13 @@ h1.card-header, h2, h3 {
 
   }
 
+  #loading-indicator {
+    top: 40vh;
+    left: 40vw;
+    width: 20vw;
+    height: 20vw;
+  }
+
   #lightbox-image {
     width: 90vw;
     height: 90vw;
@@ -241,6 +249,13 @@ h1.card-header, h2, h3 {
       font-size: $font-size-sm;
     }
 
+  }
+
+  #loading-indicator {
+    top: 35vh;
+    left: 45vw;
+    width: 10vw;
+    height: 10vw;
   }
 
   #lightbox-image {
@@ -335,7 +350,6 @@ h1.card-header, h2, h3 {
 }
 
 @media (max-width: 768px) {
-
 
   #episode-search {
 
