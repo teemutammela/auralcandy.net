@@ -1,3 +1,5 @@
-<% content_tag :div, :id => "loading-indicator", :class => "spinner-border text-primary", :role => "status" do %>
-  <%= content_tag :span, "Loading...", :class => "sr-only" %>
+<% content_tag :div, :id => "loading-indicator", :class => "box-shadow" do %>
+  <% content_tag :div, :class => "spinner-border text-primary", :role => "status" do %>
+    <%= content_tag :span, "Loading...", :class => "sr-only" %>
+  <% end %>
 <% end %>
