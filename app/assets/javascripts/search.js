@@ -148,7 +148,8 @@ const Search = {
 
 /* Document ready state */
 $(document).ready(function () {
-  // Initialize paging buttons
+  // Initialize play and paging buttons
+  Player.initPlayButtons()
   Search.initPagingButtons()
 
   // Initialize episode search when form values are changed
