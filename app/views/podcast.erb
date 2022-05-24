@@ -30,7 +30,7 @@
       <% content_tag :item do %>
         <%= content_tag :title, cd(episode.title_full) %>
         <%= content_tag :link, episode.url %>
-        <%= content_tag :guid, episode.audio_url %>
+        <%= content_tag :guid, episode.url %>
         <%= content_tag :category, cd("Podcasts") %>
         <%
           track_list  = episode.track_list.map { |track| content_tag(:li, track) }
