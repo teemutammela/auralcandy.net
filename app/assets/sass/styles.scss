@@ -181,10 +181,10 @@ h1.card-header, h2, h3 {
 }
 
 #loading-indicator {
-  position: fixed;
-  opacity: 0;
   background-color: $gray-800;
   border-radius: 50%;
+  position: fixed;
+  opacity: 0;
 }
 
 @media screen and (orientation:portrait) {
