@@ -12,7 +12,8 @@ module Contentful
       # NOTE! It's possible to initialize client with invalid API key and/or space ID
       $delivery = Contentful::Client.new(
         access_token: ENV['CONTENTFUL_DELIVERY_KEY'],
-        space: ENV['CONTENTFUL_SPACE_ID']
+        space: ENV['CONTENTFUL_SPACE_ID'],
+        environment: ENV['CONTENTFUL_ENVIRONMENT']
       )
     rescue StandardError
       halt 500, 'Unable to initialize Contentful Delivery API client.'
