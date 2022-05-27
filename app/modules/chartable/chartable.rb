@@ -28,17 +28,14 @@ module Chartable
 
   # Fetch downloads from Chartable API
   def chartable_data
-    begin
-      total = $management.entries.all(content_type: 'episode').total.to_i
-      downloads = {}
-      pages     = (total / 10) + 1
-    rescue StandardError
-      abort('Unable to connect to Contentful Management API. Check credentials.')
-    end
+    downloads = {}
+    page = 1
 
-    # Fetch data in multiple passes
-    (1..pages).each do |page|
+    # Query result pages until API returns an empty array
+    loop do
       data = chartable_api_page(page)
+      page += 1
+      break if data.empty?
 
       # Populate hash with episode titles and downloads counts
       data.each do |episode|
@@ -72,16 +69,13 @@ module Chartable
 
     # Query and update episode entries
     $management.entries.all(options).each do |episode|
+      title = episode.fields[:title]
+      downloads = data[title]
       # Update download count to episode entry if found in Chartable data
-      if episode.published? && data.key?(episode.fields[:title])
-        episode.update(downloads: data[episode.fields[:title]])
-        episode.publish
+      next unless episode.published? && data.key?(title)
 
-      # Set download count to zero if not found in Chartable
-      elsif episode.published? && !data.key?(episode.fields[:title])
-        episode.update(downloads: 0)
-        episode.publish
-      end
+      episode.update(downloads:)
+      episode.publish
     end
   end
 end
