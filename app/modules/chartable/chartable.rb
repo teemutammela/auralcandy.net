@@ -42,7 +42,16 @@ module Chartable
 
       # Populate hash with episode titles and downloads counts
       data.each do |episode|
-        downloads[episode['title'].split(' - ')[1]] = episode['total_downloads'].to_i
+        # Extract episode title
+        title = episode['title'].split(' - ')[1]
+
+        # Combine download count from every episode of the same title
+        # NOTE! Changed guid-parameters cause old episodes to be listed as new
+        downloads[title] = if downloads.include?(title)
+                             downloads[title] + episode['total_downloads'].to_i
+                           else
+                             episode['total_downloads'].to_i
+                           end
       end
     end
 
