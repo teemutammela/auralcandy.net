@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (7.0.2.3)
+    activesupport (7.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -13,7 +13,7 @@ GEM
     contentful (2.16.3)
       http (> 0.8, < 5.0)
       multi_json (~> 1)
-    contentful-management (3.3.0)
+    contentful-management (3.4.0)
       http (> 1.0, < 5.0)
       json (>= 1.8, < 3.0)
       multi_json (~> 1)
@@ -55,7 +55,7 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
     i18n (1.9.1)
       concurrent-ruby (~> 1.0)
-    json (2.6.1)
+    json (2.6.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -123,20 +123,20 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (3.5.1)
-    regexp_parser (2.3.0)
+    regexp_parser (2.5.0)
     rerun (0.13.1)
       listen (~> 3.0)
     rexml (3.2.5)
-    rubocop (1.27.0)
+    rubocop (1.30.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
-      rexml
-      rubocop-ast (>= 1.16.0, < 2.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.18.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.17.0)
+    rubocop-ast (1.18.0)
       parser (>= 3.1.1.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
@@ -168,20 +168,21 @@ GEM
       unf_ext
     unf_ext (0.0.8)
     unicode-display_width (2.1.0)
+    yaml (0.2.0)
 
 PLATFORMS
   x86_64-darwin-18
   x86_64-linux
 
 DEPENDENCIES
-  activesupport (= 7.0.2.3)
+  activesupport (= 7.0.3)
   addressable (= 2.8.0)
   contentful (= 2.16.3)
-  contentful-management (= 3.3.0)
+  contentful-management (= 3.4.0)
   dotenv (= 2.7.6)
   faraday (= 1.7.0)
   http (= 4.4.1)
-  json (= 2.6.1)
+  json (= 2.6.2)
   padrino (= 0.15.1)
   puma (= 5.6.4)
   rack-cache (= 1.13.0)
@@ -190,12 +191,13 @@ DEPENDENCIES
   rake (= 13.0.6)
   redcarpet (= 3.5.1)
   rerun (= 0.13.1)
-  rubocop (= 1.27.0)
+  rubocop (= 1.30.0)
   rubocop-rake (= 0.6.0)
   sass (= 3.7.4)
   sinatra (= 2.2.0)
   sinatra-contrib (= 2.2.0)
   test-unit (= 3.5.3)
+  yaml (= 0.2.0)
 
 RUBY VERSION
    ruby 3.1.2p20

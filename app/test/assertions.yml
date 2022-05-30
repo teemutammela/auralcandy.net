@@ -1,0 +1,59 @@
+---
+manifest:
+  - Primary Brand - Primary Brand Tagline
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+podcast:
+  - <?xml version="1.0" encoding="UTF-8" ?>
+  - <title><![CDATA[Primary Brand - Primary Brand Tagline]]></title>
+  - <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus.]]></description>
+  - <itunes:email><![CDATA[contact@email.com]]></itunes:email>
+  - <title><![CDATA[DJ First - Example Episode 1]]></title>
+  - /episodes/example-episode-1</link>
+  - <li>Producer feat. Vocalist - Track Name [Mix Name]</li>
+  - the_funk_formula.png
+  - Sample_Audio_1.mp3
+  - <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+  - <itunes:duration>00:00:27</itunes:duration>
+  - <itunes:keywords><![CDATA[DJ, Podcast, Deep House, House Music, Progressive House]]></itunes:keywords>
+sitemap:
+   - <?xml version="1.0" encoding="UTF-8" ?>
+   - /episodes/example-episode-1
+   - /episodes/example-episode-2
+   - /episodes/example-episode-3
+index:
+     - <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus." />
+     - <meta name="keywords" content="dj, podcast, music" />
+     - <title>Primary Brand - Primary Brand Tagline</title>
+     - <a href="/" class="navbar-brand" title="Home">Primary Brand</a>
+     - <a href="https://apple.co/2Y2xeCz" class="nav-link" title="Listen to AuralCandy.Net on Apple Podcasts" itemprop="relatedLink">Apple Podcasts</a>
+     - <a href="#about" class="nav-link" title="About AuralCandy.Net" itemprop="relatedLink">About</a>
+     - <form id="episode-search">
+     - <option value="secondary-brand">Secondary Brand</option>
+     - <option value="progressive_house">Progressive House</option>
+     - <option value="24">24 Per Page</option>
+     - <option value="date-desc" selected="selected">
+search_default:
+     - <h2 class="card-header text-center text-muted" itemprop="name">Example Episode 1</h2>
+     - <li title="Deep House" class="badge badge-pill badge-primary">Deep House</li>
+     - the_funk_formula.png
+     - Sample_Audio_1.mp3
+     - <time class="col text-left text-nowrap" datetime="2019-04-11" itemprop="datePublished">
+search_brand:
+     - <h2 class="card-header text-center text-muted" itemprop="name">Example Episode 3</h2>
+search_genre:
+     - <h2 class="card-header text-center text-muted" itemprop="name">Example Episode 1</h2>
+     - <li title="Deep House" class="badge badge-pill badge-primary">Deep House</li>
+search_popularity:
+     - <h2 class="card-header text-center text-muted" itemprop="name">Example Episode 4</h2>
+episode:
+     - <meta name="keywords" content="DJ, Podcast, Deep House, House Music, Progressive House" />
+     - /episodes/example-episode-2" rel="prev" />
+     - <title>Example Episode 1 by DJ First - Primary Brand</title>
+     - <h1 class="jumbotron-heading">Example Episode 1</h1>
+     - <li title="Deep House" class="badge badge-pill badge-primary">Deep House</li>
+     - data-dj="DJ First"
+     - data-title="Example Episode 1"
+     - <div class="text-muted">Producer feat. Vocalist</div>
+     - <div class="small">Track Name [Mix Name]</div>
+     - <time class="col text-left text-nowrap" datetime="2019-04-11" itemprop="datePublished">
+     - <div class="col text-right text-nowrap" itemprop="author">DJ First</div>

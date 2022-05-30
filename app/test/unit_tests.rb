@@ -3,6 +3,7 @@
 require 'test/unit'
 require 'rack/test'
 require 'optparse'
+require 'yaml'
 
 # Command line options
 OptionParser.new do |option|
@@ -29,6 +30,9 @@ require_relative('../app')
 class PodcastTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
+  # Load assertions from YAML file
+  $assertions = YAML.load_file('app/test/assertions.yml')
+
   # Reference main application
   def app
     Podcast
@@ -39,8 +43,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/manifest.json'
 
     assert last_response.ok?
-    assert last_response.body.include?('"name": "Primary Brand - Primary Brand Tagline"')
-    assert last_response.body.include?('"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus."')
+    $assertions['manifest'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Podcast RSS/XML feed
@@ -49,22 +54,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/podcast'
 
     assert last_response.ok?
-
-    # Brand
-    assert last_response.body.include?('<?xml version="1.0" encoding="UTF-8" ?>')
-    assert last_response.body.include?('<title><![CDATA[Primary Brand - Primary Brand Tagline]]></title>')
-    assert last_response.body.include?('<description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus.]]></description>')
-    assert last_response.body.include?('<itunes:email><![CDATA[contact@email.com]]></itunes:email>')
-
-    # Episode
-    assert last_response.body.include?('<title><![CDATA[DJ First - Example Episode 1]]></title>')
-    assert last_response.body.include?('/episodes/example-episode-1</link>')
-    assert last_response.body.include?('<li>Producer feat. Vocalist - Track Name [Mix Name]</li>')
-    assert last_response.body.include?('the_funk_formula.png')
-    assert last_response.body.include?('sample_audio.mp3')
-    assert last_response.body.include?('<pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>')
-    assert last_response.body.include?('<itunes:duration>00:00:27</itunes:duration>')
-    assert last_response.body.include?('<itunes:keywords><![CDATA[DJ, Podcast, Deep House, House Music, Progressive House]]></itunes:keywords>')
+    $assertions['podcast'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Sitemal XML
@@ -72,10 +64,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/sitemap.xml'
 
     assert last_response.ok?
-    assert last_response.body.include?('<?xml version="1.0" encoding="UTF-8" ?>')
-    assert last_response.body.include?('/episodes/example-episode-1')
-    assert last_response.body.include?('/episodes/example-episode-2')
-    assert last_response.body.include?('/episodes/example-episode-3')
+    $assertions['sitemap'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Index view
@@ -83,23 +74,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/'
 
     assert last_response.ok?
-
-    # Head
-    assert last_response.body.include?('<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien mauris at urna a purus." />')
-    assert last_response.body.include?('<meta name="keywords" content="dj, podcast, music" />')
-    assert last_response.body.include?('<title>Primary Brand - Primary Brand Tagline</title>')
-
-    # Body - Main navigation links
-    assert last_response.body.include?('<a href="/" class="navbar-brand" title="Home">Primary Brand</a>')
-    assert last_response.body.include?('<a href="https://apple.co/2Y2xeCz" class="nav-link" title="Listen to AuralCandy.Net on Apple Podcasts" itemprop="relatedLink">Apple Podcasts</a>')
-    assert last_response.body.include?('<a href="#about" class="nav-link" title="About AuralCandy.Net" itemprop="relatedLink">About</a>')
-
-    # Body - Search form elements
-    assert last_response.body.include?('<form id="episode-search">')
-    assert last_response.body.include?('<option value="secondary-brand">Secondary Brand</option>')
-    assert last_response.body.include?('<option value="progressive_house">Progressive House</option>')
-    assert last_response.body.include?('<option value="24">24 Per Page</option>')
-    assert last_response.body.include?('<option value="date-desc" selected="selected">')
+    $assertions['index'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Search - Default
@@ -107,11 +84,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/search/any/any/12/date-asc/none/1'
 
     assert last_response.ok?
-    assert last_response.body.include?('<h2 class="card-header text-center text-muted" itemprop="name">Example Episode 1</h2>')
-    assert last_response.body.include?('<li title="Deep House" class="badge badge-pill badge-primary">Deep House</li>')
-    assert last_response.body.include?('the_funk_formula.png')
-    assert last_response.body.include?('sample_audio.mp3')
-    assert last_response.body.include?('<time class="col text-left text-nowrap" datetime="2019-04-11" itemprop="datePublished">')
+    $assertions['search_default'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Search - Brand
@@ -119,7 +94,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/search/secondary-brand/any/12/date-asc/none/1'
 
     assert last_response.ok?
-    assert last_response.body.include?('<h2 class="card-header text-center text-muted" itemprop="name">Example Episode 3</h2>')
+    $assertions['search_brand'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Search - Genre
@@ -127,8 +104,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/search/any/deep-house/12/date-asc/none/1'
 
     assert last_response.ok?
-    assert last_response.body.include?('<h2 class="card-header text-center text-muted" itemprop="name">Example Episode 1</h2>')
-    assert last_response.body.include?('<li title="Deep House" class="badge badge-pill badge-primary">Deep House</li>')
+    $assertions['search_genre'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Search - Popularity
@@ -136,7 +114,9 @@ class PodcastTest < Test::Unit::TestCase
     get '/search/any/any/12/popularity-desc/none/1'
 
     assert last_response.ok?
-    assert last_response.body.include?('<h2 class="card-header text-center text-muted" itemprop="name">Example Episode 4</h2>')
+    $assertions['search_popularity'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 
   # Episode view
@@ -144,20 +124,8 @@ class PodcastTest < Test::Unit::TestCase
     get '/episodes/example-episode-1'
 
     assert last_response.ok?
-
-    # Head
-    assert last_response.body.include?('<meta name="keywords" content="DJ, Podcast, Deep House, House Music, Progressive House" />')
-    assert last_response.body.include?('/episodes/example-episode-2" rel="prev" />')
-    assert last_response.body.include?('<title>Example Episode 1 by DJ First - Primary Brand</title>')
-
-    # Body
-    assert last_response.body.include?('<h1 class="jumbotron-heading">Example Episode 1</h1>')
-    assert last_response.body.include?('<li title="Deep House" class="badge badge-pill badge-primary">Deep House</li>')
-    assert last_response.body.include?('data-dj="DJ First"')
-    assert last_response.body.include?('data-title="Example Episode 1"')
-    assert last_response.body.include?('<div class="text-muted">Producer feat. Vocalist</div>')
-    assert last_response.body.include?('<div class="small">Track Name [Mix Name]</div>')
-    assert last_response.body.include?('<time class="col text-left text-nowrap" datetime="2019-04-11" itemprop="datePublished">')
-    assert last_response.body.include?('<div class="col text-right text-nowrap" itemprop="author">DJ First</div>')
+    $assertions['episode'].each do |assertion|
+      assert last_response.body.include?(assertion.to_s)
+    end
   end
 end
