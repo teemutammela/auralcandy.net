@@ -122,7 +122,7 @@ $ contentful login
 $ contentful space use
 ```
 
-__3)__ Import content models to target space. Alternatively, use `import/migration.js` if you prefer to use [contentful-migration](https://github.com/contentful/contentful-migration) tooling instead.
+__3)__ Import content models to target space.
 
 ```shell
 $ contentful space import --content-file import/content-models.json
@@ -276,6 +276,23 @@ Classes are included in `app/app.rb`. Classes are wrappers for corresponding Con
 | `Navigation Link`		| `navigationLink`		| `class.navigation_link.rb`			| Navigation menu internal or external URL.							|
 
 __1)__ `Brand` content model is also used to manage site's default settings and navigation menu links and anchors. Each `Brand` instance can have its unique navigation menu.
+
+#### Audio File Hosting
+
+Contentful's free [Community](https://www.contentful.com/pricing/) tier service package enforces a maximum asset size of 50MB, which is insufficient for podcast usage. Therefor the `Episode` content type is designed with external audio file hosting such as [Amazon S3](https://aws.amazon.com/s3/) in mind. Please note, that Dropbox and Google Drive are _not_ suitable for audio file hosting, as they introduce too many redirects and latency issues.
+
+However, if you have Team or Enterprise service package and wish to host audio files in Contentful and use the asset reference field type, simply apply the following modifications.
+
+**1)** Add a file attachment field called `Audio` to the `Episode` content type.
+
+**2)** Modify the `@audio_url` and `@file_size` property definitions in `app/classes/episode.rb` as follows.
+
+```shell
+@audio_url = entry.fields[:audio].url
+@file_size = entry.fields[:audio].file.details['size']
+```
+
+**3)** Remove fields `File URL` and `File Size` from the `Episode` content type.
 
 ## Importing Chartable Downloads
 

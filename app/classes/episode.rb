@@ -21,9 +21,9 @@ class Episode
     @genre        = entry.fields[:genre].sort
     @labels       = (entry.fields[:label].to_a.map { |label| Label.new(label) }).sort_by(&:name)
     @image_url    = (entry.fields[:image] ? "https:#{entry.fields[:image].url}" : @brand.image_url)
-    @audio_url    = "https:#{entry.fields[:audio].url}"
-    @file_size    = entry.fields[:audio].file.details['size'].to_i
-    @downloads    = entry.fields[:downloads]
+    @audio_url    = entry.fields[:file_url]
+    @file_size    = entry.fields[:file_size].to_i
+    @downloads    = entry.fields[:downloads].to_i.to_s
   end
 
   # Publish date in RFC2822 format
