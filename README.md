@@ -83,7 +83,7 @@ __Teemu Tammela__
 
 * __Performance Optimization__
 	* Efficient use of caching, content compression and headers on the application level
-	* Low amount of HTTP requests (25) and footprint (~1MB)
+	* Low amount of HTTP requests and memory footprint
 	* JavaScript and SASS asset pipeline via [Grunt](https://gruntjs.com/)
 	* Full [Cloudflare](https://www.cloudflare.com/) compatibility
 
@@ -190,7 +190,7 @@ __3)__ Default environment is `development`. Set production environment via the 
 $ export APP_ENV=production
 ```
 
-__NOTE!__ Global variable `$base_url` (set in `app/modules/podcast/module.defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/module.defaults.rb`.
+__NOTE!__ Global variable `$base_url` (set in `app/modules/podcast/defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/defaults.rb`.
 
 ```ruby
 $base_url = $base_url.sub("http://", "https://") unless settings.development?
@@ -252,28 +252,28 @@ Configuration for `development` and `production` environments is set in `app/app
 
 Modules are included and registered in `app/app.rb`. Modules follow Sinatra's standard [modular extensions](http://sinatrarb.com/extensions.html) pattern.
 
-| Directory									| Module								    | Description																																		|
-|---------------------------|---------------------------|-------------------------------------------------------------------------------|
-| `app/modules/contentful`	| `module.delivery.rb`   		| Contentful Delivery API client.																								|
-| `app/modules/contentful`	| `module.management.rb` 		| Contentful Management API client.																							|
-| `app/modules/chartable`		| `module.chartable.rb`   	| Chartable download count import.																					    |
-| `app/modules/podcast`			| `module.defaults.rb`      | Shared defaults (brands, genres, search form parameters and footer).					|
-| `app/modules/podcast`			| `module.helpers.rb`       | Generic helpers, mostly for parsing strings for various purposes.							|
-| `app/modules/podcast`			| `module.queries.rb`       | Query content from Contentful and wrap it to objects (registered as helpers).	|
-| `app/modules/podcast`			| `module.routing.rb`       | Route and URL parameter handling.																							|
+| Directory									| Module					 | Description																																		|
+|---------------------------|------------------|--------------------------------------------------------------------------------|
+| `app/modules/contentful`	| `delivery.rb`    | Contentful Delivery API client.																								|
+| `app/modules/contentful`	| `management.rb`  | Contentful Management API client.																							|
+| `app/modules/chartable`		| `chartable.rb`   | Chartable download count import.																					      |
+| `app/modules/podcast`			| `defaults.rb`    | Shared defaults (brands, genres, search form parameters and footer).					  |
+| `app/modules/podcast`			| `helpers.rb`     | Generic helpers, mostly for parsing strings for various purposes.							|
+| `app/modules/podcast`			| `queries.rb`     | Query content from Contentful and wrap it to objects (registered as helpers).	|
+| `app/modules/podcast`			| `routes.rb`      | Route and URL parameter handling.																							|
 
 ### Content Models & Classes
 
 Classes are included in `app/app.rb`. Classes are wrappers for corresponding Contentful content models. Classes are used for formatting field values, handling related content by wrapping them with appropriate classes, adding helper methods as object properties and defining the accessible properties of said class.
 
-| Content Model				| Contentful ID				| Class														| Description                                           |
-|---------------------|---------------------|---------------------------------|-------------------------------------------------------|
-| `Brand`							| `brand`							| `class.brand.rb`								| Podcast brand __1)__.																	|
-| `DJ`								| `author`						| `class.dj.rb`										| Author DJ of a podcast episode.											  |
-| `Episode`						| `episode`						| `class.episode.rb`							| Podcast episode.																		 	|
-| `Label`							| `label`							| `class.label.rb`								| Recording label related to an episode.		           	|
-| `Navigation Anchor`	| `navigationAnchor`	| `class.navigation_anchor.rb`		| Navigation menu in-page anchor.												|
-| `Navigation Link`		| `navigationLink`		| `class.navigation_link.rb`			| Navigation menu internal or external URL.							|
+| Content Model				| Contentful ID				| Class											| Description                                           |
+|---------------------|---------------------|---------------------------|-------------------------------------------------------|
+| `Brand`							| `brand`							| `brand.rb`								| Podcast brand __1)__.																	|
+| `DJ`								| `author`						| `dj.rb`										| Author DJ of a podcast episode.											  |
+| `Episode`						| `episode`						| `episode.rb`							| Podcast episode.																		 	|
+| `Label`							| `label`							| `label.rb`								| Recording label related to an episode.		           	|
+| `Navigation Anchor`	| `navigationAnchor`	| `navigation_anchor.rb`		| Navigation menu in-page anchor.												|
+| `Navigation Link`		| `navigationLink`		| `navigation_link.rb`			| Navigation menu internal or external URL.							|
 
 __1)__ `Brand` content model is also used to manage site's default settings and navigation menu links and anchors. Each `Brand` instance can have its unique navigation menu.
 
@@ -304,7 +304,7 @@ $ rake chartable:import
 
 ## Unit Testing
 
-Run the dedicated [Rake](https://github.com/ruby/rake) task to perform unit tests for all routes defined in `module.routing.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/unit_tests.rb`.
+Run the dedicated [Rake](https://github.com/ruby/rake) task to perform unit tests for all routes defined in `routes.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/unit_tests.rb`.
 
 **NOTE!** Enviromental variables `CONTENTFUL_DELIVERY_KEY_TEST` and `CONTENTFUL_SPACE_ID_TEST` set in the `.env` file enable to use different Contentful space for testing and for actual production content.
 
