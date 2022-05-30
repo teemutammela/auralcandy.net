@@ -1,6 +1,12 @@
 {
+  "tags": [
+  ],
   "entries": [
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -159,6 +165,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -317,6 +327,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -380,6 +394,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -443,6 +461,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -506,6 +528,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -569,6 +595,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -632,6 +662,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -643,7 +677,7 @@
         "id": "6L4bBqz8ZVF01HVr2zRDQQ",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.513Z",
-        "updatedAt": "2020-04-08T07:51:17.241Z",
+        "updatedAt": "2022-05-27T08:03:10.153Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -651,8 +685,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 6,
-        "publishedAt": "2020-04-08T07:51:17.241Z",
+        "publishedVersion": 11,
+        "publishedAt": "2022-05-27T08:03:10.153Z",
         "firstPublishedAt": "2020-03-17T07:30:21.819Z",
         "createdBy": {
           "sys": {
@@ -668,8 +702,8 @@
             "id": null
           }
         },
-        "publishedCounter": 3,
-        "version": 7,
+        "publishedCounter": 5,
+        "version": 12,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -756,14 +790,11 @@
             }
           ]
         },
-        "audio": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "7mhP8l36JN57SvwgTlQFCN"
-            }
-          }
+        "fileUrl": {
+          "en-US": "https://assets.ctfassets.net/bfsakvlry45q/C5n5K0X0k78PvJHBe7UR9/d8f834ac4fc13ab6f3b26aea7a31681f/Sample_Audio_2.mp3"
+        },
+        "fileSize": {
+          "en-US": 443926
         },
         "downloads": {
           "en-US": 100
@@ -771,6 +802,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -834,6 +869,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -845,7 +884,7 @@
         "id": "3BKvBtYL2wFzVy4XryVOQU",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.518Z",
-        "updatedAt": "2020-04-08T07:51:17.309Z",
+        "updatedAt": "2022-05-27T08:03:33.543Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -853,8 +892,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 6,
-        "publishedAt": "2020-04-08T07:51:17.309Z",
+        "publishedVersion": 10,
+        "publishedAt": "2022-05-27T08:03:33.543Z",
         "firstPublishedAt": "2020-03-17T07:30:20.734Z",
         "createdBy": {
           "sys": {
@@ -870,8 +909,8 @@
             "id": null
           }
         },
-        "publishedCounter": 3,
-        "version": 7,
+        "publishedCounter": 5,
+        "version": 11,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -967,14 +1006,11 @@
             }
           ]
         },
-        "audio": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "7mhP8l36JN57SvwgTlQFCN"
-            }
-          }
+        "fileUrl": {
+          "en-US": "https://assets.ctfassets.net/bfsakvlry45q/45XOR7Quz85QQ0R0tD7cKk/918e05599a5f55d1fefb6e1433bd8403/Sample_Audio_3.mp3"
+        },
+        "fileSize": {
+          "en-US": 443926
         },
         "downloads": {
           "en-US": 75
@@ -982,6 +1018,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -993,7 +1033,7 @@
         "id": "6uZtjEnJF2qj3lp9fbmkg4",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.518Z",
-        "updatedAt": "2020-04-08T07:51:17.232Z",
+        "updatedAt": "2022-05-27T08:01:36.714Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1001,8 +1041,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 6,
-        "publishedAt": "2020-04-08T07:51:17.232Z",
+        "publishedVersion": 12,
+        "publishedAt": "2022-05-27T08:01:36.714Z",
         "firstPublishedAt": "2020-03-17T07:30:18.731Z",
         "createdBy": {
           "sys": {
@@ -1018,8 +1058,8 @@
             "id": null
           }
         },
-        "publishedCounter": 3,
-        "version": 7,
+        "publishedCounter": 5,
+        "version": 13,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1106,14 +1146,11 @@
             }
           ]
         },
-        "audio": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "7mhP8l36JN57SvwgTlQFCN"
-            }
-          }
+        "fileUrl": {
+          "en-US": "https://assets.ctfassets.net/bfsakvlry45q/4wmu4TUXUCXNUmOEg7eHes/03fe6fc14de4b6eb1fcc1806cac7a635/Sample_Audio_1.mp3"
+        },
+        "fileSize": {
+          "en-US": 443926
         },
         "downloads": {
           "en-US": 150
@@ -1121,6 +1158,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1132,7 +1173,7 @@
         "id": "6CGsfWafDZsEpe0xG7ftJP",
         "type": "Entry",
         "createdAt": "2020-03-17T07:30:16.521Z",
-        "updatedAt": "2020-04-08T07:52:25.193Z",
+        "updatedAt": "2022-05-27T08:04:44.045Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1140,8 +1181,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 7,
-        "publishedAt": "2020-04-08T07:52:25.193Z",
+        "publishedVersion": 15,
+        "publishedAt": "2022-05-27T08:04:44.045Z",
         "firstPublishedAt": "2020-03-17T07:35:23.080Z",
         "createdBy": {
           "sys": {
@@ -1157,8 +1198,8 @@
             "id": null
           }
         },
-        "publishedCounter": 3,
-        "version": 8,
+        "publishedCounter": 6,
+        "version": 16,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1245,14 +1286,11 @@
             }
           ]
         },
-        "audio": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "7mhP8l36JN57SvwgTlQFCN"
-            }
-          }
+        "fileUrl": {
+          "en-US": "https://assets.ctfassets.net/bfsakvlry45q/4les0JiBh3iPdPQmiX7B8m/048ac88b272fd26a7c6f2e53ec265d90/Sample_Audio_4.mp3"
+        },
+        "fileSize": {
+          "en-US": 443926
         },
         "downloads": {
           "en-US": 150
@@ -1260,6 +1298,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1323,6 +1365,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1386,6 +1432,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1452,6 +1502,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1518,6 +1572,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1584,6 +1642,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1650,6 +1712,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1716,6 +1782,10 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1784,6 +1854,10 @@
   ],
   "assets": [
     {
+      "metadata": {
+        "tags": [
+        ]
+      },
       "sys": {
         "space": {
           "sys": {
@@ -1851,72 +1925,10 @@
       }
     },
     {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": null
-          }
-        },
-        "id": "7mhP8l36JN57SvwgTlQFCN",
-        "type": "Asset",
-        "createdAt": "2020-03-17T07:30:04.921Z",
-        "updatedAt": "2020-03-17T07:33:08.011Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 5,
-        "publishedAt": "2020-03-17T07:33:08.011Z",
-        "firstPublishedAt": "2020-03-17T07:30:13.324Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": null
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": null
-          }
-        },
-        "publishedCounter": 2,
-        "version": 6,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": null
-          }
-        }
+      "metadata": {
+        "tags": [
+        ]
       },
-      "fields": {
-        "title": {
-          "en-US": "Sample Audio"
-        },
-        "description": {
-          "en-US": "Length 00:00:27"
-        },
-        "file": {
-          "en-US": {
-            "url": "//assets.ctfassets.net/bfsakvlry45q/7mhP8l36JN57SvwgTlQFCN/f009e5a33d02f581ab73cd8689cca15f/sample_audio.mp3",
-            "details": {
-              "size": 443926
-            },
-            "fileName": "sample_audio.mp3",
-            "contentType": "audio/mpeg"
-          }
-        }
-      }
-    },
-    {
       "sys": {
         "space": {
           "sys": {
@@ -1979,6 +1991,274 @@
             },
             "fileName": "ghost_of_disco_past.png",
             "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "45XOR7Quz85QQ0R0tD7cKk",
+        "type": "Asset",
+        "createdAt": "2022-05-27T07:58:20.143Z",
+        "updatedAt": "2022-05-27T07:58:38.776Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-05-27T07:58:38.776Z",
+        "firstPublishedAt": "2022-05-27T07:58:38.776Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Sample Audio 3"
+        },
+        "file": {
+          "en-US": {
+            "url": "//assets.ctfassets.net/bfsakvlry45q/45XOR7Quz85QQ0R0tD7cKk/918e05599a5f55d1fefb6e1433bd8403/Sample_Audio_3.mp3",
+            "details": {
+              "size": 443926
+            },
+            "fileName": "Sample Audio 3.mp3",
+            "contentType": "audio/mpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "4wmu4TUXUCXNUmOEg7eHes",
+        "type": "Asset",
+        "createdAt": "2022-05-27T07:58:20.143Z",
+        "updatedAt": "2022-05-27T07:58:38.769Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-05-27T07:58:38.769Z",
+        "firstPublishedAt": "2022-05-27T07:58:38.769Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Sample Audio 1"
+        },
+        "file": {
+          "en-US": {
+            "url": "//assets.ctfassets.net/bfsakvlry45q/4wmu4TUXUCXNUmOEg7eHes/03fe6fc14de4b6eb1fcc1806cac7a635/Sample_Audio_1.mp3",
+            "details": {
+              "size": 443926
+            },
+            "fileName": "Sample Audio 1.mp3",
+            "contentType": "audio/mpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "4les0JiBh3iPdPQmiX7B8m",
+        "type": "Asset",
+        "createdAt": "2022-05-27T07:58:20.153Z",
+        "updatedAt": "2022-05-27T07:58:38.761Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-05-27T07:58:38.761Z",
+        "firstPublishedAt": "2022-05-27T07:58:38.761Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Sample Audio 4"
+        },
+        "file": {
+          "en-US": {
+            "url": "//assets.ctfassets.net/bfsakvlry45q/4les0JiBh3iPdPQmiX7B8m/048ac88b272fd26a7c6f2e53ec265d90/Sample_Audio_4.mp3",
+            "details": {
+              "size": 443926
+            },
+            "fileName": "Sample Audio 4.mp3",
+            "contentType": "audio/mpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": null
+          }
+        },
+        "id": "C5n5K0X0k78PvJHBe7UR9",
+        "type": "Asset",
+        "createdAt": "2022-05-27T07:58:20.606Z",
+        "updatedAt": "2022-05-27T07:58:38.753Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-05-27T07:58:38.753Z",
+        "firstPublishedAt": "2022-05-27T07:58:38.753Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": null
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Sample Audio 2"
+        },
+        "file": {
+          "en-US": {
+            "url": "//assets.ctfassets.net/bfsakvlry45q/C5n5K0X0k78PvJHBe7UR9/d8f834ac4fc13ab6f3b26aea7a31681f/Sample_Audio_2.mp3",
+            "details": {
+              "size": 443926
+            },
+            "fileName": "Sample Audio 2.mp3",
+            "contentType": "audio/mpeg"
           }
         }
       }
