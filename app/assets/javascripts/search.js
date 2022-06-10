@@ -82,12 +82,14 @@ const Search = {
     // Fade out episode list
     list.fadeTo(interval, 0)
     loading.fadeTo(0, 1)
+    loading.css('z-index', 99)
 
     /* Insert response into element */
     list.load(url, function () {
       // Fade in episode list
       list.fadeTo(interval, 1)
       loading.fadeTo(0, 0)
+      loading.css('z-index', -1)
 
       // Initialize paging buttons
       Search.initPagingButtons()

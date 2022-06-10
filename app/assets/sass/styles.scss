@@ -185,6 +185,7 @@ h1.card-header, h2, h3 {
   border-radius: 50%;
   position: fixed;
   opacity: 0;
+  z-index: -1;
 }
 
 @media screen and (orientation:portrait) {
