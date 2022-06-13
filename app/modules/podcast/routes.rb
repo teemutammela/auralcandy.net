@@ -45,7 +45,7 @@ module Sinatra
             search_params[:genre],
             search_params[:limit],
             search_params[:order],
-            search_params[:id],
+            episode.id,
             search_params[:page]
           )
 
