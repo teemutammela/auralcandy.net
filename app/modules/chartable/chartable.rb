@@ -9,6 +9,7 @@ module Chartable
       chartable_api_url += "?podcast_id=#{ENV['CHARTABLE_PODCAST_ID']}"
       chartable_api_url += "&team_id=#{ENV['CHARTABLE_PODCAST_ID']}"
       chartable_api_url += "&page=#{page}"
+      chartable_api_url += '&page_size=30'
 
       # Set request target URL
       request.url(chartable_api_url)
@@ -45,7 +46,7 @@ module Chartable
         # Combine download count from every episode of the same title
         # NOTE! Changed guid-parameters cause old episodes to be listed as new
         downloads[title] = if downloads.include?(title)
-                             downloads[title] + episode['total_downloads'].to_i
+                             downloads[title].to_i + episode['total_downloads'].to_i
                            else
                              episode['total_downloads'].to_i
                            end
@@ -71,6 +72,7 @@ module Chartable
     $management.entries.all(options).each do |episode|
       title = episode.fields[:title]
       downloads = data[title]
+
       # Update download count to episode entry if found in Chartable data
       next unless episode.published? && data.key?(title)
 
