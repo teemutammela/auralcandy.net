@@ -36,7 +36,7 @@ const Search = {
 
     // Handle history event's data content
     if (data !== null) {
-      const url = '/search/' + brand + '/' + genre + '/' + limit + '/' + order + '/' + id + '/' + page
+      const url = `/search/${brand}/${genre}/${limit}/${order}/${id}/${page}`
 
       // Update episode list data-parameters and content
       Search.setSearchParameters(data.brand, data.genre, data.limit, data.order)

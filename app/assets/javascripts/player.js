@@ -48,10 +48,10 @@ const Player = {
 
     // Social media sharing URLs
     episode.share_urls = {
-      twitter: 'https://twitter.com/intent/tweet?text=' + encodeURI(episode.dj + ' - ' + episode.title) + '&url=' + encodeURI(episode.episodeUrl),
-      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURI(episode.episodeUrl),
-      pinterest: 'https://pinterest.com/pin/create/button/?url=' + encodeURI(episode.episodeUrl),
-      email: 'mailto:?subject=' + encodeURI(episode.dj + ' - ' + episode.title) + '&body=' + encodeURI(episode.episodeUrl)
+      twitter: 'https://twitter.com/intent/tweet?text=' + encodeURI(`${episode.dj} - ${episode.title}`) + `&url=${encodeURI(episode.episodeUrl)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(episode.episodeUrl)}`,
+      pinterest: `https://pinterest.com/pin/create/button/?url=${encodeURI(episode.episodeUrl)}`,
+      email: 'mailto:?subject=' + encodeURI(`${episode.dj} - ${episode.title}`) + `&body=${encodeURI(episode.episodeUrl)}`
     }
 
     // Set values to share menu

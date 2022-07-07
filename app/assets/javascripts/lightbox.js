@@ -2,7 +2,7 @@ const Lightbox = {
 
   /* Set cover image to lightbox */
   setImage: function (imageUrl) {
-    $('#lightbox-image').css('background-image', "url('" + imageUrl + "'")
+    $('#lightbox-image').css('background-image', `url("${imageUrl}"`)
   },
 
   /* Show cover image in lightbox */
