@@ -3,8 +3,8 @@
 module Contentful
   module Delivery
     # Abort if required environmental variables are not set
-    if ENV['CONTENTFUL_DELIVERY_KEY'].nil? || ENV['CONTENTFUL_SPACE_ID'].nil?
-      abort('Environmental variables CONTENTFUL_DELIVERY_KEY or CONTENTFUL_SPACE_ID not set.')
+    %w[CONTENTFUL_DELIVERY_KEY CONTENTFUL_SPACE_ID].each do |env|
+      abort("Environmental variable #{env} not set.") if ENV[env].to_s.empty?
     end
 
     # Attempt to initialize Contentful Delivery API client
