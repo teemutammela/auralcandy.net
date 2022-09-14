@@ -31,7 +31,7 @@ __Teemu Tammela__
 	* [Modules](#modules)
 	* [Content Models & Classes](#content-models-classes)
 * [Importing Chartable Downloads](#importing-chartable-downloads)
-* [Unit Testing](#unit-testing)
+* [Testing](#testing)
 
 ## Features
 
@@ -40,7 +40,7 @@ __Teemu Tammela__
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
 	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-22` stack)
-	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) unit tests
+	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) tests
 
 * __Mobile Friendly Responsive Layout__
 	* Built with [Bootstrap 4](http://getbootstrap.com/)
@@ -134,7 +134,7 @@ __4)__ Import example content to target space.
 $ contentful space import --content-file import/example-content.json
 ```
 
-__NOTE!__ Unit tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the unit tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
+__NOTE!__ Tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
 
 ## Deployment
 
@@ -302,12 +302,12 @@ Run the dedicated [Rake](https://github.com/ruby/rake) task to import download s
 $ rake chartable:import
 ```
 
-## Unit Testing
+## Testing
 
-Run the dedicated [Rake](https://github.com/ruby/rake) task to perform unit tests for all routes defined in `routes.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/unit_tests.rb`.
+Run the dedicated [Rake](https://github.com/ruby/rake) task to perform tests for all routes defined in `routes.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/unit_tests.rb`.
 
 **NOTE!** Enviromental variables `CONTENTFUL_DELIVERY_KEY_TEST` and `CONTENTFUL_SPACE_ID_TEST` set in the `.env` file enable to use different Contentful space for testing and for actual production content.
 
 ```shell
-$ rake test:run
+$ rake podcast:test
 ```

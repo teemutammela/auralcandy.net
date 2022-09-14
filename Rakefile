@@ -25,9 +25,9 @@ namespace :chartable do
   end
 end
 
-namespace :test do
-  desc 'Test - Run All Unit Tests'
-  task :run do
+namespace :podcast do
+  desc 'Podcast - Run All Tests'
+  task :test do
     # Verify that required environmental variables are set
     %w[CONTENTFUL_DELIVERY_KEY_TEST CONTENTFUL_SPACE_ID_TEST].each do |env|
       abort("Environmental variable #{env} not set.") if ENV[env].to_s.empty?
