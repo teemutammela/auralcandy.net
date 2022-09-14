@@ -2,7 +2,7 @@
 
 class NavigationAnchor
   # Accessible properties
-  attr_accessor :name, :description, :link_anchor
+  attr_reader :name, :description, :link_anchor
 
   # Initialize properties
   def initialize(entry)

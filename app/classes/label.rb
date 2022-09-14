@@ -2,7 +2,7 @@
 
 class Label
   # Accessible properties
-  attr_accessor :name, :link_url
+  attr_reader :name, :link_url
 
   # Initialize properties
   def initialize(entry)

@@ -2,7 +2,7 @@
 
 class NavigationLink
   # Accessible properties
-  attr_accessor :name, :description, :link_url
+  attr_reader :name, :description, :link_url
 
   # Initialize properties
   def initialize(entry)

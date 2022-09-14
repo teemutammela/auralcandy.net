@@ -2,8 +2,8 @@
 
 class Episode
   # Accessible properties
-  attr_accessor :id, :published, :updated, :dj, :title, :slug, :brand, :description, :track_list, :duration, :genre,
-                :labels, :image_url, :audio_url, :file_size, :downloads
+  attr_reader :id, :published, :updated, :dj, :title, :slug, :brand, :description, :track_list, :duration, :genre,
+              :labels, :image_url, :audio_url, :file_size, :downloads
 
   # Initialize properties
   def initialize(entry)
@@ -43,7 +43,7 @@ class Episode
 
   # Combine DJs as a single string
   def djs
-    (@dj.to_a.map(&:handle)).join(', ').sub(/(.*), /, '\1 & ')
+    @dj.to_a.map(&:handle).join(', ').sub(/(.*), /, '\1 & ')
   end
 
   # Combine DJ(s) and title to a single string

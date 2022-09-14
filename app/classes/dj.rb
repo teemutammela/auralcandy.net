@@ -4,7 +4,7 @@ class DJ
   # NOTE! Corresponding content model ID is 'author', not 'dj'. Easy to miss and potential WTF :)
 
   # Accessible properties
-  attr_accessor :handle, :name
+  attr_reader :handle, :name
 
   # Initialize properties
   def initialize(entry)
