@@ -134,7 +134,7 @@ __4)__ Import example content to target space.
 $ contentful space import --content-file import/example-content.json
 ```
 
-__NOTE!__ Tests (`app/test/unit_tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
+__NOTE!__ Tests (`app/test/tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
 
 ## Deployment
 
@@ -304,7 +304,7 @@ $ rake chartable:import
 
 ## Testing
 
-Run the dedicated [Rake](https://github.com/ruby/rake) task to perform tests for all routes defined in `routes.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/unit_tests.rb`.
+Run the dedicated [Rake](https://github.com/ruby/rake) task to perform tests for all routes defined in `routes.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/tests.rb`.
 
 **NOTE!** Enviromental variables `CONTENTFUL_DELIVERY_KEY_TEST` and `CONTENTFUL_SPACE_ID_TEST` set in the `.env` file enable to use different Contentful space for testing and for actual production content.
 

@@ -38,6 +38,6 @@ namespace :podcast do
     rack_environment        = ENV['RACK_ENV'].to_s.empty? ? 'development' : ENV['RACK_ENV']
 
     # Execute unit tests
-    sh "ruby app/test/unit_tests.rb -k #{contentful_delivery_key} -s #{contentful_space_id} -e #{rack_environment}"
+    sh "ruby app/test/tests.rb -k #{contentful_delivery_key} -s #{contentful_space_id} -e #{rack_environment}"
   end
 end
