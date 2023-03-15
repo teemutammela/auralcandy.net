@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 
 ruby '3.1.2'
 
-gem 'activesupport', '7.0.4'
+gem 'activesupport', '7.0.4.3'
 gem 'addressable', '2.8.1'
 gem 'contentful', '2.16.3'
 gem 'contentful-management', '3.6.0'
