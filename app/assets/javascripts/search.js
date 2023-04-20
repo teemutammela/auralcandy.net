@@ -160,7 +160,18 @@ $(document).ready(function () {
   })
 
   // Update search parameters on page change event
+  /*
   window.addEventListener('popstate', function (event) {
     Search.setSearchState(event.state)
+  })
+  */
+
+  window.addEventListener('popstate', function (event) {
+    const currentUrl = window.location.href.split('#')[0]
+    const previousUrl = event.state ? event.state.url.split('#')[0] : null
+
+    if (currentUrl !== previousUrl && !window.location.hash) {
+      Search.setSearchState(event.state)
+    }
   })
 })
