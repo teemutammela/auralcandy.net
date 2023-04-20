@@ -3,8 +3,7 @@
 class Brand
   # Accessible properties
   attr_reader :name, :default, :slug, :tagline, :image_url, :short_description, :long_description, :compatibility,
-              :privacy_policy, :keywords, :email, :phone, :street_address, :zip_code, :locality, :navigation_menu,
-              :apple_podcasts_url, :google_podcasts_url, :paypal_url
+              :privacy_policy, :keywords, :email, :phone, :street_address, :zip_code, :locality, :navigation_menu
 
   # Initialize properties
   def initialize(entry)
