@@ -1,4 +1,6 @@
 ---
+require:
+  - rubocop-rake
 Style/Documentation:
   Enabled: false
 Style/GuardClause:
