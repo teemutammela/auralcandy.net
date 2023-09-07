@@ -45,19 +45,6 @@ const Player = {
     $('#media-audio-url').attr('src', episode.audioUrl)
     $('#media-episode-url').attr('href', episode.episodeUrl)
     $('#media-download').attr('href', episode.audioUrl)
-
-    // Social media sharing URLs
-    episode.share_urls = {
-      twitter: 'https://twitter.com/intent/tweet?text=' + encodeURI(`${episode.dj} - ${episode.title}`) + `&url=${encodeURI(episode.episodeUrl)}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(episode.episodeUrl)}`,
-      pinterest: `https://pinterest.com/pin/create/button/?url=${encodeURI(episode.episodeUrl)}`,
-      email: 'mailto:?subject=' + encodeURI(`${episode.dj} - ${episode.title}`) + `&body=${encodeURI(episode.episodeUrl)}`
-    }
-
-    // Set values to share menu
-    for (const key in episode.share_urls) {
-      $('#media-' + key + '-url').attr('href', episode.share_urls[key])
-    }
   },
 
   /* Restore media player state */
