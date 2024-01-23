@@ -178,13 +178,7 @@ __1)__ Start the application via the `heroku local` command. Application is now 
 $ heroku local -p 9292
 ```
 
-__2)__ Alternatively, use [rerun](https://github.com/alexch/rerun/) to automatically restart the application upon file save. `rerun` is included in the `Gemfile` and is installed as part of `bundle install`. By default `rerun` is set to monitor changes in the `*.rb` files in the `app/` directory. Settings are found in the `.rerun` configuration file.
-
-```shell
-$ rerun rackup
-```
-
-__3)__ Default environment is `development`. Set production environment via the `APP_ENV` variable.
+__2)__ Default environment is `development`. Set production environment via the `APP_ENV` variable.
 
 ```shell
 $ export APP_ENV=production
