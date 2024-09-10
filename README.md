@@ -222,6 +222,7 @@ __1)__ Install the required _npm_ packages listed in `package.json`.
 
 ```shell
 $ npm install
+$ npm install -g grunt-cli
 ```
 
 __2)__ Launch the task runner while working with JavaScripts and stylesheets. Upon file save, `*.js` and `*.scss` files in directories `/assets/javascripts/` and `/assets/sass/` will be combined and compressed into target directories `/public/javascripts/` and `/public/stylesheets/` as configured in `Gruntfile.js`.
