@@ -125,11 +125,12 @@ const Player = {
 
   /* Set episode properties to localStorage */
   setLocalStorage: function (episode) {
+    const prefixUrl = 'https://op3.dev/e/'
     localStorage.removeItem('episode')
 
-    // Strip Chartable redirection from audio URL to prevent unnecessary redirections when restoring state
-    if (episode.audioUrl.includes('chtbl.com')) {
-      const audioUrl = 'https:/' + episode.audioUrl.replace('https://chtbl.com/track/', '').replace(/^[0-9A-Z]{5}?/, '')
+    // Strip OP3 prefix URL from audio URL to prevent unnecessary redirections when restoring state
+    if (episode.audioUrl.includes(prefixUrl)) {
+      const audioUrl = episode.audioUrl.replace(prefixUrl, '')
       episode.audioUrl = audioUrl
     }
 

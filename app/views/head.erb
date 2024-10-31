@@ -29,7 +29,6 @@
 	<%= tag :link, :href => previous_url, :rel => "prev" if defined? previous_url %>
 	<%= tag :link, :href => next_url, :rel => "next" if defined? next_url %>
 	<%= tag :link, :href => "https://fonts.gstatic.com", :rel => "preconnect" %>
-	<%= tag :link, :href => "/webfonts/fa-solid-900.woff2", :rel => "preload", :as => "font", :crossorigin => "anonymous" %>
 	<%= tag :link, :href => "/stylesheets/styles.min.css", :rel => "stylesheet", :type => "text/css", :media => "screen" %>	
 	<%= feed_tag :rss, "/podcast", :title => "Podcast" %>
 	<%= favicon_tag "/images/favicon/favicon.png", :rel => "shortcut icon", :type => "image/x-icon" %>

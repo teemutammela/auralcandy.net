@@ -30,7 +30,6 @@ __Teemu Tammela__
 * [Application Structure](#application-structure)
 	* [Modules](#modules)
 	* [Content Models & Classes](#content-models-classes)
-* [Importing Chartable Downloads](#importing-chartable-downloads)
 * [Testing](#testing)
 
 ## Features
@@ -50,7 +49,7 @@ __Teemu Tammela__
 * __Episode Search__
 	* Search by brand and genre
 	* Pagination and variable items per page
-	* Sort by date, title or popularity (requires Chartable integration)
+	* Sort by date, title or popularity
 
 * __Embedded Media Player__
 	* Saves player state in [localStorage](https://www.w3schools.com/html/html5_webstorage.asp)
@@ -70,10 +69,6 @@ __Teemu Tammela__
 	* Genre keywords (as defined in iTunes Podcast DTD)
 	* Track listing
 	* Related recording labels
-
-* __Statistics (Optional)__
-  * Download tracking via [Chartable](http://chartable.com)
-  * Import Chartable download count to Contentful
 
 * __Search Engine Optimization__
 	* Machine-readable [microdata schemas](https://schema.org/)
@@ -103,7 +98,6 @@ __1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index]
 * [Grunt](https://gruntjs.com/)
 * [Contentful account](https://www.contentful.com/) & [Contentful CLI](https://github.com/contentful/contentful-cli)
 * [Heroku account](https://www.heroku.com/) & [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
-* [Chartable account](http://chartable.com) (optional)
 
 ## Installation
 
@@ -138,7 +132,7 @@ __NOTE!__ Tests (`app/test/tests.rb`) are designed to match the contents of `exa
 
 ## Deployment
 
-Contentful API keys, space ID and Chartable credentials must be set as environment variables. Create a new `.env` file by copying the example file.
+Contentful API keys, space ID and environment must be set as environment variables. Create a new `.env` file by copying the example file.
 
 ```shell
 $ cp .env.example .env
@@ -155,20 +149,11 @@ $ heroku config:set VARIABLE_NAME=variable_value
 |-----------------------------|---------------------------------------------------------------|
 | `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content).                      |
 | `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key.                                  |
-| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key. __1)__                         |
-| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`). __1)__           |
-| `CHARTABLE_PODCAST_ID`      | Chartable team and podcast ID (e.g. `auralcandynet`). __1)__  |
-| `CHARTABLE_ACCESS_TOKEN`    | Chartable cookie access token. __1)__ __2)__                  |
-| `CHARTABLE_ID`              | Chartable link ID (optional). __3)__                          |
-| `APPLE_PODCAST_ID`          | Apple Podcasts ID (optional). __4)__                          |
+| `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key.                                |
+| `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`).                  |
+| `APPLE_PODCAST_ID`          | Apple Podcasts ID (optional). __1)__                          |
 
-__1)__ Required only by the [Chartable](https://chartable.com/) import functionality.
-
-__2)__ Chartable does not officially offer a public API, but it's possible to utilize the dashboard JSON end-point by acquiring the access token from a cookie. Login to Chartable dashboard, open the browser's developer tools and look for a request to URL `/dashboard?podcast_id=<PODCAST_ID>`. The access token can be found in a cookie called `remember_token`. Please note, that the access token will expire after one year.
-
-__3)__ If `ENV["CHARTABLE_ID"]` is not set, `@audio_url_chartable` property found in class `Episode` simply returns the original Contentful asset URL. Chartable ID can be found at _Dashboard → Integrations_.
-
-__4)__ If `ENV["APPLE_PODCAST_ID"]` is set, a `apple-itunes-app` meta tag will be inserted into the `<head>` section of the page. Read Apple's [Smart App Banners](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners) documentation for further information.
+__1)__ If `ENV["APPLE_PODCAST_ID"]` is set, a `apple-itunes-app` meta tag will be inserted into the `<head>` section of the page. Read Apple's [Smart App Banners](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners) documentation for further information.
 
 ### Development (Local)
 
@@ -239,7 +224,7 @@ Configuration for `development` and `production` environments is set in `app/app
 |---------------|---------------------------------------------------------------------------------------|
 | `app/assets`	| JavaScripts and SASS stylesheets.																											|
 | `app/classes`	| Classes for wrapping content objects.																									|
-| `app/modules`	| Contentful clients, Chartable functionality and application modules.	 	              |
+| `app/modules`	| Contentful clients and application modules.	 	              |
 | `app/public`	| Static files (images, compiled JavaScripts and CSS stylesheets etc.).									|
 | `app/views`		| ERB view templates and partials.																											|
 
@@ -251,7 +236,6 @@ Modules are included and registered in `app/app.rb`. Modules follow Sinatra's st
 |---------------------------|------------------|--------------------------------------------------------------------------------|
 | `app/modules/contentful`	| `delivery.rb`    | Contentful Delivery API client.																								|
 | `app/modules/contentful`	| `management.rb`  | Contentful Management API client.																							|
-| `app/modules/chartable`		| `chartable.rb`   | Chartable download count import.																					      |
 | `app/modules/podcast`			| `defaults.rb`    | Shared defaults (brands, genres, search form parameters and footer).					  |
 | `app/modules/podcast`			| `helpers.rb`     | Generic helpers, mostly for parsing strings for various purposes.							|
 | `app/modules/podcast`			| `queries.rb`     | Query content from Contentful and wrap it to objects (registered as helpers).	|
@@ -288,14 +272,6 @@ However, if you have Team or Enterprise service package and wish to host audio f
 ```
 
 **3)** Remove fields `File URL` and `File Size` from the `Episode` content type.
-
-## Importing Chartable Downloads
-
-Run the dedicated [Rake](https://github.com/ruby/rake) task to import download statistics from Chartable. On Heroku it's recommended to execute the task daily via the free [Scheduler](https://elements.heroku.com/addons/scheduler) add-on.
-
-```shell
-$ rake chartable:import
-```
 
 ## Testing
 

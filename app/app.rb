@@ -58,7 +58,7 @@ class Podcast < Sinatra::Base
     set :environment, :development
     set :static_cache_control, [:public, { max_age: 0 }]
 
-    enable :reload_templates, :logging, :dump_errors, :show_exceptions, :asset_stamp
+    enable :reload_templates, :dump_errors, :show_exceptions, :asset_stamp
     disable :protection
   end
 
@@ -73,6 +73,6 @@ class Podcast < Sinatra::Base
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 365 }]
 
     enable :protection, :quiet
-    disable :reload_templates, :logging, :dump_errors, :show_exceptions, :asset_stamp
+    disable :reload_templates, :dump_errors, :show_exceptions, :asset_stamp
   end
 end

@@ -67,8 +67,8 @@ class Episode
     create_episode_url($slugs[@index + 1])
   end
 
-  # Trackable audio URL via Chartable (return Contentful URL if Chartable user ID not set as environmental variable)
-  def audio_url_chartable
-    ENV['CHARTABLE_ID'].nil? ? @audio_url : @audio_url.gsub('https://', "https://chtbl.com/track/#{ENV['CHARTABLE_ID']}/")
+  # OP3 tracking redirection URL
+  def audio_download_url
+    "https://op3.dev/e/#{@audio_url}"
   end
 end

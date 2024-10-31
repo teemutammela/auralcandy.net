@@ -44,7 +44,7 @@
         %>
         <%= content_tag :description, cd(description) %>
         <%= content_tag :author, cd("#{episode.brand.email} (#{episode.djs})") %>
-        <%= tag :enclosure, :url => episode.audio_url_chartable, :length => episode.file_size, :type => "audio/mpeg" %>
+        <%= tag :enclosure, :url => episode.audio_download_url, :length => episode.file_size, :type => "audio/mpeg" %>
         <%= content_tag :pubDate, episode.published_rfc %>
         <%= tag "itunes:image".to_sym, :href => episode.image_url %>
         <%= content_tag "itunes:duration".to_sym, episode.duration %>

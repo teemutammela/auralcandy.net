@@ -29,10 +29,6 @@ GEM
     domain_name (0.6.20240107)
     dotenv (3.1.2)
     drb (2.2.1)
-    faraday (2.9.1)
-      faraday-net_http (>= 2.0, < 3.2)
-    faraday-net_http (3.1.1)
-      net-http
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
@@ -70,8 +66,6 @@ GEM
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
     mutex_m (0.2.0)
-    net-http (0.4.1)
-      uri
     net-imap (0.4.16)
       date
       net-protocol
@@ -182,7 +176,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.1)
     yaml (0.3.0)
 
 PLATFORMS
@@ -197,9 +190,7 @@ DEPENDENCIES
   contentful (= 2.17.1)
   contentful-management (= 3.10.0)
   dotenv (= 3.1.2)
-  faraday (= 2.9.1)
   http (= 5.2.0)
-  json (= 2.7.2)
   padrino (= 0.15.3)
   puma (= 6.4.2)
   rack (= 3.1.3)
