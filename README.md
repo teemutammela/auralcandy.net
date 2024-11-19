@@ -30,7 +30,6 @@ __Teemu Tammela__
 * [Application Structure](#application-structure)
 	* [Modules](#modules)
 	* [Content Models & Classes](#content-models-classes)
-* [Testing](#testing)
 
 ## Features
 
@@ -272,13 +271,3 @@ However, if you have Team or Enterprise service package and wish to host audio f
 ```
 
 **3)** Remove fields `File URL` and `File Size` from the `Episode` content type.
-
-## Testing
-
-Run the dedicated [Rake](https://github.com/ruby/rake) task to perform tests for all routes defined in `routes.rb` using the [Rack::Test](https://github.com/rack-test/rack-test) library. Test cases are defined in `app/test/tests.rb`.
-
-**NOTE!** Enviromental variables `CONTENTFUL_DELIVERY_KEY_TEST` and `CONTENTFUL_SPACE_ID_TEST` set in the `.env` file enable to use different Contentful space for testing and for actual production content.
-
-```shell
-$ rake podcast:test
-```
