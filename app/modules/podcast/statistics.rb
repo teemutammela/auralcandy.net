@@ -3,7 +3,7 @@
 module Statistics
   # Query and update Contentful episode entries
   def update_episode_downloads(start_date)
-    %w[OP3_SHOW_UUI OP3_API_TOKEN].each do |env|
+    %w[OP3_SHOW_UUID OP3_API_TOKEN].each do |env|
       abort("Environmental variable #{env} not set.") if ENV[env].to_s.empty?
     end
 
