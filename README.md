@@ -279,7 +279,7 @@ However, if you have Team or Enterprise service package and wish to host audio f
 
 ## Statistics
 
-Query episode downloads from [OP3](https://op3.dev/) and update the `downloads` properties in Contentful episode entries.
+Query episode downloads from [OP3](https://op3.dev/) and update the `downloads` properties in Contentful episode entries. Define start date as task parameter.
 
 ```shell
 $ rake statistics:update_episode_downloads[YYYY-MM-DD]
