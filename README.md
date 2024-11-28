@@ -30,6 +30,7 @@ __Teemu Tammela__
 * [Application Structure](#application-structure)
 	* [Modules](#modules)
 	* [Content Models & Classes](#content-models-classes)
+* [Statistic](#statistics)
 
 ## Features
 
@@ -91,7 +92,7 @@ __1)__ Unless prevented by browser autoplay policy. See [Media Engagement Index]
 ## Requirements
 
 * [Git](http://git-scm.com/)
-* [Ruby](https://www.ruby-lang.org/en/) (3.3.2)
+* [Ruby](https://www.ruby-lang.org/en/)
 * [Bundler](http://bundler.io/)
 * [npm](http://www.npmjs.com/)
 * [Grunt](https://gruntjs.com/)
@@ -146,13 +147,17 @@ $ heroku config:set VARIABLE_NAME=variable_value
 
 | Variable Name               | Description                                                   |
 |-----------------------------|---------------------------------------------------------------|
+| `APPLE_PODCAST_ID`          | Apple Podcasts ID (optional). __1)__                          |
 | `CONTENTFUL_SPACE_ID`       | Contentful Space ID (source of content).                      |
 | `CONTENTFUL_DELIVERY_KEY`   | Contentful Delivery API key.                                  |
 | `CONTENTFUL_MANAGEMENT_KEY` | Contentful Management API key.                                |
 | `CONTENTFUL_ENVIRONMENT`    | Contentful environment name (e.g. `master`).                  |
-| `APPLE_PODCAST_ID`          | Apple Podcasts ID (optional). __1)__                          |
+| `OP3_SHOW_UUID`             | Open Podcast Prefix Project show UUID. __2)__                 |
+| `OP3_API_TOKEN`             | Open Podcast Prefix Project API token. __2)__                 |
 
 __1)__ If `ENV["APPLE_PODCAST_ID"]` is set, a `apple-itunes-app` meta tag will be inserted into the `<head>` section of the page. Read Apple's [Smart App Banners](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners) documentation for further information.
+
+__2)__ Required by the Rake task for updating episode download count via the [OP3](https://op3.dev/) REST API. See section [Statistic](#statistics) for further details.
 
 ### Development (Local)
 
@@ -265,9 +270,17 @@ However, if you have Team or Enterprise service package and wish to host audio f
 
 **2)** Modify the `@audio_url` and `@file_size` property definitions in `app/classes/episode.rb` as follows.
 
-```shell
+```ruby
 @audio_url = entry.fields[:audio].url
 @file_size = entry.fields[:audio].file.details['size']
 ```
 
 **3)** Remove fields `File URL` and `File Size` from the `Episode` content type.
+
+## Statistics
+
+Query episode downloads from [OP3](https://op3.dev/) and update the `downloads` properties in Contentful episode entries.
+
+```shell
+$ rake statistics:update_episode_downloads[YYYY-MM-DD]
+```

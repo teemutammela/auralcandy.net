@@ -2,13 +2,14 @@
 
 source 'http://rubygems.org'
 
-ruby '3.3.5'
+ruby '3.3.6'
 
-gem 'activesupport', '7.1.3.4'
+gem 'activesupport', '8.0.0'
 gem 'addressable', '2.8.7'
 gem 'contentful', '2.17.1'
 gem 'contentful-management', '3.10.0'
 gem 'dotenv', '3.1.4'
+gem 'faraday', '2.12.1'
 gem 'http', '5.2.0'
 gem 'padrino', '0.15.3'
 gem 'puma', '6.4.3'
