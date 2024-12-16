@@ -20,8 +20,10 @@ module Statistics
 
       next unless episode.published?
 
-      episode.update(downloads:)
-      episode.publish
+      if downloads > episode.fields[:downloads].to_i
+        episode.update(downloads:)
+        episode.publish
+      end
     end
   end
 
