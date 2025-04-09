@@ -35,7 +35,7 @@ module Sinatra
           $subscribe_url = "pcast://#{request.host_with_port}/podcast"
 
           # Allowed numbers of items for episode search
-          $search_items = [12, 24, 36, 48]
+          $search_items = [15, 30, 45, 60]
 
           # Get brands, genres and episode slugs
           $brands = brands
