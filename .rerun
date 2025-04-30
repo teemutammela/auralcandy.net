@@ -1,4 +1,0 @@
---name Podcast
---dir app
---pattern **/*.{rb}
---no-quiet
