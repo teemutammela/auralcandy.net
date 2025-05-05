@@ -65,12 +65,6 @@ class Podcast < Sinatra::Base
 
   # Production environment configuration
   configure :production do
-    use Rack::Attack
-    use Rack::Cache
-    use Rack::Deflater
-    use Rack::Protection
-    use Rack::Session::Pool, expire_after: 60 * 60 * 24 * 30, same_site: :strict
-
     Rack::Attack.blocklist('Block WordPress scan attempts') do |request|
       request.path.include?('wp-includes') || request.path.end_with?('.php')
     end
@@ -78,6 +72,12 @@ class Podcast < Sinatra::Base
     Rack::Attack.throttle('Throttle WordPress scan attempts', limit: 1, period: 60) do |request|
       request.ip if request.path.include?('wp-includes') || request.path.end_with?('.php')
     end
+
+    use Rack::Attack
+    use Rack::Cache
+    use Rack::Deflater
+    use Rack::Protection
+    use Rack::Session::Pool, expire_after: 60 * 60 * 24 * 30, same_site: :strict
 
     set :environment, :production
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 365 }]
