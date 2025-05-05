@@ -38,8 +38,7 @@ __Teemu Tammela__
 	* Built upon the [Sinatra](http://www.sinatrarb.com/) framework
 	* Utilizes [Padrino](http://padrinorb.com/guides/advanced-usage/standalone-usage-in-sinatra/) stand-alone helpers
 	* Content management and delivery by [Contentful](https://www.contentful.com/)
-	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-22` stack)
-	* Includes sample data and [Rack::Test](https://github.com/rack-test/rack-test) tests
+	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-24` stack)
 
 * __Mobile Friendly Responsive Layout__
 	* Built with [Bootstrap 4](http://getbootstrap.com/)
@@ -63,7 +62,7 @@ __Teemu Tammela__
 	* Related episodes
 
 * __RSS/XML Feed__
-	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc.
+	* Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3&pli=1), [Castbox](https://castbox.fm/download), [VLC Media Player](https://www.videolan.org/vlc/) etc.
 	* Episode descriptions
 	* Episode images (as defined in iTunes Podcast DTD)
 	* Genre keywords (as defined in iTunes Podcast DTD)
@@ -127,8 +126,6 @@ __4)__ Import example content to target space.
 ```shell
 $ contentful space import --content-file import/example-content.json
 ```
-
-__NOTE!__ Tests (`app/test/tests.rb`) are designed to match the contents of `example-content.json`. Altering the example content in Contentful is likely to cause the tests to fail. It is recommended to set up two spaces or environments (e.g. `production` and `testing`) and keep the unmodified example content in the latter.
 
 ## Deployment
 
