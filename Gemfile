@@ -2,7 +2,7 @@
 
 source 'http://rubygems.org'
 
-ruby '3.4.2'
+ruby '3.4.3'
 
 gem 'activesupport', '8.0.2'
 gem 'addressable', '2.8.7'

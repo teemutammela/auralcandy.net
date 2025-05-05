@@ -69,8 +69,8 @@ class Podcast < Sinatra::Base
       request.path.include?('wp-includes') || request.path.end_with?('.php')
     end
 
-    Rack::Attack.throttle('Throttle WordPress scan attempts', limit: 1, period: 60) do |request|
-      request.ip if request.path.include?('wp-includes') || request.path.end_with?('.php')
+    Rack::Attack.blocklisted_responder = lambda do |_request|
+      [410, { 'Content-Type' => 'text/plain' }, ['Piss off, script kiddie! This is not WordPress.']]
     end
 
     use Rack::Attack
