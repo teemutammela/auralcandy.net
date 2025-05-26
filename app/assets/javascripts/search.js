@@ -23,7 +23,7 @@ const Search = {
     const queryString = window.location.search
     const brand = (data !== null ? data.brand : 'any')
     const genre = (data !== null ? data.genre : 'any')
-    const limit = (data !== null ? parseInt(data.limit) : 12)
+    const limit = (data !== null ? parseInt(data.limit) : 15)
     const order = (data !== null ? data.order : 'date-desc')
     const id = (data !== null ? data.id : null)
     let page = (data !== null ? data.page : 1)
