@@ -45,6 +45,10 @@ h1.card-header, h2, h3 {
   .lead {
     color: $gray-200;
 
+    p {
+      text-align: justify;
+    }
+
     a {
       color: $gray-200;
       border-bottom: 1px solid $gray-500;
