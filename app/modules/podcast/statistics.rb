@@ -31,7 +31,7 @@ module Statistics
 
   # Merge OP3 downloads with legacy Chartable downloads
   def episode_urls_and_downloads(start_date)
-    @episode_urls_and_downloads ||= group_by_and_sum((op3_downloads(start_date) + chartable_downloads))
+    @episode_urls_and_downloads ||= group_by_and_sum(op3_downloads(start_date) + chartable_downloads)
   end
 
   # Query OP3 downloads from REST API beginning from YYYY-MM-DD
