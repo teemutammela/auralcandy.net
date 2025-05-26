@@ -66,7 +66,7 @@ class Podcast < Sinatra::Base
   # Production environment configuration
   configure :production do
     Rack::Attack.blocklist('Block WordPress scan attempts') do |request|
-      request.path.include?('wp-includes') || request.path.end_with?('.php')
+      request.path.include?('wp-') || request.path.end_with?('.php')
     end
 
     Rack::Attack.blocklisted_responder = lambda do |_request|
