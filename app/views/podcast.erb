@@ -16,7 +16,7 @@
       <%= content_tag :title, cd("#{$brand.name} - #{$brand.tagline}") %>
       <%= content_tag :link, $base_url %>
     <% end %>
-    <%= content_tag "itunes:author".to_sym, cd("MK-Ultra & Mesmic") %>
+    <%= content_tag "itunes:author".to_sym, cd("DJs MK-Ultra & Mesmic") %>
     <%= content_tag "itunes:subtitle".to_sym, cd($brand.short_description) %>
     <%= content_tag "itunes:summary".to_sym, cd(st($brand.long_description)) %>
     <% content_tag "itunes:owner".to_sym do %>
@@ -48,7 +48,7 @@
         <%= content_tag :pubDate, episode.published_rfc %>
         <%= tag "itunes:image".to_sym, :href => episode.image_url %>
         <%= content_tag "itunes:duration".to_sym, episode.duration %>
-        <%= content_tag "itunes:keywords".to_sym, cd("DJ, Podcast, #{episode.genre.join(", ")}") %>
+        <%= content_tag "itunes:keywords".to_sym, cd("DJ, DJ Mix, Podcast, #{episode.genre.join(", ")}") %>
       <% end %>
     <% end %>
   <% end %>
