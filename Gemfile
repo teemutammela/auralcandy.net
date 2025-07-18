@@ -2,14 +2,14 @@
 
 source 'http://rubygems.org'
 
-ruby '3.4.3'
+ruby '3.4.5'
 
 gem 'activesupport', '8.0.2'
 gem 'addressable', '2.8.7'
 gem 'contentful', '2.17.2'
 gem 'contentful-management', '3.10.1'
 gem 'dotenv', '3.1.8'
-gem 'faraday', '2.13.1'
+gem 'faraday', '2.13.2'
 gem 'http', '5.3.1'
 gem 'net-imap', '>= 0.4.20'
 gem 'padrino', '0.15.3'
