@@ -32,7 +32,7 @@ module Sinatra
           $base_url = $base_url.sub('http://', 'https://') unless settings.development?
 
           # RSS subscription URL (opens default client)
-          $subscribe_url = "pcast://#{request.host_with_port}/podcast"
+          $subscribe_url = "podcast://#{request.host_with_port}/podcast"
 
           # Allowed numbers of items for episode search
           $search_items = [15, 30, 45, 60]
