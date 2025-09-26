@@ -24,6 +24,7 @@
 	<%= tag :meta, :property => "og:description", :content => description %>
 	<%= tag :meta, :property => "og:locale", :content => "en_US" %>
 	<%= tag :meta, :property => "og:image", :content => og_image %>
+  <%= tag :meta, "http-equiv".to_sym => "Content-Security-Policy", :content => "upgrade-insecure-requests" %>
 	<%= tag :link, :href => "#{base_url}/manifest.json", :rel => "manifest" %>
 	<%= tag :link, :href => "https://www.auralcandy.net#{request.path}", :rel => "canonical" %>
 	<%= tag :link, :href => previous_url, :rel => "prev" if defined? previous_url %>
