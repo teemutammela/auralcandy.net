@@ -2,6 +2,7 @@
   locals = {
     :head => {
       :author           => episode.djs,
+      :base_url         => $base_url,
       :description      => st(episode.description ? episode.description : episode.brand.short_description),
       :keywords         => "DJ, Podcast, #{episode.genre.join(", ")}",
       :twitter_image    => "#{episode.image_url}?w=225&h=225&fm=jpg&q=100",

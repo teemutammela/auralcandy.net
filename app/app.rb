@@ -8,7 +8,6 @@ require 'json'
 require 'padrino-helpers'
 require 'rack/attack'
 require 'rack/cache'
-require 'rack/protection'
 require 'redcarpet'
 require 'redcarpet/render_strip'
 require 'sinatra/base'
@@ -60,7 +59,6 @@ class Podcast < Sinatra::Base
     set :static_cache_control, [:public, { max_age: 0 }]
 
     enable :reload_templates, :dump_errors, :show_exceptions, :asset_stamp
-    disable :protection
   end
 
   # Production environment configuration
@@ -76,13 +74,12 @@ class Podcast < Sinatra::Base
     use Rack::Attack
     use Rack::Cache
     use Rack::Deflater
-    use Rack::Protection
     use Rack::Session::Pool, expire_after: 60 * 60 * 24 * 30, same_site: :strict
 
     set :environment, :production, :static
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 365 }]
 
-    enable :protection, :quiet
+    enable :quiet
     disable :reload_templates, :dump_errors, :show_exceptions, :asset_stamp
   end
 end
