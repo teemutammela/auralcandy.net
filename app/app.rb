@@ -56,7 +56,7 @@ class Podcast < Sinatra::Base
   configure :development do
     use Rack::Session::Pool, expire_after: 0, same_site: :strict
 
-    set :environment, :development
+    set :environment, :development, :static
     set :static_cache_control, [:public, { max_age: 0 }]
 
     enable :reload_templates, :dump_errors, :show_exceptions, :asset_stamp
@@ -79,7 +79,7 @@ class Podcast < Sinatra::Base
     use Rack::Protection
     use Rack::Session::Pool, expire_after: 60 * 60 * 24 * 30, same_site: :strict
 
-    set :environment, :production
+    set :environment, :production, :static
     set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 365 }]
 
     enable :protection, :quiet
