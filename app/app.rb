@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/inflections'
+require 'active_support/gem_version'
 require 'contentful'
 require 'date'
 require 'dotenv/load'
