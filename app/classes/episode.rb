@@ -20,7 +20,7 @@ class Episode
     @track_list     = entry.fields[:track_list].to_s.split("\n")
     @duration       = entry.fields[:duration]
     @genre          = entry.fields[:genre].sort
-    @labels         = (entry.fields[:label].to_a.map { |label| Label.new(label) }).sort_by(&:name)
+    @labels         = entry.fields[:label].to_a.map { |label| Label.new(label) }.sort_by(&:name)
     @image_url      = (entry.fields[:image] ? "https:#{entry.fields[:image].url}" : @brand.image_url)
     @audio_url      = entry.fields[:file_url]
     @file_size      = entry.fields[:file_size].to_i
