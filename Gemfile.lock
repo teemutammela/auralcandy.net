@@ -28,7 +28,7 @@ GEM
       http (~> 5.0)
       json (>= 1.8, < 3.0)
       multi_json (~> 1.15)
-    date (3.4.1)
+    date (3.5.1)
     domain_name (0.6.20240107)
     dotenv (3.2.0)
     drb (2.2.3)
@@ -79,7 +79,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     net-http (0.9.1)
       uri (>= 0.11.1)
-    net-imap (0.5.8)
+    net-imap (0.5.14)
       date
       net-protocol
     net-pop (0.1.2)
@@ -183,7 +183,7 @@ GEM
       tilt (~> 2.0)
     thor (1.5.0)
     tilt (2.6.1)
-    timeout (0.4.1)
+    timeout (0.6.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
