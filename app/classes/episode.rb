@@ -14,7 +14,6 @@ class Episode
     @dj             = entry.fields[:dj].to_a.map { |dj| DJ.new(dj) }
     @title          = entry.fields[:title]
     @slug           = entry.fields[:slug]
-    @index          = $slugs.index(@slug).to_i
     @brand          = Brand.new(entry.fields[:brand])
     @description    = entry.fields[:description]
     @track_list     = entry.fields[:track_list].to_s.split("\n")
@@ -45,26 +44,6 @@ class Episode
   # Combine DJ(s) and title to a single string
   def title_full
     "#{djs} - #{@title}"
-  end
-
-  # Episode URL for a given slug
-  def create_episode_url(slug)
-    (slug ? "#{$base_url}/episodes/#{slug}" : false)
-  end
-
-  # Episode langing page URL
-  def url
-    create_episode_url(@slug)
-  end
-
-  # Previous episode URL
-  def previous_url
-    create_episode_url($slugs[@index - 1])
-  end
-
-  # Next episode URL
-  def next_url
-    create_episode_url($slugs[@index + 1])
   end
 
   # OP3 tracking redirection URL

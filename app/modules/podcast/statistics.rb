@@ -13,7 +13,7 @@ module Statistics
       order: '-fields.releaseDate'
     }
 
-    $management.entries.all(options).each do |episode|
+    management.entries.all(options).each do |episode|
       downloads = episode_urls_and_downloads(start_date).find do |hash|
         hash[:url] == episode.fields[:fileUrl]
       end&.dig(:downloads)

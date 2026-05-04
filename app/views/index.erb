@@ -2,25 +2,25 @@
   locals = {
     :head => {
       :author        => "Teemu Tammela",
-      :base_url      => $base_url,
-      :description   => $brand.short_description,
-      :keywords      => $brand.keywords.join(", "),
-      :twitter_image => $brand.image_url,
-      :og_image      => "#{$base_url}/images/layout/facebook-preview-logo.png",
-      :og_site_name  => $brand.name,
-      :og_url        => $base_url,
-      :title         => "#{$brand.name} - #{$brand.tagline}",
+      :base_url      => base_url,
+      :description   => current_brand.short_description,
+      :keywords      => current_brand.keywords.join(", "),
+      :twitter_image => current_brand.image_url,
+      :og_image      => "#{base_url}/images/layout/facebook-preview-logo.png",
+      :og_site_name  => current_brand.name,
+      :og_url        => base_url,
+      :title         => "#{current_brand.name} - #{current_brand.tagline}",
     },
     :header => {
-      :brand         => $brand.name,
-      :links         => $default_locals[:links],
-      :title         => $brand.tagline,
-      :description   => $brand.short_description,
+      :brand         => current_brand.name,
+      :links         => site_locals[:links],
+      :title         => current_brand.tagline,
+      :description   => current_brand.short_description,
       :button_text   => "Subscribe",
       :button_title  => "Subscribe via RSS",
-      :button_url    => $subscribe_url,
+      :button_url    => subscribe_url,
       :button_data   => false,
-      :footnote      => md($brand.compatibility)
+      :footnote      => md(current_brand.compatibility)
     }
   }
 %>
@@ -33,14 +33,14 @@
       <%= erb :lightbox %>
       <% content_tag :div, :class => "pt-4 pb-0 bg-light" do %>
         <% content_tag :div, :class => "container" do %>
-          <%= erb :search, :locals => { form: $default_locals[:search], selected: search_params } %>
+          <%= erb :search, :locals => { form: site_locals[:search], selected: search_params } %>
           <% content_tag :div, :id => "episode-list", :data => search_params do %>
             <%= erb :list, locals: list_result %>
           <% end %>
         <% end %>
       <% end %>
     <% end %>
-    <%= erb :footer, :locals => $default_locals[:footer] %>
+    <%= erb :footer, :locals => site_locals[:footer] %>
     <%= erb :player %>
     <%= erb :loading %>
     <%= javascript_include_tag "scripts.min.js", :async => "async", :type => false %>

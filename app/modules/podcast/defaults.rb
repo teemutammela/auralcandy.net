@@ -3,12 +3,14 @@
 module Sinatra
   module Podcast
     module Defaults
+      SEARCH_ITEMS = [15, 30, 45, 60].freeze
+
       def self.registered(app)
         # Set shared variables and other default values before handling routes
         app.before do
           # Attempt to query brands and catch errors for invalid API key or space ID
           begin
-            defaults = $delivery.entries(
+            defaults = settings.delivery.entries(
               :content_type => 'brand',
               :include => 1,
               'fields.default' => true
@@ -19,7 +21,7 @@ module Sinatra
 
           # Set default brand (first matching)
           if defaults.size.positive?
-            $brand = Brand.new(defaults.first)
+            @brand = Brand.new(defaults.first)
           else
             halt 500, 'No default brand set.'
           end
@@ -27,25 +29,13 @@ module Sinatra
           # Set cache (production mode)
           expires 60 * 60 * 24, :public, :must_revalidate unless settings.development?
 
-          # Set base URL (force HTTPS in production mode)
-          $base_url = request.base_url
-          $base_url = $base_url.sub('http://', 'https://') unless settings.development?
-
-          # RSS subscription URL (opens default client)
-          $subscribe_url = "podcast://#{request.host_with_port}/podcast"
-
-          # Allowed numbers of items for episode search
-          $search_items = [15, 30, 45, 60]
-
           # Get brands, genres and episode slugs
-          $brands = brands
-          $genres = genres
-          $slugs  = slugs
+          @brands = brands
+          @genres = genres
+          @slugs  = slugs
 
           # Build navigation menu
-          $navigation_links = []
-
-          $brand.navigation_menu.each do |navigation_item|
+          @navigation_links = @brand.navigation_menu.map do |navigation_item|
             navigation_link = {
               name: navigation_item.name,
               description: navigation_item.description
@@ -58,25 +48,25 @@ module Sinatra
               navigation_link[:url] = navigation_item.link_anchor
             end
 
-            $navigation_links.push(navigation_link)
+            navigation_link
           end
 
-          # Default variables shared by views
-          $default_locals = {
-            links: $navigation_links,
+          # Site variables shared by views
+          @site_locals = {
+            links: @navigation_links,
             search: {
               fields: {
                 brand: {
                   name: 'Brand',
-                  options: $brands.map { |brand| [brand.name, brand.slug] }.insert(0, ['Any Brand', 'any'])
+                  options: @brands.map { |brand| [brand.name, brand.slug] }.insert(0, ['Any Brand', 'any'])
                 },
                 genre: {
                   name: 'Genre',
-                  options: $genres.sort.map { |key, value| [value, key] }.insert(0, ['Any Genre', 'any'])
+                  options: @genres.sort.map { |key, value| [value, key] }.insert(0, ['Any Genre', 'any'])
                 },
                 limit: {
                   name: 'Episodes',
-                  options: $search_items.map { |items| ["#{items} Per Page", items.to_s] }
+                  options: SEARCH_ITEMS.map { |items| ["#{items} Per Page", items.to_s] }
                 },
                 order: {
                   name: 'Order',
@@ -92,14 +82,14 @@ module Sinatra
               }
             },
             footer: {
-              brand_name: $brand.name,
-              description: md($brand.long_description),
-              privacy_policy: md($brand.privacy_policy),
-              street_address: $brand.street_address,
-              zip_code: $brand.zip_code,
-              locality: $brand.locality,
-              email: $brand.email,
-              phone: $brand.phone
+              brand_name: @brand.name,
+              description: md(@brand.long_description),
+              privacy_policy: md(@brand.privacy_policy),
+              street_address: @brand.street_address,
+              zip_code: @brand.zip_code,
+              locality: @brand.locality,
+              email: @brand.email,
+              phone: @brand.phone
             }
           }
         end

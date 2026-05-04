@@ -1,11 +1,11 @@
 ---
-require:
+plugins:
   - rubocop-rake
+AllCops:
+  NewCops: disable
 Style/Documentation:
   Enabled: false
 Style/GuardClause:
-  Enabled: false
-Style/GlobalVars:
   Enabled: false
 Style/FormatString:
   Enabled: false

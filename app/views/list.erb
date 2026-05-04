@@ -10,7 +10,7 @@
               :title       => episode.title,
               :published   => episode.published,
               :natural     => episode.published_natural,
-              :episode_url => episode.url,
+              :episode_url => episode_url(episode.slug),
               :image_url   => episode.image_url,
               :audio_url   => episode.audio_download_url,
               :selected    => genre,

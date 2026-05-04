@@ -170,10 +170,10 @@ __2)__ Default environment is `development`. Set production environment via the 
 $ export APP_ENV=production
 ```
 
-__NOTE!__ Global variable `$base_url` (set in `app/modules/podcast/defaults.rb`) forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/defaults.rb`.
+__NOTE!__ The `base_url` helper forces HTTPS in production mode. This may break some links while running the application in production mode on a local workstation. You may disable this feature by commenting the following line in `app/modules/podcast/helpers.rb`.
 
 ```ruby
-$base_url = $base_url.sub("http://", "https://") unless settings.development?
+settings.development? ? url : url.sub("http://", "https://")
 ```
 
 ### Production (Heroku)
