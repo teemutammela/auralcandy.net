@@ -1,3 +1,5 @@
+const sass = require('sass')
+
 module.exports = function (grunt) {
   grunt.initConfig({
     uglify: {
@@ -20,9 +22,9 @@ module.exports = function (grunt) {
     },
     sass: {
       options: {
-        sourcemap: 'none',
-        style: 'compressed',
-        noCache: true
+        implementation: sass,
+        sourceMap: false,
+        style: 'compressed'
       },
       dist: {
         files: {
@@ -49,6 +51,6 @@ module.exports = function (grunt) {
   })
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-contrib-sass')
+  grunt.loadNpmTasks('grunt-sass')
   grunt.loadNpmTasks('grunt-contrib-watch')
 }

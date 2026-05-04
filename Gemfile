@@ -27,5 +27,4 @@ gem 'sinatra-contrib', '4.2.1'
 group :development do
   gem 'rubocop', '1.86.1'
   gem 'rubocop-rake', '0.7.1'
-  gem 'sass', '3.7.4'
 end
