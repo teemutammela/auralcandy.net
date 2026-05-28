@@ -101,6 +101,20 @@ h1.card-header, h2, h3 {
   line-height: 1.75 !important;
 }
 
+.episode-image {
+  aspect-ratio: 1 / 1;
+  display: block;
+  overflow: hidden;
+
+  img {
+    aspect-ratio: 1 / 1;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+  }
+
+}
+
 .card-body .list-group-item div {
   white-space: nowrap;
   overflow: hidden;
