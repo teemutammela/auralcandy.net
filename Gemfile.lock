@@ -79,7 +79,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     net-http (0.9.1)
       uri (>= 0.11.1)
-    net-imap (0.6.4)
+    net-imap (0.6.4.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -183,7 +183,7 @@ GEM
       tilt (~> 2.0)
     thor (1.5.0)
     tilt (2.6.1)
-    timeout (0.4.1)
+    timeout (0.6.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
@@ -207,7 +207,7 @@ DEPENDENCIES
   faraday (= 2.14.2)
   http (= 5.3.1)
   json (= 2.19.3)
-  net-imap (= 0.6.4)
+  net-imap (= 0.6.4.1)
   padrino (= 0.16.1)
   puma (= 8.0.1)
   rack (= 3.2.6)
