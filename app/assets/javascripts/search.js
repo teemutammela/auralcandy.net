@@ -73,10 +73,14 @@ const Search = {
     loading.fadeTo(0, 1)
     loading.css('z-index', 99)
 
-    list.load(url, function () {
+    list.load(url, function (_response, status) {
       list.fadeTo(interval, 1)
       loading.fadeTo(0, 0)
       loading.css('z-index', -1)
+
+      if (status === 'error') {
+        return
+      }
 
       Search.initPagingButtons()
       Player.initPlayButtons()

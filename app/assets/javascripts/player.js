@@ -53,6 +53,10 @@ const Player = {
       // Get episode data from localStorage
       const episode = Player.getLocalStorage()
 
+      if (episode === null) {
+        return
+      }
+
       // Set player properties from localStorage
       Player.setPlayerProperties(episode)
 
@@ -119,14 +123,35 @@ const Player = {
 
   /* Get episode properties from localStorage */
   getLocalStorage: function (key) {
-    const episode = JSON.parse(localStorage.episode)
-    return typeof (key) === 'undefined' ? episode : episode[key]
+    let episode = null
+
+    try {
+      episode = JSON.parse(localStorage.episode)
+    } catch (error) {
+      localStorage.removeItem('episode')
+      return null
+    }
+
+    if (episode === null || typeof (episode) !== 'object') {
+      localStorage.removeItem('episode')
+      return null
+    }
+
+    if (typeof (key) === 'undefined') {
+      return episode
+    }
+
+    return typeof (episode[key]) === 'undefined' ? null : episode[key]
   },
 
   /* Set episode properties to localStorage */
   setLocalStorage: function (episode) {
     const prefixUrl = 'https://op3.dev/e/'
     localStorage.removeItem('episode')
+
+    if (episode.audioUrl === null || typeof (episode.audioUrl) === 'undefined') {
+      return
+    }
 
     // Strip OP3 prefix URL from audio URL to prevent unnecessary redirections when restoring state
     if (episode.audioUrl.includes(prefixUrl)) {
@@ -140,6 +165,11 @@ const Player = {
   /* Update episode properties in localStorage */
   updateLocalStorage: function (key, value) {
     const episode = Player.getLocalStorage()
+
+    if (episode === null) {
+      return
+    }
+
     episode[key] = value
     Player.setLocalStorage(episode)
   },
@@ -154,8 +184,14 @@ const Player = {
     /* Restore current time index from localStorage */
     Player.audio.onprogress = function () {
       if (localStorage.episode && Player.audio.currentTime === 0) {
+        const elapsed = Player.getLocalStorage('elapsed')
+
+        if (elapsed === null) {
+          return
+        }
+
         // Setting current time only once prevents jumps in audio playback
-        Player.audio.currentTime = Player.getLocalStorage('elapsed')
+        Player.audio.currentTime = elapsed
 
         // Attempt to resume audio playback
         Player.resumePlayback()
@@ -176,7 +212,7 @@ const Player = {
       Player.togglePlayIcon()
 
       // Set duration interval (runs on the background until playback ends)
-      if (typeof (duration) === 'undefined') {
+      if (Player.duration === null) {
         Player.duration = setInterval(function () {
           Player.updateDuration()
         }, 1000)
@@ -198,6 +234,7 @@ const Player = {
 
       // Clear duration display interval
       clearInterval(Player.duration)
+      Player.duration = null
     }
 
     /* Error - display notification */
@@ -230,6 +267,10 @@ $(document).ready(function () {
 
     // Stop audio playback
     Player.audio.pause()
+
+    // Clear duration display interval
+    clearInterval(Player.duration)
+    Player.duration = null
 
     return false
   })
