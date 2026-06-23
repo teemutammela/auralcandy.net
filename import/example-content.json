@@ -89,7 +89,7 @@
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis. Quisque sed pellentesque lacus. Curabitur laoreet elit vel vehicula cursus. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam."
         },
         "compatibility": {
-          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
+          "en-US": "Compatible with [Apple Podcasts](https://apps.apple.com/us/app/apple-podcasts/id525463029), [Castbox](https://castbox.fm/channel/id3057509), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3), [iTunes](https://www.apple.com/itunes/), [VLC Media Player](https://www.videolan.org/vlc/) etc."
         },
         "privacyPolicy": {
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi."
@@ -251,7 +251,7 @@
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam. Praesent consectetur ac lacus ac convallis. Quisque sed pellentesque lacus. Curabitur laoreet elit vel vehicula cursus. Nullam elit dui, ultricies ac lorem ut, sagittis viverra diam."
         },
         "compatibility": {
-          "en-US": "Compatible with [Apple Podcasts](https://itunes.apple.com/us/app/podcasts/id525463029), [Google Podcasts](https://play.google.com/store/apps/details?id=com.google.android.apps.podcasts), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3), [iTunes](https://www.apple.com/itunes/),  [VLC Media Player](https://www.videolan.org/vlc/) etc."
+          "en-US": "Compatible with [Apple Podcasts](https://apps.apple.com/us/app/apple-podcasts/id525463029), [Castbox](https://castbox.fm/channel/id3057509), [Amazon Music](https://play.google.com/store/apps/details?id=com.amazon.mp3), [iTunes](https://www.apple.com/itunes/),  [VLC Media Player](https://www.videolan.org/vlc/) etc."
         },
         "privacyPolicy": {
           "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ullamcorper sapien. Mauris at urna a purus pellentesque fermentum eu pellentesque nisi."
@@ -1561,13 +1561,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "Google Podcasts"
+          "en-US": "Castbox"
         },
         "description": {
-          "en-US": "Listen to AuralCandy.Net on Google Podcasts"
+          "en-US": "Listen to AuralCandy.Net on Castbox"
         },
         "linkUrl": {
-          "en-US": "https://goo.gl/a5SMyW"
+          "en-US": "https://castbox.fm/channel/id3057509"
         }
       }
     },

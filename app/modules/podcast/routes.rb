@@ -115,7 +115,7 @@ module Sinatra
             cache_control :public, :must_revalidate, max_age: 60 * 60 * 24 * 30
           end
 
-          erb :manifest, locals: { brand: current_brand }, content_type: 'application/json'
+          erb :manifest, locals: { brand: current_brand }, content_type: 'application/manifest+json'
         end
 
         # Options (used only to block certain types of bots)
