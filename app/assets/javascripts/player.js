@@ -1,50 +1,58 @@
 const Player = {
 
-  player: $('#media-player'),
+  player: document.getElementById('media-player'),
   audio: document.getElementById('media-audio'),
   duration: null,
 
   /* Initialize episode play buttons */
   initPlayButtons: function () {
-    $('.play-button').click(function () {
-      // Get episode properties from data-parameters
-      const episode = $(this).data()
+    AppDom.queryAll('.play-button').forEach(function (button) {
+      if (button.dataset.playerInitialized === 'true') {
+        return
+      }
 
-      // Add default duration, elapsed time and play state
-      episode.duration = '00:00:00'
-      episode.elapsed = 0
-      episode.state = 'play'
+      button.dataset.playerInitialized = 'true'
 
-      // Set episode properties to media player and save to localStorage
-      Player.setPlayerProperties(episode)
-      Player.setLocalStorage(episode)
+      button.addEventListener('click', function (event) {
+        // Get episode properties from data-parameters
+        const episode = AppDom.data(button)
 
-      // Set full size cover image to lightbox
-      Lightbox.setImage(episode.imageFullUrl)
+        event.preventDefault()
 
-      // Load audio file to media player
-      Player.audio.load()
+        // Add default duration, elapsed time and play state
+        episode.duration = '00:00:00'
+        episode.elapsed = 0
+        episode.state = 'play'
 
-      // Fade in media player and start playback
-      Player.player.fadeIn('slow', function () {
-        Player.audio.play()
+        // Set episode properties to media player and save to localStorage
+        Player.setPlayerProperties(episode)
+        Player.setLocalStorage(episode)
+
+        // Set full size cover image to lightbox
+        Lightbox.setImage(episode.imageFullUrl)
+
+        // Load audio file to media player
+        Player.audio.load()
+
+        // Fade in media player and start playback
+        AppDom.fadeIn(Player.player, 'slow', 'flex', function () {
+          Player.audio.play()
+        })
       })
-
-      return false
     })
   },
 
   /* Set episode properties to media player */
   setPlayerProperties: function (episode) {
     // Set episode title, cover image and source URLs
-    $('#media-dj').html(episode.dj)
-    $('#media-title').html(episode.title)
-    $('#media-duration').html(episode.duration)
-    $('#media-image-url').attr('data-image-url', episode.imageUrl)
-    $('#media-image-full-url').attr('data-image-full-url', episode.imageFullUrl)
-    $('#media-audio-url').attr('src', episode.audioUrl)
-    $('#media-episode-url').attr('href', episode.episodeUrl)
-    $('#media-download').attr('href', episode.audioUrl)
+    AppDom.query('#media-dj').innerHTML = episode.dj
+    AppDom.query('#media-title').innerHTML = episode.title
+    AppDom.query('#media-duration').innerHTML = episode.duration
+    AppDom.query('#media-image-url').setAttribute('data-image-url', episode.imageUrl)
+    AppDom.query('#media-image-full-url').setAttribute('data-image-full-url', episode.imageFullUrl)
+    AppDom.query('#media-audio-url').setAttribute('src', episode.audioUrl)
+    AppDom.query('#media-episode-url').setAttribute('href', episode.episodeUrl)
+    AppDom.query('#media-download').setAttribute('href', episode.audioUrl)
   },
 
   /* Restore media player state */
@@ -67,7 +75,8 @@ const Player = {
       Player.togglePlayIcon()
 
       // Display media player instantly
-      Player.player.show()
+      Player.player.style.display = 'flex'
+      Player.player.style.opacity = 1
     }
   },
 
@@ -88,16 +97,18 @@ const Player = {
 
   /* Set play or pause title and icon */
   togglePlayIcon: function () {
-    const link = $('#media-playpause')
-    const icon = link.find('span')
+    const link = AppDom.query('#media-playpause')
+    const icon = AppDom.query('span', link)
 
-    Player.audio.paused ? link.attr('title', 'Play') : link.attr('title', 'Pause')
-    Player.audio.paused ? icon.attr('class', 'fas fa-play') : icon.attr('class', 'fas fa-pause')
+    Player.audio.paused ? link.setAttribute('title', 'Play') : link.setAttribute('title', 'Pause')
+    Player.audio.paused ? icon.setAttribute('class', 'fas fa-play') : icon.setAttribute('class', 'fas fa-pause')
   },
 
   /* Set media player cover image thumbnail */
   setThumbnail: function () {
-    $('#media-image-url').attr('src', $('#media-image-url').attr('data-image-url'))
+    const image = AppDom.query('#media-image-url')
+
+    image.setAttribute('src', image.getAttribute('data-image-url'))
   },
 
   /* Update media player duration and elapsed time index */
@@ -116,7 +127,7 @@ const Player = {
         Player.updateLocalStorage('elapsed', current)
 
         // Update duration display in media player
-        $('#media-duration').html(duration)
+        AppDom.query('#media-duration').innerHTML = duration
       }
     }
   },
@@ -178,7 +189,7 @@ const Player = {
   bindPlayerEvents: function () {
     /* Audio loading started - display loading animation */
     Player.audio.onloadstart = function () {
-      $('#media-image-url').attr('src', '/images/layout/loading-dark.gif')
+      AppDom.query('#media-image-url').setAttribute('src', '/images/layout/loading-dark.gif')
     }
 
     /* Restore current time index from localStorage */
@@ -230,7 +241,7 @@ const Player = {
       localStorage.removeItem('episode')
 
       // Hide media player
-      Player.player.fadeOut('slow')
+      AppDom.fadeOut(Player.player, 'slow')
 
       // Clear duration display interval
       clearInterval(Player.duration)
@@ -246,24 +257,26 @@ const Player = {
 }
 
 /* Document ready state */
-$(document).ready(function () {
+AppDom.ready(function () {
   // Bind media player events and restore media player state
   Player.bindPlayerEvents()
   Player.restorePlayerState()
 
   /* Media player play/pause button */
-  $('#media-playpause').click(function () {
+  AppDom.query('#media-playpause').addEventListener('click', function (event) {
+    event.preventDefault()
     Player.togglePlayState()
-    return false
   })
 
   /* Media player close button */
-  $('#media-close').click(function () {
+  AppDom.query('#media-close').addEventListener('click', function (event) {
+    event.preventDefault()
+
     // Clear episode properties from localStorage
     localStorage.removeItem('episode')
 
     // Fade out media player
-    Player.player.fadeOut('slow')
+    AppDom.fadeOut(Player.player, 'slow')
 
     // Stop audio playback
     Player.audio.pause()
@@ -271,7 +284,5 @@ $(document).ready(function () {
     // Clear duration display interval
     clearInterval(Player.duration)
     Player.duration = null
-
-    return false
   })
 })

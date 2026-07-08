@@ -1,22 +1,16 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "jquery": true
+    "es2021": true
   },
   "extends": [
-    "standard",
-    "plugin:jquery/slim"
+    "standard"
   ],
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "plugins": [
-    "jquery"
-  ],
   "rules": {
     "no-undef": "off",
-    "no-unused-vars": "off",
-    "jquery/no-fade": "off"
+    "no-unused-vars": "off"
   }
 }

@@ -2,27 +2,27 @@ const Lightbox = {
 
   /* Set cover image to lightbox */
   setImage: function (imageUrl) {
-    $('#lightbox-image').css('background-image', `url("${imageUrl}")`)
+    AppDom.query('#lightbox-image').style.backgroundImage = `url("${imageUrl}")`
   },
 
   /* Show cover image in lightbox */
   showImage: function () {
-    $('body').css('overflow', 'hidden')
-    $('#lightbox').fadeIn('slow')
+    document.body.style.overflow = 'hidden'
+    AppDom.fadeIn(AppDom.query('#lightbox'), 'slow')
   },
 
   /* Hide cover image and lightbox */
   hideImage: function () {
-    $('body').css('overflow', 'auto')
-    $('#lightbox').fadeOut('slow')
+    document.body.style.overflow = 'auto'
+    AppDom.fadeOut(AppDom.query('#lightbox'), 'slow')
   }
 
 }
 
 /* Document ready state */
-$(document).ready(function () {
+AppDom.ready(function () {
   // Full size cover image instance
-  const imageFullUrl = $('#media-image-full-url').data('imageFullUrl')
+  const imageFullUrl = AppDom.data(AppDom.query('#media-image-full-url')).imageFullUrl
 
   // Set cover image to lightbox if URL is present
   if (imageFullUrl) {
@@ -30,14 +30,14 @@ $(document).ready(function () {
   }
 
   // Show cover image in lightbox
-  $('#media-image-full-url').click(function () {
+  AppDom.query('#media-image-full-url').addEventListener('click', function (event) {
+    event.preventDefault()
     Lightbox.showImage()
-    return false
   })
 
   // Hide cover image and lightbox
-  $('#lightbox-close').click(function () {
+  AppDom.query('#lightbox-close').addEventListener('click', function (event) {
+    event.preventDefault()
     Lightbox.hideImage()
-    return false
   })
 })

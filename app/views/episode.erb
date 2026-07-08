@@ -53,7 +53,7 @@
 <!DOCTYPE HTML>
 <% content_tag :html, :lang => "en" do %>
   <%= erb :head, :locals => locals[:head] %>
-  <% content_tag :body, :itemtype => "https://schema.org/WebPage", :itemscope => true do %>
+  <% content_tag :body, :itemtype => "https://schema.org/WebPage", :itemscope => true, :data => {:bs_no_jquery => true} do %>
     <%= erb :header, :locals => locals[:header] %>
     <% content_tag :main do %>
       <%= erb :lightbox %>

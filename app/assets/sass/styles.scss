@@ -1,4 +1,82 @@
-@import "bootstrap-4.6.2/bootstrap.scss";
+$white:    #FFFFFF;
+$gray-100: #F8F8F8;
+$gray-200: #EEEEEE;
+$gray-300: #DDDDDD;
+$gray-400: #CCCCCC;
+$gray-500: #AAAAAA;
+$gray-600: #787878;
+$gray-700: #444444;
+$gray-800: #333333;
+$gray-900: #222222;
+$black:    #000000;
+
+$blue:    #007BFF;
+$indigo:  #6610F2;
+$purple:  #6F42C1;
+$pink:    #E83E8C;
+$red:     #DC3545;
+$orange:  #DC5216;
+$yellow:  #FFE968;
+$green:   #6E8352;
+$teal:    #4ACAF2;
+$cyan:    #17A2B8;
+
+$primary:       $orange;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$body-color:                $gray-900;
+$body-secondary-color:      $gray-600;
+$link-decoration:           none;
+$link-hover-decoration:     none;
+$link-shade-percentage:     15%;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$font-size-base:              1rem;
+$h1-font-size:                $font-size-base * 3;
+$h2-font-size:                $font-size-base * 1.5;
+$h3-font-size:                $font-size-base * 1.25;
+$h4-font-size:                $font-size-base;
+$h5-font-size:                $font-size-base;
+$headings-margin-bottom:      .5rem;
+$headings-font-family:        inherit;
+$headings-color:              inherit;
+$small-font-size:             80%;
+
+$navbar-dark-color:                 $gray-500;
+$navbar-dark-hover-color:           $gray-100;
+$navbar-dark-active-color:          $gray-100;
+$navbar-dark-disabled-color:        $gray-700;
+$navbar-dark-icon-color:            $gray-500;
+$navbar-dark-toggler-border-color:  $gray-600;
+
+$badge-font-size:                   60%;
+$badge-padding-y:                   .5em;
+$badge-padding-x:                   1em;
+
+$card-cap-padding-y:                .75rem;
+$card-cap-padding-x:                1.25rem;
+
+@import "bootstrap-5.3.8/bootstrap.scss";
 @import "fontawesome-5.15.4/fontawesome.scss";
 @import "fontawesome-5.15.4/solid.scss";
 @import "fonts.scss";
@@ -30,7 +108,7 @@ h1.card-header, h2, h3 {
 
 }
 
-.jumbotron {
+.site-hero {
   background-image: url("/images/layout/header.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -83,6 +161,10 @@ h1.card-header, h2, h3 {
 
   }
 
+}
+
+.text-justify {
+  text-align: justify !important;
 }
 
 .bg-light {
@@ -212,7 +294,7 @@ h1.card-header, h2, h3 {
     font-size: $font-size-base !important;
   }
 
-  .jumbotron {
+  .site-hero {
     padding-bottom: $spacer * 2;
 
     h1 {
@@ -259,7 +341,7 @@ h1.card-header, h2, h3 {
 
 @media screen and (orientation:landscape) {
 
-  .jumbotron {
+  .site-hero {
     padding-bottom: $spacer * 2;
 
     h1 {
@@ -302,7 +384,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:landscape) and (min-width: 1921px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 35vw;
@@ -318,7 +400,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:landscape) and (max-width: 1920px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 40vw;
@@ -334,7 +416,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:landscape) and (max-width: 1375px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 60vw;
@@ -350,7 +432,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:landscape) and (max-width: 920px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 70vw;
@@ -366,7 +448,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:landscape) and (max-width: 790px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 75vw;
@@ -382,7 +464,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:portrait) and (min-width: 1024px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 60vw;
@@ -398,7 +480,7 @@ h1.card-header, h2, h3 {
 
 @media (orientation:portrait) and (min-width: 768px) and (max-width: 1023px) {
 
-  .jumbotron {
+  .site-hero {
 
     .lead {
       max-width: 75vw;

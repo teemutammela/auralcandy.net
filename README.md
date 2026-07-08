@@ -41,7 +41,7 @@ __Teemu Tammela__
 	* Ready to be deployed on [Heroku](https://www.heroku.com/) (tested with `heroku-24` stack)
 
 * __Mobile Friendly Responsive Layout__
-	* Built with [Bootstrap 4](http://getbootstrap.com/)
+	* Built with [Bootstrap 5](http://getbootstrap.com/)
 	* Vector icons by [Fontawesome 5](https://fontawesome.com/)
 	* [WebP](https://developers.google.com/speed/webp/) image support on [Chromium](https://www.chromium.org/) based browsers (JPEG fallback for Firefox, Safari etc.)
 
