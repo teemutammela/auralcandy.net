@@ -43,6 +43,33 @@ module Sinatra
         objects('Episode', options)
       end
 
+      # Get a list of years with published episodes
+      def episode_years
+        options = {
+          content_type: 'episode',
+          include: 0,
+          order: '-fields.releaseDate',
+          select: 'fields.releaseDate',
+          limit: 999
+        }
+
+        settings.delivery.entries(options).map do |episode|
+          Date.parse(episode.fields[:release_date]).year
+        end.uniq
+      end
+
+      # Get episodes published in a given year
+      def episodes_by_year(year)
+        start_date = Date.new(year.to_i, 1, 1)
+        end_date = start_date.next_year
+
+        episodes(
+          'fields.releaseDate[gte]'.to_sym => start_date.iso8601,
+          'fields.releaseDate[lt]'.to_sym => end_date.iso8601,
+          limit: 999
+        )
+      end
+
       # Get episode by URL slug
       def episode_by_slug(slug)
         # Query options

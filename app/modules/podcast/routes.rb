@@ -94,10 +94,37 @@ module Sinatra
           erb :podcast, locals: { episodes: }, content_type: 'application/xml'
         end
 
-        # XML sitemap for Google
+        # XML sitemap index
         app.get '/sitemap.xml', '/xml/sitemap.xml' do
+          # Set headers
+          headers['Accept-Ranges'] = 'bytes'
+
+          sitemaps = ["#{base_url}/sitemap-pages.xml"] + episode_years.map do |year|
+            "#{base_url}/sitemap-#{year}.xml"
+          end
+
+          # Pass variables to template
+          erb :sitemap_index, locals: { sitemaps: sitemaps }, content_type: 'application/xml'
+        end
+
+        # XML sitemap for site pages
+        app.get '/sitemap-pages.xml' do
+          # Set headers
+          headers['Accept-Ranges'] = 'bytes'
+
+          # Pass variables to template
+          erb :sitemap_pages, content_type: 'application/xml'
+        end
+
+        # XML sitemap for episodes published in given year
+        app.get '/sitemap-:year.xml' do |year|
+          halt 404 unless year.match?(/\A\d{4}\z/)
+
           # Query episodes
-          episodes = episodes(limit: settings.limit)
+          episodes = episodes_by_year(year)
+
+          # Halt if no episodes were published in requested year
+          halt 404 if episodes.empty?
 
           # Set headers
           last_modified(episodes.first.updated) unless settings.development?
